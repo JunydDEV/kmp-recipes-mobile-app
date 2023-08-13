@@ -29,6 +29,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "firebase-kmm-app"
+rootProject.name = "kmp-recipes-mobile-app"
 include(":androidApp")
 include(":shared")

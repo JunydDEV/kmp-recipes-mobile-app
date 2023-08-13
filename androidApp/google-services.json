@@ -128,6 +128,35 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:15677041941:android:153cdf711de67a2e8e4d1c",
+        "android_client_info": {
+          "package_name": "com.kmp.recipes.android.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "15677041941-qlc20ohs62m23ju09cbfgkn797ifols2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtTTt3C6v8aTecKEWnKF1mSylCcEklNEQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "15677041941-1fl064ntg0d4q2nn8npgmt9cqa8mb62j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

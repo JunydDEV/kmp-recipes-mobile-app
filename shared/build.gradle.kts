@@ -60,7 +60,7 @@ kotlin {
 
 android {
     compileSdk = (findProperty("android.compileSdk") as String).toInt()
-    namespace = "com.firebase.kmm.app.shared"
+    namespace = "com.kmp.recipes.mobile.app.shared"
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     sourceSets["main"].res.srcDirs("src/androidMain/res")
@@ -80,7 +80,7 @@ android {
 }
 
 multiplatformResources {
-    multiplatformResourcesPackage = "com.firebase.kmm.app.sharedres"
+    multiplatformResourcesPackage = "com.kmp.recipes.mobile.app.sharedres"
     multiplatformResourcesClassName = "SharedRes"
     disableStaticFrameworkWarning = true
 }

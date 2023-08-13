@@ -17,14 +17,13 @@ kotlin {
 
 android {
     compileSdk = (findProperty("android.compileSdk") as String).toInt()
-    namespace = "com.myapplication"
+    namespace = "com.kmp.recipes.android.app"
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
 
-    namespace = "com.firebase.kmm.app.android"
     compileSdk = 33
     defaultConfig {
-        applicationId = "com.firebase.kmm.app.android"
+        applicationId = "com.kmp.recipes.android.app"
         minSdk = (findProperty("android.minSdk") as String).toInt()
         targetSdk = (findProperty("android.targetSdk") as String).toInt()
         versionCode = 1

@@ -8,3 +8,4 @@ captures
 .cxx
 local.properties
 xcuserdata
+/androidApp/src/androidMain/kotlin/com/firebase/kmm/app/android/ColorsPlayground.kt
