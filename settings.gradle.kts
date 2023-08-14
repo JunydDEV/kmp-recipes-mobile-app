@@ -32,3 +32,4 @@ dependencyResolutionManagement {
 rootProject.name = "kmp-recipes-mobile-app"
 include(":androidApp")
 include(":shared")
+include(":systemui")

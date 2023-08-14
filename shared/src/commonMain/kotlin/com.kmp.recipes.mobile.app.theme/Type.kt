@@ -15,35 +15,35 @@ fun getTypography(): Typography {
     return Typography(
         headlineSmall = TextStyle(
             fontWeight = FontWeight.SemiBold,
-            fontFamily = fontFamilyResource(SharedRes.fonts.PlayfairDisplay.semiBold),
+            fontFamily = fontFamilyResource(SharedRes.fonts.Lato.semibold),
             fontSize = 24.sp,
             lineHeight = 32.sp,
             letterSpacing = 0.sp
         ),
         titleLarge = TextStyle(
             fontWeight = FontWeight.Bold,
-            fontFamily = fontFamilyResource(SharedRes.fonts.PlayfairDisplay.bold),
+            fontFamily = fontFamilyResource(SharedRes.fonts.Lato.bold),
             fontSize = 18.sp,
             lineHeight = 28.sp,
             letterSpacing = 0.sp
         ),
         bodyLarge = TextStyle(
             fontWeight = FontWeight.Normal,
-            fontFamily = fontFamilyResource(SharedRes.fonts.PlayfairDisplay.regular),
+            fontFamily = fontFamilyResource(SharedRes.fonts.Lato.regular),
             fontSize = 16.sp,
             lineHeight = 24.sp,
             letterSpacing = 0.15.sp
         ),
         bodyMedium = TextStyle(
             fontWeight = FontWeight.Medium,
-            fontFamily = fontFamilyResource(SharedRes.fonts.PlayfairDisplay.medium),
+            fontFamily = fontFamilyResource(SharedRes.fonts.Lato.medium),
             fontSize = 14.sp,
             lineHeight = 20.sp,
             letterSpacing = 0.25.sp
         ),
         labelMedium = TextStyle(
             fontWeight = FontWeight.SemiBold,
-            fontFamily = fontFamilyResource(SharedRes.fonts.PlayfairDisplay.semiBold),
+            fontFamily = fontFamilyResource(SharedRes.fonts.Lato.semibold),
             fontSize = 12.sp,
             lineHeight = 16.sp,
             letterSpacing = 0.5.sp
