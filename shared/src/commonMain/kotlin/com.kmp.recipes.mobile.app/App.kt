@@ -1,5 +1,6 @@
 package com.kmp.recipes.mobile.app
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
@@ -18,6 +19,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.LargeTopAppBar
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.MediumTopAppBar
@@ -32,7 +34,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import com.kmp.recipes.mobile.app.theme.AppTheme
+import dev.icerock.moko.resources.compose.painterResource
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -48,6 +52,14 @@ fun RecipesApp() {
                         style = MaterialTheme.typography.titleLarge.copy(fontSize = 28.sp),
                         color = MaterialTheme.colorScheme.onPrimary
                     )
+                },
+                actions = {
+                    IconButton(onClick = {}) {
+                        Image(painter = painterResource(SharedRes.images.heart), contentDescription = null)
+                    }
+                    IconButton(onClick = {}) {
+                        Image(painter = painterResource(SharedRes.images.search), contentDescription = null)
+                    }
                 },
                 colors = TopAppBarDefaults.largeTopAppBarColors(containerColor = MaterialTheme.colorScheme.primary)
             )
