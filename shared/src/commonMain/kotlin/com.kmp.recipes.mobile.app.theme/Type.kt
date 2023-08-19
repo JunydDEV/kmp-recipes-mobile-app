@@ -14,8 +14,8 @@ fun getTypography(): Typography {
 
     return Typography(
         headlineSmall = TextStyle(
-            fontWeight = FontWeight.SemiBold,
-            fontFamily = fontFamilyResource(SharedRes.fonts.Lato.semibold),
+            fontWeight = FontWeight.Bold,
+            fontFamily = fontFamilyResource(SharedRes.fonts.Lato.bold),
             fontSize = 24.sp,
             lineHeight = 32.sp,
             letterSpacing = 0.sp
@@ -23,7 +23,7 @@ fun getTypography(): Typography {
         titleLarge = TextStyle(
             fontWeight = FontWeight.Bold,
             fontFamily = fontFamilyResource(SharedRes.fonts.Lato.bold),
-            fontSize = 18.sp,
+            fontSize = 20.sp,
             lineHeight = 28.sp,
             letterSpacing = 0.sp
         ),
