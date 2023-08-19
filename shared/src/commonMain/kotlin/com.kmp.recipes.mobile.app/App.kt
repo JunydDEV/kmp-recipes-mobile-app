@@ -1,6 +1,7 @@
 package com.kmp.recipes.mobile.app
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -9,17 +10,20 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -49,7 +53,7 @@ fun RecipesApp() {
                 title = {
                     Text(
                         textAlign = TextAlign.End,
-                        text = "Recipes App",
+                        text = "MrBites",
                         style = MaterialTheme.typography.titleLarge.copy(fontSize = 28.sp),
                         color = MaterialTheme.colorScheme.onPrimary
                     )
@@ -78,7 +82,7 @@ fun RecipesApp() {
             Column(modifier = mainModifier) {
 
                 Text(
-                    modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 16.dp),
+                    modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 10.dp),
                     text = "Discover",
                     style = MaterialTheme.typography.titleLarge,
                     color = MaterialTheme.colorScheme.primary
@@ -88,7 +92,7 @@ fun RecipesApp() {
                     Box(contentAlignment = Alignment.TopEnd) {
                         Card(
                             modifier = Modifier.fillMaxWidth().height(250.dp)
-                                .padding(start = 16.dp, end = 16.dp, top = 16.dp),
+                                .padding(start = 16.dp, end = 16.dp, top = 10.dp),
                             colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primary)
                         ) {}
 
@@ -113,6 +117,31 @@ fun RecipesApp() {
                             style = MaterialTheme.typography.bodyLarge,
                             color = MaterialTheme.colorScheme.onPrimary
                         )
+
+                        Row(
+                            modifier = Modifier.padding(top = 16.dp).fillMaxSize(fraction = 0.5f),
+                            horizontalArrangement = Arrangement.SpaceBetween
+                        ) {
+                            Row (verticalAlignment = Alignment.CenterVertically) {
+                                Image(painter = painterResource(SharedRes.images.ic_clock), contentDescription = null)
+                                Spacer(Modifier.width(10.dp))
+                                Text(
+                                    text = "25min",
+                                    style = MaterialTheme.typography.bodyLarge,
+                                    color = MaterialTheme.colorScheme.onPrimary
+                                )
+                            }
+
+                            Row (verticalAlignment = Alignment.CenterVertically) {
+                                Image(painter = painterResource(SharedRes.images.ic_chef), contentDescription = null)
+                                Spacer(Modifier.width(10.dp))
+                                Text(
+                                    text = "Easy",
+                                    style = MaterialTheme.typography.bodyLarge,
+                                    color = MaterialTheme.colorScheme.onPrimary
+                                )
+                            }
+                        }
                     }
                 }
 
@@ -124,23 +153,37 @@ fun RecipesApp() {
                 )
 
                 Row(
-                    modifier = Modifier.padding(top = 10.dp, start = 16.dp, end = 16.dp)
+                    modifier = Modifier.padding(top = 0.dp, start = 16.dp, end = 16.dp)
                         .horizontalScroll(rememberScrollState())
                 ) {
-                    val categories = listOf(
+                    val categoriesImages = listOf(
                         SharedRes.images.pizza_ibackground_image,
                         SharedRes.images.pasta_background_image,
                         SharedRes.images.steak_background_image
                     )
+
+                    val categoriesNames = listOf("Pizza", "Pasta", "Steak")
                     repeat(3) {
-                        Image(
-                            modifier = Modifier.aspectRatio(16f / 9f)
-                                .size(140.dp, 90.dp)
-                                .clip(RoundedCornerShape(10.dp)),
-                            painter = painterResource(categories[it]),
-                            contentScale = ContentScale.Crop,
-                            contentDescription = null
-                        )
+                        Box(
+                            modifier = Modifier.size(140.dp, 90.dp),
+                            contentAlignment = Alignment.BottomStart
+                        ) {
+                            Image(
+                                modifier = Modifier.aspectRatio(16f / 9f)
+                                    .fillMaxSize()
+                                    .clip(RoundedCornerShape(10.dp)),
+                                painter = painterResource(categoriesImages[it]),
+                                contentScale = ContentScale.Crop,
+                                contentDescription = null
+                            )
+
+                            Text(
+                                modifier = Modifier.padding(start = 10.dp, bottom = 10.dp),
+                                text = categoriesNames[it],
+                                style = MaterialTheme.typography.bodyLarge,
+                                color = MaterialTheme.colorScheme.onPrimary
+                            )
+                        }
                         Spacer(Modifier.padding(start = 10.dp))
                     }
                 }
@@ -178,6 +221,32 @@ fun RecipesApp() {
                                 text = "Skirt steak is always great on the grill and doesn't need much help, but I love how this came out…",
                                 style = MaterialTheme.typography.bodyLarge
                             )
+
+
+                            Row(
+                                modifier = Modifier.padding(top = 5.dp, bottom = 16.dp).fillMaxSize(fraction = 0.5f),
+                                horizontalArrangement = Arrangement.SpaceBetween
+                            ) {
+                                Row (verticalAlignment = Alignment.CenterVertically) {
+                                    Image(painter = painterResource(SharedRes.images.ic_clock), contentDescription = null)
+                                    Spacer(Modifier.width(10.dp))
+                                    Text(
+                                        text = "25min",
+                                        style = MaterialTheme.typography.bodyLarge,
+                                        color = MaterialTheme.colorScheme.primary
+                                    )
+                                }
+
+                                Row (verticalAlignment = Alignment.CenterVertically) {
+                                    Image(painter = painterResource(SharedRes.images.ic_chef), contentDescription = null)
+                                    Spacer(Modifier.width(10.dp))
+                                    Text(
+                                        text = "Easy",
+                                        style = MaterialTheme.typography.bodyLarge,
+                                        color = MaterialTheme.colorScheme.primary
+                                    )
+                                }
+                            }
                         }
 
                     }
