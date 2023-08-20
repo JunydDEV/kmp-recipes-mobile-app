@@ -8,8 +8,9 @@ object Dimens {
     val defaultSpacing = 16.dp
     val smallSpacing = 10.dp
     val largeSpacing = 20.dp
-    val discoverRecipeHeight = 220.dp
+    val normalRadius = 10.dp
 
+    val discoverRecipeHeight = 220.dp
     val discoverRecipeImageSize = 180.dp
     val categoryImageWidth = 140.dp
     val categoryImageHeight = 90.dp

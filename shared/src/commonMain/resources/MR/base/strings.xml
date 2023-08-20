@@ -46,6 +46,6 @@
     <string name="recipe_difficulty_level_image">Recipe difficulty image</string>
     <string name="recipe_category_image_description">Recipe category image</string>
 
-
+    <string name="search_recipes_label">Search Recipes...</string>
 
 </resources>
