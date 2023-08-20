@@ -6,10 +6,16 @@
     <string name="popular_recipes_section_header">Popular Recipes</string>
 
     <!--Discover recipe one strings-->
-    <string name="recipe_one_title">Potstickers Chinese Dumplings</string>
-    <string name="recipe_one_description">An authentic potsticker recipe using ground beef and ground shrimp</string>
-    <string name="recipe_one_cooking_duration">25min</string>
-    <string name="recipe_one_cooking_difficulty_level">Easy</string>
+    <string name="discover_recipe_one_title">Potstickers Chinese Dumplings</string>
+    <string name="discover_recipe_one_description">An authentic potsticker recipe using ground beef and ground shrimp</string>
+    <string name="discover_recipe_one_cooking_duration">25min</string>
+    <string name="discover_recipe_one_cooking_difficulty_level">Easy</string>
+
+    <!--Discover recipe one strings-->
+    <string name="discover_recipe_two_title">Pasta colored farfalle salad</string>
+    <string name="discover_recipe_two_description">A delicious dish created from the fresh bounty of my garden.</string>
+    <string name="discover_recipe_two_cooking_duration">15min</string>
+    <string name="discover_recipe_two_cooking_difficulty_level">Easy</string>
 
     <!--Recipes categories-->
     <string name="category_pizza">Pizza</string>
@@ -23,15 +29,15 @@
     <string name="popular_recipe_one_difficulty_level">Medium</string>
 
     <!--Popular recipe two strings-->
-    <string name="popular_recipe_two_title">Masala Marinated Skirt Steak</string>
-    <string name="popular_recipe_two_description">Skirt steak is always great on the grill and does not need much help, but I love how this came out…</string>
-    <string name="popular_recipe_two_duration">20min</string>
-    <string name="popular_recipe_two_difficulty_level">Medium</string>
+    <string name="popular_recipe_two_title">Creamy Garden Zucchini Pasta</string>
+    <string name="popular_recipe_two_description">Fresh garden zucchini and tomatoes are the stars of this simple summer pasta dish.</string>
+    <string name="popular_recipe_two_duration">30min</string>
+    <string name="popular_recipe_two_difficulty_level">Easy</string>
 
     <!--Popular recipe three strings-->
-    <string name="popular_recipe_three_title">Masala Marinated Skirt Steak</string>
-    <string name="popular_recipe_three_description">Skirt steak is always great on the grill and does not need much help, but I love how this came out…</string>
-    <string name="popular_recipe_three_duration">20min</string>
+    <string name="popular_recipe_three_title">Summer Squash Cordon Bleu</string>
+    <string name="popular_recipe_three_description">Traditionally, a cordon bleu is made with veal or chicken that is filled with cheese and ham, then shallow-fried in vegetable oil. It is served with lingonberry jam, lemon and a lightly dressed green salad or potato salad.</string>
+    <string name="popular_recipe_three_duration">30min</string>
     <string name="popular_recipe_three_difficulty_level">Medium</string>
 
     <!--Images descriptions-->

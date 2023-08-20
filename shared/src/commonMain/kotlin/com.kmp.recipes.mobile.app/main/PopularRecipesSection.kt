@@ -19,7 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.layout.ContentScale
 import com.kmp.recipes.mobile.app.Dimens
-import com.kmp.recipes.mobile.app.main.model.PopularRecipe
+import com.kmp.recipes.mobile.app.main.model.Recipe
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.compose.painterResource
 import dev.icerock.moko.resources.compose.stringResource
@@ -38,23 +38,23 @@ fun PopularRecipes() {
             color = MaterialTheme.colorScheme.primary
         )
 
-        val popularRecipes = listOf(
-            PopularRecipe(
+        val recipes = listOf(
+            Recipe(
                 image = SharedRes.images.marinated_steak_cover_image,
                 title = stringResource(SharedRes.strings.popular_recipe_one_title),
                 description = stringResource(SharedRes.strings.popular_recipe_one_description),
                 duration = stringResource(SharedRes.strings.popular_recipe_one_duration),
                 difficultyLevel = stringResource(SharedRes.strings.popular_recipe_one_difficulty_level)
             ),
-            PopularRecipe(
-                image = SharedRes.images.marinated_steak_cover_image,
+            Recipe(
+                image = SharedRes.images.pasta_cover_image,
                 title = stringResource(SharedRes.strings.popular_recipe_two_title),
                 description = stringResource(SharedRes.strings.popular_recipe_two_description),
                 duration = stringResource(SharedRes.strings.popular_recipe_two_duration),
                 difficultyLevel = stringResource(SharedRes.strings.popular_recipe_two_difficulty_level)
             ),
-            PopularRecipe(
-                image = SharedRes.images.marinated_steak_cover_image,
+            Recipe(
+                image = SharedRes.images.summer_sqash_cordon_cover_image,
                 title = stringResource(SharedRes.strings.popular_recipe_three_title),
                 description = stringResource(SharedRes.strings.popular_recipe_three_description),
                 duration = stringResource(SharedRes.strings.popular_recipe_three_duration),
@@ -67,7 +67,7 @@ fun PopularRecipes() {
                 end = Dimens.defaultSpacing
             )
         ) {
-            repeat(popularRecipes.size) {
+            repeat(recipes.size) {
                 Column {
                     Card(
                         Modifier.fillMaxWidth()
@@ -77,21 +77,23 @@ fun PopularRecipes() {
                     ) {
                         Image(
                             modifier = Modifier.fillMaxSize(),
-                            painter = painterResource(popularRecipes[it].image),
+                            painter = painterResource(recipes[it].image),
                             contentDescription = null,
                             contentScale = ContentScale.Crop
                         )
                     }
                     Text(
                         modifier = Modifier.padding(top = Dimens.smallSpacing),
-                        text = popularRecipes[it].title,
+                        text = recipes[it].title,
                         style = MaterialTheme.typography.titleLarge,
-                        color = MaterialTheme.colorScheme.primary
+                        color = MaterialTheme.colorScheme.primary,
+                        maxLines = 1
                     )
 
                     Text(
-                        text = popularRecipes[it].description,
-                        style = MaterialTheme.typography.bodyLarge
+                        text = recipes[it].description,
+                        style = MaterialTheme.typography.bodyLarge,
+                        maxLines = 3
                     )
 
                     Row(
@@ -99,9 +101,9 @@ fun PopularRecipes() {
                             .padding(top = Dimens.smallSpacing, bottom = Dimens.smallSpacing),
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
-                        PopularRecipeCookingDuration(popularRecipes[it])
+                        PopularRecipeCookingDuration(recipes[it])
                         Spacer(Modifier.width(Dimens.defaultSpacing))
-                        PopularRecipeDifficultyLevel(popularRecipes[it])
+                        PopularRecipeDifficultyLevel(recipes[it])
                     }
                 }
             }
@@ -110,7 +112,7 @@ fun PopularRecipes() {
 }
 
 @Composable
-fun PopularRecipeCookingDuration(recipe: PopularRecipe) {
+fun PopularRecipeCookingDuration(recipe: Recipe) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         Image(
             painter = painterResource(SharedRes.images.ic_clock),
@@ -126,7 +128,7 @@ fun PopularRecipeCookingDuration(recipe: PopularRecipe) {
 }
 
 @Composable
-fun PopularRecipeDifficultyLevel(recipe: PopularRecipe) {
+fun PopularRecipeDifficultyLevel(recipe: Recipe) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         Image(
             painter = painterResource(SharedRes.images.ic_chef),
