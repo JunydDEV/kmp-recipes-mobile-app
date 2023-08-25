@@ -1,6 +1,5 @@
 package com.kmp.recipes.mobile.app.main
 
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.runtime.Composable
 import com.kmp.recipes.mobile.app.main.model.Recipe
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
@@ -8,7 +7,7 @@ import dev.icerock.moko.resources.compose.stringResource
 
 @Composable
 fun SearchRecipesList(searchQuery: String) {
-    val title = stringResource(SharedRes.strings.search_recipes_label)
+    val title = stringResource(SharedRes.strings.search_results_label)
     val recipes = listOf(
         Recipe(
             image = SharedRes.images.marinated_steak_cover_image,
@@ -38,6 +37,7 @@ fun SearchRecipesList(searchQuery: String) {
         SearchResultsNotFound()
     } else {
         RecipesListing(
+            isSearch = true,
             title = title,
             recipesList = result
         )

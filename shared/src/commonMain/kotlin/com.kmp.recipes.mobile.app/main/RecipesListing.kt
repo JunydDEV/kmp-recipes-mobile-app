@@ -26,18 +26,35 @@ import dev.icerock.moko.resources.compose.stringResource
 
 
 @Composable
-fun RecipesListing(title: String, recipesList: List<Recipe>) {
+fun RecipesListing(isSearch: Boolean = false, title: String, recipesList: List<Recipe>) {
     Column(modifier = Modifier.fillMaxWidth()) {
-        Text(
-            modifier = Modifier.padding(
-                top = Dimens.defaultSpacing,
-                start = Dimens.defaultSpacing,
-                end = Dimens.defaultSpacing
-            ),
-            text = title,
-            style = MaterialTheme.typography.titleLarge,
-            color = MaterialTheme.colorScheme.primary
-        )
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween) {
+            Text(
+                modifier = Modifier.padding(
+                    top = Dimens.defaultSpacing,
+                    start = Dimens.defaultSpacing,
+                    end = Dimens.defaultSpacing
+                ),
+                text = title,
+                style = MaterialTheme.typography.titleLarge,
+                color = MaterialTheme.colorScheme.primary
+            )
+
+            if (isSearch.not()) {
+                Text(
+                    modifier = Modifier.padding(
+                        top = Dimens.defaultSpacing,
+                        start = Dimens.defaultSpacing,
+                        end = Dimens.defaultSpacing
+                    ),
+                    text = stringResource(SharedRes.strings.title_view_all),
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = MaterialTheme.colorScheme.primary
+                )
+            }
+        }
 
         Column(
             modifier = Modifier.padding(

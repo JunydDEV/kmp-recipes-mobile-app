@@ -50,4 +50,6 @@
     <string name="search_recipes_label">Search Recipes...</string>
     <string name="search_results_not_found">Sorry, recipes not found.</string>
 
+    <string name="title_view_all">View All</string>
+
 </resources>
