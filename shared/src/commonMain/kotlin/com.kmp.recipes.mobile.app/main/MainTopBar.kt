@@ -21,6 +21,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.text.style.TextAlign
 import com.kmp.recipes.mobile.app.Dimens
 import com.kmp.recipes.mobile.app.safeAreaPadding
@@ -30,7 +31,7 @@ import dev.icerock.moko.resources.compose.stringResource
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainTopBar() {
+fun MainTopBar(value: String, onChangeValue: (String) -> Unit) {
 
     val searchBarVisibilityState = remember { mutableStateOf(false) }
 
@@ -57,6 +58,7 @@ fun MainTopBar() {
                 }) {
                     Image(
                         painter = painterResource(SharedRes.images.search),
+                        colorFilter = ColorFilter.tint(if (searchBarVisibilityState.value) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.onPrimary),
                         contentDescription = null
                     )
                 }
@@ -65,7 +67,6 @@ fun MainTopBar() {
         )
 
         AnimatedVisibility(visible = searchBarVisibilityState.value) {
-            val searchFieldSate = remember { mutableStateOf("") }
             TextField(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -74,8 +75,8 @@ fun MainTopBar() {
                         end = Dimens.defaultSpacing,
                         bottom = Dimens.defaultSpacing
                     ),
-                value = searchFieldSate.value,
-                onValueChange = { searchFieldSate.value = it },
+                value = value,
+                onValueChange = { onChangeValue.invoke(it) },
                 label = { Text(stringResource(SharedRes.strings.search_recipes_label)) },
                 colors = TextFieldDefaults.textFieldColors(
                     containerColor = MaterialTheme.colorScheme.onPrimary,

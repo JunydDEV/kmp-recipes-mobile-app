@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MrBites</string>
+    <string name="app_name">Cookit</string>
     <string name="discover_section_header">Discover</string>
     <string name="categories_section_header">Categories</string>
     <string name="popular_recipes_section_header">Popular Recipes</string>
@@ -46,6 +46,8 @@
     <string name="recipe_difficulty_level_image">Recipe difficulty image</string>
     <string name="recipe_category_image_description">Recipe category image</string>
 
+    <string name="search_results_label">Search Results</string>
     <string name="search_recipes_label">Search Recipes...</string>
+    <string name="search_results_not_found">Sorry, recipes not found.</string>
 
 </resources>
