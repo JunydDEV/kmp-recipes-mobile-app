@@ -5,7 +5,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import com.firebase.kmm.systemui.setStatusBarColor
+import com.kmp.mobile.systemui.setStatusBarColor
 
 private val LightColors = lightColorScheme(
     primary = md_theme_light_primary,

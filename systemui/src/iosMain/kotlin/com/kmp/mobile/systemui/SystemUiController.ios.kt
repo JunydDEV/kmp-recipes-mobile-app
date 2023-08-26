@@ -1,4 +1,4 @@
-package com.firebase.kmm.systemui
+package com.kmp.mobile.systemui
 
 import androidx.compose.ui.graphics.Color
 
