@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.main
+package com.kmp.recipes.mobile.app.main_screen.sections
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image

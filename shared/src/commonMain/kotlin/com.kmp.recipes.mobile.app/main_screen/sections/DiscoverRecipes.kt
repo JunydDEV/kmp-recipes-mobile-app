@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.main
+package com.kmp.recipes.mobile.app.main_screen.sections
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
@@ -26,7 +26,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.kmp.recipes.mobile.app.Dimens
-import com.kmp.recipes.mobile.app.main.model.Recipe
+import com.kmp.recipes.mobile.app.common.data.Recipe
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.compose.painterResource
 import dev.icerock.moko.resources.compose.stringResource

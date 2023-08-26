@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.main
+package com.kmp.recipes.mobile.app.main_screen.search_recipes
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

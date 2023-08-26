@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.main
+package com.kmp.recipes.mobile.app.common
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -19,43 +19,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.layout.ContentScale
 import com.kmp.recipes.mobile.app.Dimens
-import com.kmp.recipes.mobile.app.main.model.Recipe
+import com.kmp.recipes.mobile.app.common.data.Recipe
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.compose.painterResource
 import dev.icerock.moko.resources.compose.stringResource
 
 
 @Composable
-fun RecipesListing(isSearch: Boolean = false, title: String, recipesList: List<Recipe>) {
+fun RecipesListing(recipesList: List<Recipe>) {
     Column(modifier = Modifier.fillMaxWidth()) {
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween) {
-            Text(
-                modifier = Modifier.padding(
-                    top = Dimens.defaultSpacing,
-                    start = Dimens.defaultSpacing,
-                    end = Dimens.defaultSpacing
-                ),
-                text = title,
-                style = MaterialTheme.typography.titleLarge,
-                color = MaterialTheme.colorScheme.primary
-            )
-
-            if (isSearch.not()) {
-                Text(
-                    modifier = Modifier.padding(
-                        top = Dimens.defaultSpacing,
-                        start = Dimens.defaultSpacing,
-                        end = Dimens.defaultSpacing
-                    ),
-                    text = stringResource(SharedRes.strings.title_view_all),
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = MaterialTheme.colorScheme.primary
-                )
-            }
-        }
-
         Column(
             modifier = Modifier.padding(
                 start = Dimens.defaultSpacing,

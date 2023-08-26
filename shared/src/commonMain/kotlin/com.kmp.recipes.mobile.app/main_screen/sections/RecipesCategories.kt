@@ -1,6 +1,7 @@
-package com.kmp.recipes.mobile.app.main
+package com.kmp.recipes.mobile.app.main_screen.sections
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -20,13 +21,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.Dimens
+import com.kmp.recipes.mobile.app.recipes_listing.RecipesScreen
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.compose.painterResource
 import dev.icerock.moko.resources.compose.stringResource
 
 @Composable
-fun RecipesCategories() {
+fun RecipesCategories(navigator: Navigator) {
     Column(
         modifier = Modifier.fillMaxWidth(),
     ) {
@@ -58,11 +61,14 @@ fun RecipesCategories() {
             )
 
             repeat(categoriesImages.size) {
+                val title = "${stringResource(categoriesNames[it])} Recipes"
                 Box(
                     modifier = Modifier.size(
                         width = Dimens.categoryImageWidth,
                         height = Dimens.categoryImageHeight
-                    ),
+                    ).clickable {
+                        navigator.push(RecipesScreen(title))
+                    },
                     contentAlignment = Alignment.BottomStart
                 ) {
                     Image(

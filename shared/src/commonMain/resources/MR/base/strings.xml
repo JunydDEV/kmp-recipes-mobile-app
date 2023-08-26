@@ -49,7 +49,7 @@
     <string name="search_results_label">Search Results</string>
     <string name="search_recipes_label">Search Recipes...</string>
     <string name="search_results_not_found">Sorry, recipes not found.</string>
-
-    <string name="title_view_all">View All</string>
+    <string name="title_recipes_list">Recipes List</string>
+    <string name="title_view_all_recipes">View All</string>
 
 </resources>

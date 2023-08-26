@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.main.model
+package com.kmp.recipes.mobile.app.common.data
 
 import dev.icerock.moko.resources.ImageResource
 

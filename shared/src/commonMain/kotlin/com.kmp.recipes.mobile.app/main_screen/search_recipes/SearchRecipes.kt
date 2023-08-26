@@ -1,13 +1,21 @@
-package com.kmp.recipes.mobile.app.main
+package com.kmp.recipes.mobile.app.main_screen.search_recipes
 
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import com.kmp.recipes.mobile.app.main.model.Recipe
+import androidx.compose.ui.Modifier
+import com.kmp.recipes.mobile.app.Dimens
+import com.kmp.recipes.mobile.app.common.data.Recipe
+import com.kmp.recipes.mobile.app.common.RecipesListing
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.compose.stringResource
 
 @Composable
-fun PopularRecipes() {
-    val title = stringResource(SharedRes.strings.popular_recipes_section_header)
+fun SearchRecipesList(searchQuery: String) {
+    val title = stringResource(SharedRes.strings.search_results_label)
     val recipes = listOf(
         Recipe(
             image = SharedRes.images.marinated_steak_cover_image,
@@ -32,5 +40,23 @@ fun PopularRecipes() {
         )
     )
 
-    RecipesListing(title = title, recipesList = recipes)
+    val result = recipes.filter { it.title.contains(searchQuery) }
+    if (result.isEmpty()) {
+        SearchResultsNotFound()
+    } else {
+        Column(modifier = Modifier.fillMaxSize()) {
+            Text(
+                modifier = Modifier.padding(
+                    top = Dimens.defaultSpacing,
+                    start = Dimens.defaultSpacing,
+                    end = Dimens.defaultSpacing
+                ),
+                text = title,
+                style = MaterialTheme.typography.titleLarge,
+                color = MaterialTheme.colorScheme.primary
+            )
+
+            RecipesListing(recipesList = result)
+        }
+    }
 }

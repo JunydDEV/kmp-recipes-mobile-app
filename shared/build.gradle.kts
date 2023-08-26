@@ -31,6 +31,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                val voyagerVersion = "1.0.0-rc06"
                 implementation(project(":systemui"))
                 implementation(compose.runtime)
                 implementation(compose.foundation)
@@ -38,6 +39,8 @@ kotlin {
                 implementation("dev.gitlive:firebase-firestore:1.8.0")
                 implementation("dev.icerock.moko:resources:0.23.0")
                 implementation("dev.icerock.moko:resources-compose:0.23.0")
+                implementation("cafe.adriel.voyager:voyager-navigator:$voyagerVersion")
+                implementation("cafe.adriel.voyager:voyager-transitions:$voyagerVersion")
             }
         }
         val androidMain by getting {
