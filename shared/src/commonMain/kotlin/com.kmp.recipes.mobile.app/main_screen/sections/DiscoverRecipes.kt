@@ -17,8 +17,10 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.Icons
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -164,10 +166,8 @@ fun DiscoverRecipeContent(recipe: Recipe) {
             maxLines = 3
         )
         Row(
-            modifier = Modifier
-                .padding(top = Dimens.defaultSpacing)
-                .fillMaxSize(fraction = Dimens.halfOfScreenWidth),
-            horizontalArrangement = Arrangement.SpaceBetween
+            modifier = Modifier.padding(top = Dimens.defaultSpacing).fillMaxWidth(),
+            horizontalArrangement = Arrangement.Start
         ) {
             RecipeCookingDuration(recipe.duration)
             RecipeDifficultyLevel(recipe.difficultyLevel)
@@ -178,8 +178,10 @@ fun DiscoverRecipeContent(recipe: Recipe) {
 @Composable
 fun RecipeCookingDuration(duration: String) {
     Row(verticalAlignment = Alignment.CenterVertically) {
-        Image(
-            painter = painterResource(SharedRes.images.ic_clock),
+        Icon(
+            modifier = Modifier.size(Dimens.iconSizeSmall),
+            painter = painterResource(SharedRes.images.ic_time),
+            tint = MaterialTheme.colorScheme.onSecondaryContainer,
             contentDescription = stringResource(SharedRes.strings.recipe_cooking_duration_image)
         )
         Spacer(Modifier.width(Dimens.smallSpacing))
@@ -193,9 +195,13 @@ fun RecipeCookingDuration(duration: String) {
 
 @Composable
 fun RecipeDifficultyLevel(difficultyLevel: String) {
-    Row(verticalAlignment = Alignment.CenterVertically) {
-        Image(
-            painter = painterResource(SharedRes.images.ic_chef),
+    Row(
+        modifier = Modifier.padding(start = Dimens.defaultSpacing),
+        verticalAlignment = Alignment.CenterVertically) {
+        Icon(
+            modifier = Modifier.size(Dimens.iconSizeSmall),
+            painter = painterResource(SharedRes.images.ic_recipe),
+            tint = MaterialTheme.colorScheme.onSecondaryContainer,
             contentDescription = stringResource(SharedRes.strings.recipe_difficulty_level_image)
         )
         Spacer(Modifier.width(Dimens.smallSpacing))

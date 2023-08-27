@@ -40,7 +40,7 @@ fun SearchRecipesList(searchQuery: String) {
         )
     )
 
-    val result = recipes.filter { it.title.contains(searchQuery) }
+    val result = recipes.filter { it.title.contains(searchQuery, ignoreCase = true) }
     if (result.isEmpty()) {
         SearchResultsNotFound()
     } else {

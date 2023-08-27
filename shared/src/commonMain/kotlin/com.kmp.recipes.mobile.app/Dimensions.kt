@@ -17,6 +17,8 @@ object Dimens {
     val categoryImageRadius = 10.dp
     val popularRecipeImageHeight = 150.dp
     val emptyLayoutHeight = 300.dp
+    val iconSizeSmall = 20.dp
+    val iconSizeMedium = 25.dp
 
     val appTitleSize: TextUnit = 28.sp
 

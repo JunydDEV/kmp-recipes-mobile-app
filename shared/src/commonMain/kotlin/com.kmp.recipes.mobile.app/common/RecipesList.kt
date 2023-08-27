@@ -9,8 +9,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Card
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -18,6 +20,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.unit.dp
 import com.kmp.recipes.mobile.app.Dimens
 import com.kmp.recipes.mobile.app.common.data.Recipe
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
@@ -64,8 +67,10 @@ fun RecipesListing(recipesList: List<Recipe>) {
                     )
 
                     Row(
-                        modifier = Modifier
-                            .padding(top = Dimens.smallSpacing, bottom = Dimens.smallSpacing),
+                        modifier = Modifier.padding(
+                            top = Dimens.smallSpacing,
+                            bottom = Dimens.smallSpacing
+                        ),
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
                         PopularRecipeCookingDuration(recipesList[it])
@@ -81,8 +86,10 @@ fun RecipesListing(recipesList: List<Recipe>) {
 @Composable
 fun PopularRecipeCookingDuration(recipe: Recipe) {
     Row(verticalAlignment = Alignment.CenterVertically) {
-        Image(
-            painter = painterResource(SharedRes.images.ic_clock),
+        Icon(
+            modifier = Modifier.size(Dimens.iconSizeMedium),
+            painter = painterResource(SharedRes.images.ic_time),
+            tint = MaterialTheme.colorScheme.onSecondaryContainer,
             contentDescription = stringResource(SharedRes.strings.recipe_cooking_duration_image)
         )
         Spacer(Modifier.width(Dimens.smallSpacing))
@@ -97,8 +104,10 @@ fun PopularRecipeCookingDuration(recipe: Recipe) {
 @Composable
 fun PopularRecipeDifficultyLevel(recipe: Recipe) {
     Row(verticalAlignment = Alignment.CenterVertically) {
-        Image(
-            painter = painterResource(SharedRes.images.ic_chef),
+        Icon(
+            modifier = Modifier.size(Dimens.iconSizeMedium),
+            painter = painterResource(SharedRes.images.ic_recipe),
+            tint = MaterialTheme.colorScheme.onSecondaryContainer,
             contentDescription = stringResource(SharedRes.strings.recipe_difficulty_level_image)
         )
         Spacer(Modifier.width(Dimens.smallSpacing))

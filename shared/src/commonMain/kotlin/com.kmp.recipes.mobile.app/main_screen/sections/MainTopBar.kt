@@ -7,8 +7,13 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Favorite
+import androidx.compose.material.icons.rounded.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -23,6 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
 import com.kmp.recipes.mobile.app.Dimens
 import com.kmp.recipes.mobile.app.safeAreaPadding
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
@@ -48,17 +54,20 @@ fun MainTopBar(value: String, onChangeValue: (String) -> Unit) {
             },
             actions = {
                 IconButton(onClick = {}) {
-                    Image(
-                        painter = painterResource(SharedRes.images.heart),
+                    Icon(
+                        modifier = Modifier.size(30.dp),
+                        imageVector = Icons.Rounded.Favorite,
+                        tint = MaterialTheme.colorScheme.onPrimary,
                         contentDescription = null
                     )
                 }
                 IconButton(onClick = {
                     searchBarVisibilityState.value = searchBarVisibilityState.value.not()
                 }) {
-                    Image(
-                        painter = painterResource(SharedRes.images.search),
-                        colorFilter = ColorFilter.tint(if (searchBarVisibilityState.value) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.onPrimary),
+                    Icon(
+                        modifier = Modifier.size(30.dp),
+                        imageVector = Icons.Rounded.Search,
+                        tint = if (searchBarVisibilityState.value) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.onPrimary,
                         contentDescription = null
                     )
                 }
