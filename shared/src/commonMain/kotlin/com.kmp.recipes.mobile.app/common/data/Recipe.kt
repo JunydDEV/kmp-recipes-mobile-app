@@ -1,11 +1,13 @@
 package com.kmp.recipes.mobile.app.common.data
 
-import dev.icerock.moko.resources.ImageResource
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class Recipe(
-    val image: ImageResource,
-    val title: String,
+    val id: String? = null,
+    val image: String,
+    val label: String,
     val description: String,
     val duration: String,
-    val difficultyLevel: String
+    val level: String
 )

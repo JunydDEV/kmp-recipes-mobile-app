@@ -4,6 +4,7 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.compose")
     id("dev.icerock.mobile.multiplatform-resources")
+    kotlin("plugin.serialization") version "1.8.0"
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -36,11 +37,16 @@ kotlin {
                 implementation(compose.runtime)
                 implementation(compose.foundation)
                 implementation(compose.material3)
+                implementation(kotlin("stdlib-common"))
+                implementation("com.soywiz.korlibs.klogger:klogger:4.0.2")
+                implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.2")
                 implementation("dev.gitlive:firebase-firestore:1.8.0")
                 implementation("dev.icerock.moko:resources:0.23.0")
                 implementation("dev.icerock.moko:resources-compose:0.23.0")
                 implementation("cafe.adriel.voyager:voyager-navigator:$voyagerVersion")
                 implementation("cafe.adriel.voyager:voyager-transitions:$voyagerVersion")
+                api("io.github.qdsfdhvh:image-loader:1.5.3")
+
             }
         }
         val androidMain by getting {

@@ -20,32 +20,9 @@ import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.compose.stringResource
 
 @Composable
-fun PopularRecipes(navigator: Navigator) {
+fun PopularRecipes(recipes: List<Recipe>, navigator: Navigator) {
 
     val title = stringResource(SharedRes.strings.popular_recipes_section_header)
-    val recipes = listOf(
-        Recipe(
-            image = SharedRes.images.marinated_steak_cover_image,
-            title = stringResource(SharedRes.strings.popular_recipe_one_title),
-            description = stringResource(SharedRes.strings.popular_recipe_one_description),
-            duration = stringResource(SharedRes.strings.popular_recipe_one_duration),
-            difficultyLevel = stringResource(SharedRes.strings.popular_recipe_one_difficulty_level)
-        ),
-        Recipe(
-            image = SharedRes.images.pasta_cover_image,
-            title = stringResource(SharedRes.strings.popular_recipe_two_title),
-            description = stringResource(SharedRes.strings.popular_recipe_two_description),
-            duration = stringResource(SharedRes.strings.popular_recipe_two_duration),
-            difficultyLevel = stringResource(SharedRes.strings.popular_recipe_two_difficulty_level)
-        ),
-        Recipe(
-            image = SharedRes.images.summer_sqash_cordon_cover_image,
-            title = stringResource(SharedRes.strings.popular_recipe_three_title),
-            description = stringResource(SharedRes.strings.popular_recipe_three_description),
-            duration = stringResource(SharedRes.strings.popular_recipe_three_duration),
-            difficultyLevel = stringResource(SharedRes.strings.popular_recipe_three_difficulty_level)
-        )
-    )
     Column(modifier = Modifier.fillMaxSize()) {
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -76,6 +53,6 @@ fun PopularRecipes(navigator: Navigator) {
                 color = MaterialTheme.colorScheme.primary
             )
         }
-        RecipesListing(recipesList = recipes)
+        RecipesListing(recipesList = recipes, navigator = navigator)
     }
 }

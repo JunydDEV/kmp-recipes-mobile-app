@@ -1,79 +1,87 @@
-package com.kmp.recipes.mobile.app.common
+package com.kmp.recipes.mobile.app.recipe_details
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Card
+import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clipToBounds
-import androidx.compose.ui.layout.ContentScale
-import cafe.adriel.voyager.navigator.Navigator
+import cafe.adriel.voyager.core.model.rememberScreenModel
+import cafe.adriel.voyager.core.screen.Screen
+import cafe.adriel.voyager.navigator.LocalNavigator
+import cafe.adriel.voyager.navigator.currentOrThrow
 import com.kmp.recipes.mobile.app.Dimens
+import com.kmp.recipes.mobile.app.common.SecondaryAppBar
 import com.kmp.recipes.mobile.app.common.data.Recipe
-import com.kmp.recipes.mobile.app.recipe_details.RecipeDetailsScreen
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
-import com.seiko.imageloader.rememberAsyncImagePainter
 import dev.icerock.moko.resources.compose.painterResource
 import dev.icerock.moko.resources.compose.stringResource
 
+class RecipeDetailsScreen(private val recipe: Recipe) : Screen {
 
-@Composable
-fun RecipesListing(recipesList: List<Recipe>, navigator: Navigator) {
-    Column(modifier = Modifier.fillMaxWidth()) {
-        Column(
-            modifier = Modifier.padding(
-                start = Dimens.defaultSpacing,
-                end = Dimens.defaultSpacing
-            )
-        ) {
-            repeat(recipesList.size) {
-                Column(modifier = Modifier.clickable {
-                    navigator.push(
-                        RecipeDetailsScreen(
-                            recipesList[it]
-                        )
-                    )
-                }) {
-                    Card(
-                        Modifier.fillMaxWidth()
-                            .height(Dimens.popularRecipeImageHeight)
-                            .padding(top = Dimens.smallSpacing)
-                            .clipToBounds(),
+    @OptIn(ExperimentalMaterial3Api::class)
+    @Composable
+    override fun Content() {
+        val navigator = LocalNavigator.currentOrThrow
+        val recipeDetailsModel = rememberScreenModel { RecipeDetailsModel() }
+        Scaffold(
+            topBar = {
+                Column {
+                    SecondaryAppBar(title = "Details", navigator = navigator)
+                    Box(
+                        modifier = Modifier.wrapContentHeight().fillMaxWidth(),
+                        contentAlignment = Alignment.Center
                     ) {
-                        val painter = rememberAsyncImagePainter(recipesList[it].image)
-                        Image(
-                            modifier = Modifier.fillMaxSize(),
-                            painter = painter,
-                            contentDescription = null,
-                            contentScale = ContentScale.Crop
-                        )
+//                        Image(
+//                            modifier = Modifier.size(300.dp),
+//                            painter = painterResource(recipe.image),
+//                            contentDescription = null,
+//                        )
                     }
+                }
+            },
+            containerColor = MaterialTheme.colorScheme.primary
+        ) {
+            val scrollState = rememberScrollState()
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .fillMaxHeight()
+                    .padding(it)
+                    .background(MaterialTheme.colorScheme.background)
+                    .verticalScroll(scrollState)
+            ) {
+                Column(modifier = Modifier.fillMaxSize().padding(Dimens.defaultSpacing)) {
                     Text(
                         modifier = Modifier.padding(top = Dimens.smallSpacing),
-                        text = recipesList[it].label,
+                        text = recipe.label,
                         style = MaterialTheme.typography.titleLarge,
                         color = MaterialTheme.colorScheme.primary,
                         maxLines = 1
                     )
 
                     Text(
-                        text = recipesList[it].description,
+                        text = recipe.description,
                         style = MaterialTheme.typography.bodyLarge,
-                        maxLines = 3
+                        color = MaterialTheme.colorScheme.primary,
                     )
 
                     Row(
@@ -83,18 +91,34 @@ fun RecipesListing(recipesList: List<Recipe>, navigator: Navigator) {
                         ),
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
-                        PopularRecipeCookingDuration(recipesList[it])
+                        RecipeCookingDuration(recipe)
                         Spacer(Modifier.width(Dimens.defaultSpacing))
-                        PopularRecipeDifficultyLevel(recipesList[it])
+                        RecipeDifficultyLevel(recipe)
                     }
+
+                    Spacer(Modifier.height(Dimens.defaultSpacing))
+
+                    RecipeIngredientsSection(
+                        recipe = recipe,
+                        navigator = navigator
+                    )
+
+                    Spacer(Modifier.height(Dimens.defaultSpacing))
+
+                    RecipeInstructionsSection(
+                        recipe = recipe,
+                        navigator = navigator
+                    )
                 }
             }
+
+
         }
     }
 }
 
 @Composable
-fun PopularRecipeCookingDuration(recipe: Recipe) {
+fun RecipeCookingDuration(recipe: Recipe) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         Icon(
             modifier = Modifier.size(Dimens.iconSizeMedium),
@@ -112,7 +136,7 @@ fun PopularRecipeCookingDuration(recipe: Recipe) {
 }
 
 @Composable
-fun PopularRecipeDifficultyLevel(recipe: Recipe) {
+fun RecipeDifficultyLevel(recipe: Recipe) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         Icon(
             modifier = Modifier.size(Dimens.iconSizeMedium),

@@ -9,7 +9,6 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import cafe.adriel.voyager.core.model.rememberScreenModel
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
@@ -26,25 +25,25 @@ class RecipesScreen(private val title: String) : Screen {
     override fun Content() {
         val recipes = listOf(
             Recipe(
-                image = SharedRes.images.marinated_steak_cover_image,
-                title = stringResource(SharedRes.strings.popular_recipe_one_title),
+                image = "",
+                label = stringResource(SharedRes.strings.popular_recipe_one_title),
                 description = stringResource(SharedRes.strings.popular_recipe_one_description),
                 duration = stringResource(SharedRes.strings.popular_recipe_one_duration),
-                difficultyLevel = stringResource(SharedRes.strings.popular_recipe_one_difficulty_level)
+                level = stringResource(SharedRes.strings.popular_recipe_one_difficulty_level)
             ),
             Recipe(
-                image = SharedRes.images.pasta_cover_image,
-                title = stringResource(SharedRes.strings.popular_recipe_two_title),
+                image = "",
+                label = stringResource(SharedRes.strings.popular_recipe_two_title),
                 description = stringResource(SharedRes.strings.popular_recipe_two_description),
                 duration = stringResource(SharedRes.strings.popular_recipe_two_duration),
-                difficultyLevel = stringResource(SharedRes.strings.popular_recipe_two_difficulty_level)
+                level = stringResource(SharedRes.strings.popular_recipe_two_difficulty_level)
             ),
             Recipe(
-                image = SharedRes.images.summer_sqash_cordon_cover_image,
-                title = stringResource(SharedRes.strings.popular_recipe_three_title),
+                image = "",
+                label = stringResource(SharedRes.strings.popular_recipe_three_title),
                 description = stringResource(SharedRes.strings.popular_recipe_three_description),
                 duration = stringResource(SharedRes.strings.popular_recipe_three_duration),
-                difficultyLevel = stringResource(SharedRes.strings.popular_recipe_three_difficulty_level)
+                level = stringResource(SharedRes.strings.popular_recipe_three_difficulty_level)
             )
         )
         val navigator = LocalNavigator.currentOrThrow
@@ -61,7 +60,7 @@ class RecipesScreen(private val title: String) : Screen {
             val scrollState = rememberScrollState()
 
             Column(modifier = Modifier.fillMaxSize().padding(it).verticalScroll(scrollState)) {
-                RecipesListing(recipes)
+                RecipesListing(recipes, navigator)
             }
         }
     }

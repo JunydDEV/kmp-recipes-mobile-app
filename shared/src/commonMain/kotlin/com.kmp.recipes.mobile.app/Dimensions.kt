@@ -19,9 +19,12 @@ object Dimens {
     val emptyLayoutHeight = 300.dp
     val iconSizeSmall = 20.dp
     val iconSizeMedium = 25.dp
+    val ingredientImageWidth = 101.dp
+    val ingredientImageHeight = 127.dp
 
     val appTitleSize: TextUnit = 28.sp
 
     const val halfOfScreenWidth = 0.5f
     const val categoryImageRatio = 16f / 9f
+    const val ingredientImageRatio = 6f / 7f
 }

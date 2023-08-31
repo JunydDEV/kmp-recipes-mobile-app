@@ -15,11 +15,12 @@ import cafe.adriel.voyager.core.model.rememberScreenModel
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
+import com.kmp.recipes.mobile.app.main_screen.search_recipes.SearchRecipesList
 import com.kmp.recipes.mobile.app.main_screen.sections.DiscoverRecipesSection
 import com.kmp.recipes.mobile.app.main_screen.sections.MainTopBar
 import com.kmp.recipes.mobile.app.main_screen.sections.PopularRecipes
 import com.kmp.recipes.mobile.app.main_screen.sections.RecipesCategories
-import com.kmp.recipes.mobile.app.main_screen.search_recipes.SearchRecipesList
+import dev.icerock.moko.resources.compose.readTextAsState
 
 class MainScreen : Screen {
 
@@ -28,7 +29,6 @@ class MainScreen : Screen {
     override fun Content() {
         val navigator = LocalNavigator.currentOrThrow
         val mainScreenModel = rememberScreenModel { MainScreenModel() }
-
         val searchFieldState = remember { mutableStateOf("") }
 
         Scaffold(
@@ -39,18 +39,26 @@ class MainScreen : Screen {
                 }
             }
         ) {
-            val mainModifier = Modifier
-                .verticalScroll(rememberScrollState())
-                .fillMaxSize()
-                .padding(it)
+            val recipesDataState = mainScreenModel.getRecipesData().readTextAsState()
+            if (recipesDataState.value != null && recipesDataState.value?.isNotEmpty() == true) {
+                val recipesData =
+                    mainScreenModel.serializeRecipesTextToRecipesDataModel(recipesDataState.value)
 
-            Column(modifier = mainModifier) {
-                if (searchFieldState.value.isNotEmpty() && searchFieldState.value.length > 3) {
-                    SearchRecipesList(searchFieldState.value)
-                } else {
-                    DiscoverRecipesSection()
-                    RecipesCategories(navigator)
-                    PopularRecipes(navigator)
+                val mainModifier = Modifier
+                    .verticalScroll(rememberScrollState())
+                    .fillMaxSize()
+                    .padding(it)
+
+                Column(modifier = mainModifier) {
+                    if (searchFieldState.value.isNotEmpty() && searchFieldState.value.length > 3) {
+                        SearchRecipesList(searchFieldState.value, navigator)
+                    } else {
+                        DiscoverRecipesSection(navigator)
+                        RecipesCategories(navigator)
+                        PopularRecipes(
+                            recipes = mainScreenModel.getPopularRecipesList(recipesData),
+                            navigator = navigator)
+                    }
                 }
             }
         }

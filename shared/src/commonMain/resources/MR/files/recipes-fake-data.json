@@ -1,0 +1,141 @@
+{
+  "sections": {
+    "popular_recipes": {
+      "id": "_popular_recipes",
+      "label": "Popular",
+      "recipes": [
+        "t1,t2,t3",
+        "t4",
+        "t5"
+      ]
+    }
+  },
+  "recipes": [
+    {
+      "id": "t1",
+      "label": "Golden Turmeric Latter",
+      "image": "https://images.pexels.com/photos/2159067/pexels-photo-2159067.jpeg",
+      "description": "A warm and soothing turmeric latte with a hint of spice.",
+      "instructions": [
+        "In a saucepan, heat 1 cup of milk (dairy or plant-based) over medium heat.",
+        "Add 1/2 teaspoon ground turmeric, 1/4 teaspoon ground cinnamon, a pinch of black pepper, and a pinch of ground ginger.",
+        "Whisk the mixture until well combined and heated through.",
+        "Sweeten with honey or maple syrup to taste.",
+        "Pour into a mug and enjoy your golden turmeric latte!"
+      ],
+      "ingredients": [
+        "1 cup milk (dairy or plant-based)",
+        "1/2 teaspoon ground turmeric",
+        "1/4 teaspoon ground cinnamon",
+        "Pinch of black pepper",
+        "Pinch of ground ginger",
+        "Honey or maple syrup to taste"
+      ],
+      "duration": "10 minutes",
+      "level": "Easy"
+    },
+    {
+      "id": "t2",
+      "label": "Avocado Toast with a Twist",
+      "image": "https://images.pexels.com/photos/2067423/pexels-photo-2067423.jpeg",
+      "description": "Upgrade your avocado toast with a variety of delicious toppings.",
+      "instructions": [
+        "Toast two slices of whole-grain bread until crispy.",
+        "Mash a ripe avocado and spread it evenly on the toasted bread slices.",
+        "Top one slice with sliced cherry tomatoes and a drizzle of balsamic glaze.",
+        "Top the other slice with smoked salmon, capers, and fresh dill.",
+        "Season both toasts with salt, black pepper, and red pepper flakes.",
+        "Serve your upgraded avocado toasts for a satisfying breakfast!"
+      ],
+      "ingredients": [
+        "2 slices whole-grain bread",
+        "1 ripe avocado",
+        "Sliced cherry tomatoes",
+        "Balsamic glaze",
+        "Smoked salmon",
+        "Capers",
+        "Fresh dill",
+        "Salt, black pepper, and red pepper flakes"
+      ],
+      "duration": "15 minutes",
+      "level": "Easy"
+    },
+    {
+      "id": "t3",
+      "label": "Vegan Chickpea Buddha Bowl",
+      "image": "https://images.pexels.com/photos/6632285/pexels-photo-6632285.jpeg",
+      "description": "A nourishing and colorful vegan bowl packed with nutrients.",
+      "instructions": [
+        "Cook 1 cup of quinoa according to package instructions.",
+        "In a bowl, toss together cooked quinoa, cooked chickpeas, roasted sweet potatoes, sautéed kale, and sliced avocado.",
+        "Drizzle with tahini dressing and sprinkle with pumpkin seeds.",
+        "Garnish with microgreens for a fresh touch.",
+        "Enjoy your vibrant and wholesome vegan chickpea Buddha bowl!"
+      ],
+      "ingredients": [
+        "1 cup quinoa",
+        "Cooked chickpeas",
+        "Roasted sweet potatoes",
+        "Sautéed kale",
+        "Sliced avocado",
+        "Tahini dressing",
+        "Pumpkin seeds",
+        "Microgreens"
+      ],
+      "duration": "30 minutes",
+      "level": "Intermediate"
+    },
+    {
+      "id": "t4",
+      "label": "Crispy Baked Cauliflower Bites",
+      "image": "https://images.pexels.com/photos/5764069/pexels-photo-5764069.jpeg",
+      "description": "Irresistibly crispy and flavorful baked cauliflower bites.",
+      "instructions": [
+        "Preheat the oven to 425°F (220°C) and line a baking sheet with parchment paper.",
+        "In a bowl, whisk together 1 cup of flour, 1 teaspoon paprika, 1/2 teaspoon garlic powder, 1/2 teaspoon onion powder, salt, and black pepper.",
+        "Dip cauliflower florets into a mixture of 1 cup non-dairy milk and 2 tablespoons hot sauce.",
+        "Dredge each floret in the flour mixture until coated and place on the baking sheet.",
+        "Bake for 20-25 minutes, flipping halfway through, until the cauliflower is crispy and golden.",
+        "Serve your crispy baked cauliflower bites with your favorite dipping sauce!"
+      ],
+      "ingredients": [
+        "1 cup flour",
+        "1 teaspoon paprika",
+        "1/2 teaspoon garlic powder",
+        "1/2 teaspoon onion powder",
+        "Salt and black pepper",
+        "Cauliflower florets",
+        "1 cup non-dairy milk",
+        "2 tablespoons hot sauce"
+      ],
+      "duration": "40 minutes",
+      "level": "Intermediate"
+    },
+    {
+      "id": "t5",
+      "label": "Blueberry Chia Seed Pudding",
+      "image": "https://images.pexels.com/photos/13689785/pexels-photo-13689785.jpeg",
+      "description": "A delightful and nutritious chia seed pudding bursting with blueberries.",
+      "instructions": [
+        "In a bowl, mix 1/4 cup chia seeds, 1 cup almond milk, 1 tablespoon maple syrup, and a splash of vanilla extract.",
+        "Stir well and let it sit for 10 minutes, then stir again to break up any clumps.",
+        "Refrigerate the mixture for at least 2 hours or overnight, allowing the chia seeds to absorb the liquid and thicken.",
+        "In a blender, blend 1/2 cup blueberries until smooth to create a blueberry compote.",
+        "Layer the chia seed pudding and blueberry compote in serving glasses.",
+        "Top with fresh blueberries and a drizzle of honey.",
+        "Savor your delicious and nutritious blueberry chia seed pudding!"
+      ],
+      "ingredients": [
+        "1/4 cup chia seeds",
+        "1 cup almond milk",
+        "1 tablespoon maple syrup",
+        "Splash of vanilla extract",
+        "1/2 cup blueberries",
+        "Fresh blueberries",
+        "Honey"
+      ],
+      "duration": "2 hours",
+      "level": "Easy"
+    }
+  ]
+}

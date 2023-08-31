@@ -33,6 +33,7 @@ import com.kmp.recipes.mobile.app.Dimens
 import com.kmp.recipes.mobile.app.safeAreaPadding
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.compose.painterResource
+import dev.icerock.moko.resources.compose.readTextAsState
 import dev.icerock.moko.resources.compose.stringResource
 
 @OptIn(ExperimentalMaterial3Api::class)
