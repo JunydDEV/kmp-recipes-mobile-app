@@ -1,5 +1,6 @@
 package com.kmp.recipes.mobile.app.main_screen
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,12 +19,13 @@ import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.navigator.currentOrThrow
+import com.kmp.recipes.mobile.app.Dimens
 import com.kmp.recipes.mobile.app.common.data.RecipesData
 import com.kmp.recipes.mobile.app.main_screen.search_recipes.SearchRecipesList
 import com.kmp.recipes.mobile.app.main_screen.sections.DiscoverRecipesSection
 import com.kmp.recipes.mobile.app.main_screen.sections.MainTopBar
-import com.kmp.recipes.mobile.app.main_screen.sections.PopularRecipes
-import com.kmp.recipes.mobile.app.main_screen.sections.RecipesCategories
+import com.kmp.recipes.mobile.app.main_screen.sections.PopularRecipesSection
+import com.kmp.recipes.mobile.app.main_screen.sections.RecipesCategoriesSection
 import dev.icerock.moko.resources.compose.readTextAsState
 
 class MainScreen : Screen {
@@ -72,21 +74,26 @@ class MainScreen : Screen {
         recipesData: RecipesData,
         mainScreenModel: MainScreenModel
     ) {
-        LazyColumn(modifier = Modifier.fillMaxWidth().padding(paddingValues)) {
+        LazyColumn(
+            modifier = Modifier.fillMaxWidth().padding(paddingValues),
+            verticalArrangement = Arrangement.spacedBy(Dimens.defaultSpacing)
+        ) {
             item {
                 DiscoverRecipesSection(
                     navigator = navigator,
-                    recipesList = recipesData.sections.discover)
+                    discoverRecipes = recipesData.sections.discover
+                )
             }
             item {
-                RecipesCategories(
+                RecipesCategoriesSection(
                     navigator = navigator,
-                    recipesData = recipesData)
+                    categories = recipesData.sections.categories
+                )
             }
             item {
-                PopularRecipes(
-                    recipes = mainScreenModel.getPopularRecipesList(recipesData),
-                    navigator = navigator
+                PopularRecipesSection(
+                    navigator = navigator,
+                    recipes = mainScreenModel.getPopularRecipesList(recipesData)
                 )
             }
         }

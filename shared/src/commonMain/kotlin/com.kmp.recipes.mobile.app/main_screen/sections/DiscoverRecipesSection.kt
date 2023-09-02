@@ -24,7 +24,6 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -42,7 +41,7 @@ import dev.icerock.moko.resources.compose.painterResource
 import dev.icerock.moko.resources.compose.stringResource
 
 @Composable
-fun DiscoverRecipesSection(navigator: Navigator, recipesList: List<Recipe>) {
+fun DiscoverRecipesSection(navigator: Navigator, discoverRecipes: List<Recipe>) {
     Column(
         modifier = Modifier.fillMaxWidth(),
     ) {
@@ -56,7 +55,7 @@ fun DiscoverRecipesSection(navigator: Navigator, recipesList: List<Recipe>) {
             color = MaterialTheme.colorScheme.primary
         )
 
-        RecipesPager(navigator, recipesList)
+        RecipesPager(navigator, discoverRecipes)
     }
 }
 
@@ -99,12 +98,13 @@ private fun DiscoverRecipeCard(modifier: Modifier, recipe: Recipe, navigator: Na
             val cardModifier = Modifier.fillMaxWidth()
                 .padding(
                     start = Dimens.defaultSpacing,
-                    end = 20.dp,
-                    top = 20.dp,
+                    end = Dimens.largeSpacing,
+                    top = Dimens.largeSpacing,
                 )
             Card(
                 modifier = cardModifier,
-                shape = RoundedCornerShape(10.dp).copy(topEnd = CornerSize(50.dp)),
+                shape = RoundedCornerShape(Dimens.cornerSize).copy(topEnd = CornerSize(50.dp)),
+                elevation = CardDefaults.cardElevation(defaultElevation = Dimens.cardElevation),
                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primary)
             ) {
                 DiscoverRecipeContent(recipe)
@@ -114,12 +114,13 @@ private fun DiscoverRecipeCard(modifier: Modifier, recipe: Recipe, navigator: Na
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.TopEnd
             ) {
-                OutlinedCard(
-                    Modifier.size(130.dp)
+                Card(
+                    modifier = Modifier.size(Dimens.discoverRecipeImageSize)
                         .clipToBounds()
                         .padding(top = Dimens.smallSpacing, end = Dimens.smallSpacing),
                     shape = CircleShape,
-                    border = BorderStroke(5.dp, color = Color.White),
+                    elevation = CardDefaults.cardElevation(defaultElevation = Dimens.cardElevation),
+                    border = BorderStroke(Dimens.bordersWidth, color = Color.White),
                 ) {
                     ImageX(
                         modifier = Modifier.fillMaxSize(),

@@ -11,14 +11,15 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clipToBounds
 import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.Dimens
 import com.kmp.recipes.mobile.app.common.data.Recipe
@@ -30,58 +31,53 @@ import dev.icerock.moko.resources.compose.stringResource
 
 @Composable
 fun RecipesListing(recipesList: List<Recipe>, navigator: Navigator) {
-    Column(modifier = Modifier.fillMaxWidth()) {
-        Column(
-            modifier = Modifier.padding(
-                start = Dimens.defaultSpacing,
-                end = Dimens.defaultSpacing
-            )
-        ) {
-            repeat(recipesList.size) {
-                Column(modifier = Modifier.clickable {
-                    navigator.push(
-                        RecipeDetailsScreen(
-                            recipesList[it]
-                        )
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(Dimens.smallSpacing)
+    ) {
+        repeat(recipesList.size) {
+            Column(modifier = Modifier.clickable {
+                navigator.push(
+                    RecipeDetailsScreen(
+                        recipesList[it]
                     )
-                }) {
-                    Card(
-                        Modifier.fillMaxWidth()
-                            .height(Dimens.popularRecipeImageHeight)
-                            .padding(top = Dimens.smallSpacing)
-                            .clipToBounds(),
-                    ) {
-                        ImageX(
-                            modifier = Modifier.fillMaxSize(),
-                            url = recipesList[it].image,
-                            showOverlay = true
-                        )
-                    }
-                    Text(
-                        modifier = Modifier.padding(top = Dimens.smallSpacing),
-                        text = recipesList[it].label,
-                        style = MaterialTheme.typography.titleLarge,
-                        color = MaterialTheme.colorScheme.primary,
-                        maxLines = 1
+                )
+            }) {
+                Card(
+                    modifier = Modifier.fillMaxWidth().height(Dimens.popularRecipeImageHeight),
+                    shape = RoundedCornerShape(Dimens.normalRadius),
+                    elevation = CardDefaults.cardElevation(defaultElevation = Dimens.cardElevation)
+                ) {
+                    ImageX(
+                        modifier = Modifier.fillMaxSize(),
+                        url = recipesList[it].image,
+                        showOverlay = true
                     )
+                }
+                Text(
+                    modifier = Modifier.padding(top = Dimens.smallSpacing),
+                    text = recipesList[it].label,
+                    style = MaterialTheme.typography.titleLarge,
+                    color = MaterialTheme.colorScheme.primary,
+                    maxLines = 1
+                )
 
-                    Text(
-                        text = recipesList[it].description,
-                        style = MaterialTheme.typography.bodyLarge,
-                        maxLines = 3
-                    )
+                Text(
+                    text = recipesList[it].description,
+                    style = MaterialTheme.typography.bodyLarge,
+                    maxLines = 3
+                )
 
-                    Row(
-                        modifier = Modifier.padding(
-                            top = Dimens.smallSpacing,
-                            bottom = Dimens.smallSpacing
-                        ),
-                        horizontalArrangement = Arrangement.SpaceBetween
-                    ) {
-                        PopularRecipeCookingDuration(recipesList[it])
-                        Spacer(Modifier.width(Dimens.defaultSpacing))
-                        PopularRecipeDifficultyLevel(recipesList[it])
-                    }
+                Row(
+                    modifier = Modifier.padding(
+                        top = Dimens.smallSpacing,
+                        bottom = Dimens.smallSpacing
+                    ),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    PopularRecipeCookingDuration(recipesList[it])
+                    Spacer(Modifier.width(Dimens.defaultSpacing))
+                    PopularRecipeDifficultyLevel(recipesList[it])
                 }
             }
         }

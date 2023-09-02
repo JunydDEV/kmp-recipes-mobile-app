@@ -10,8 +10,7 @@ object Dimens {
     val largeSpacing = 20.dp
     val normalRadius = 10.dp
 
-    val discoverRecipeHeight = 220.dp
-    val discoverRecipeImageSize = 180.dp
+    val discoverRecipeImageSize = 160.dp
     val categoryImageWidth = 140.dp
     val categoryImageHeight = 90.dp
     val categoryImageRadius = 10.dp
@@ -21,6 +20,9 @@ object Dimens {
     val iconSizeMedium = 25.dp
     val ingredientImageWidth = 101.dp
     val ingredientImageHeight = 127.dp
+    val bordersWidth = 5.dp
+    val cornerSize = 10.dp
+    val cardElevation = 10.dp
 
     val appTitleSize: TextUnit = 28.sp
 
