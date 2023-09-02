@@ -74,10 +74,14 @@ class MainScreen : Screen {
     ) {
         LazyColumn(modifier = Modifier.fillMaxWidth().padding(paddingValues)) {
             item {
-                DiscoverRecipesSection(navigator)
+                DiscoverRecipesSection(
+                    navigator = navigator,
+                    recipesList = recipesData.sections.discover)
             }
             item {
-                RecipesCategories(navigator, recipesData)
+                RecipesCategories(
+                    navigator = navigator,
+                    recipesData = recipesData)
             }
             item {
                 PopularRecipes(

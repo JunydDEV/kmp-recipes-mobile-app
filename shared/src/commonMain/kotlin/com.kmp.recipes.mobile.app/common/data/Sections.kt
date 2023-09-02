@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Sections(
-//    @SerialName("discover") val discover: DiscoverRecipesData,
+    @SerialName("discover_recipes") val discover: List<Recipe>,
     @SerialName("categories") val categories: List<Category>,
     @SerialName("popular_recipes") val popularRecipes: PopularRecipesData
 )

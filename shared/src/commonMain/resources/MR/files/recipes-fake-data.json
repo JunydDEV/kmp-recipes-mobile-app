@@ -1,5 +1,230 @@
 {
   "sections": {
+    "discover_recipes": [
+      {
+        "id": "mix1",
+        "label": "Mediterranean Surf 'n' Turf Pizza",
+        "image": "https://images.pexels.com/photos/1552642/pexels-photo-1552642.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+        "ingredients": [
+          {
+            "image": "https://images.pexels.com/photos/6605209/pexels-photo-6605209.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+            "label": "Wholegrain Bread",
+            "quantity": "2 Slices"
+          },
+          {
+            "image": "https://images.pexels.com/photos/557659/pexels-photo-557659.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+            "label": "Avocado",
+            "quantity": "1 rip"
+          },
+          {
+            "image": "https://images.pexels.com/photos/533309/pexels-photo-533309.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+            "label": "Cherry Tomatoes",
+            "quantity": "2 Sliced"
+          },
+          {
+            "image": "https://images.pexels.com/photos/10487732/pexels-photo-10487732.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+            "label": "Black Pepper",
+            "quantity": "1 Pinch"
+          },
+          {
+            "image": "https://images.pexels.com/photos/33260/honey-sweet-syrup-organic.jpg",
+            "label": "Honey",
+            "quantity": "1 Teaspoon"
+          }
+        ],
+        "instructions": [
+          "Preheat your oven to the highest temperature it can reach.",
+          "Roll out the pizza dough on a floured surface to your desired thickness.",
+          "Transfer the dough to a pizza stone or baking sheet.",
+          "Spread the tomato sauce evenly over the dough, leaving a border around the edges.",
+          "Sprinkle the shredded mozzarella cheese over the sauce.",
+          "Top with cooked shrimp, cooked steak strips, black olives, roasted red peppers, and thinly sliced red onion.",
+          "Sprinkle crumbled feta cheese over the toppings.",
+          "Drizzle olive oil over the pizza and sprinkle with dried oregano, salt, and black pepper.",
+          "Bake in the preheated oven until the crust is golden and the cheese is melted and bubbly.",
+          "Slice and serve the Mediterranean surf 'n' turf pizza."
+        ],
+        "duration": "30 minutes",
+        "level": "Intermediate",
+        "description": "Experience the best of both worlds with this Mediterranean-inspired pizza. It combines the flavors of the sea with succulent shrimp and tender steak, along with the freshness of olives, peppers, and feta cheese."
+      },
+      {
+        "id": "mix2",
+        "label": "Lemon Butter Shrimp Scampi Pasta",
+        "image": "https://images.pexels.com/photos/725997/pexels-photo-725997.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+        "ingredients": [
+          {
+            "image": "https://images.pexels.com/photos/6605209/pexels-photo-6605209.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+            "label": "Wholegrain Bread",
+            "quantity": "2 Slices"
+          },
+          {
+            "image": "https://images.pexels.com/photos/557659/pexels-photo-557659.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+            "label": "Avocado",
+            "quantity": "1 rip"
+          },
+          {
+            "image": "https://images.pexels.com/photos/533309/pexels-photo-533309.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+            "label": "Cherry Tomatoes",
+            "quantity": "2 Sliced"
+          },
+          {
+            "image": "https://images.pexels.com/photos/10487732/pexels-photo-10487732.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+            "label": "Black Pepper",
+            "quantity": "1 Pinch"
+          },
+          {
+            "image": "https://images.pexels.com/photos/33260/honey-sweet-syrup-organic.jpg",
+            "label": "Honey",
+            "quantity": "1 Teaspoon"
+          }
+        ],
+        "instructions": [
+          "Cook the linguine pasta according to package instructions until al dente. Drain and set aside.",
+          "In a large skillet, melt the butter over medium heat.",
+          "Add minced garlic and sauté for about 1 minute until fragrant.",
+          "Add peeled and deveined large shrimp to the skillet and cook until pink and opaque, about 2-3 minutes per side.",
+          "Stir in lemon zest and lemon juice.",
+          "Toss in the cooked linguine pasta and chopped fresh parsley. Toss to combine.",
+          "Season with salt and black pepper to taste.",
+          "Serve the lemon butter shrimp scampi pasta hot."
+        ],
+        "duration": "20 minutes",
+        "level": "Intermediate",
+        "description": "Indulge in the flavors of the Mediterranean with this zesty shrimp scampi pasta. The combination of succulent shrimp, garlic, lemon, and fresh parsley creates a delightful seafood pasta."
+      },
+      {
+        "id": "mix3",
+        "label": "Coffee-Rubbed Sirloin Steak",
+        "image": "https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+        "ingredients": [
+          {
+            "image": "https://images.pexels.com/photos/6605209/pexels-photo-6605209.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+            "label": "Wholegrain Bread",
+            "quantity": "2 Slices"
+          },
+          {
+            "image": "https://images.pexels.com/photos/557659/pexels-photo-557659.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+            "label": "Avocado",
+            "quantity": "1 rip"
+          },
+          {
+            "image": "https://images.pexels.com/photos/533309/pexels-photo-533309.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+            "label": "Cherry Tomatoes",
+            "quantity": "2 Sliced"
+          },
+          {
+            "image": "https://images.pexels.com/photos/10487732/pexels-photo-10487732.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+            "label": "Black Pepper",
+            "quantity": "1 Pinch"
+          },
+          {
+            "image": "https://images.pexels.com/photos/33260/honey-sweet-syrup-organic.jpg",
+            "label": "Honey",
+            "quantity": "1 Teaspoon"
+          }
+        ],
+        "instructions": [
+          "Preheat a grill or skillet to high heat.",
+          "In a bowl, combine ground coffee, brown sugar, smoked paprika, chili powder, garlic powder, salt, and black pepper to create the rub.",
+          "Season the sirloin steaks with the coffee rub on both sides, pressing the rub into the meat.",
+          "Place the steaks on the grill or skillet and cook for about 4-5 minutes per side for medium-rare.",
+          "Remove the steaks from the heat and let them rest for a few minutes.",
+          "Slice the coffee-rubbed sirloin steaks and serve with your favorite side dishes."
+        ],
+        "duration": "15 minutes",
+        "level": "Intermediate",
+        "description": "Elevate your steak game with this unique coffee-rubbed sirloin. The rich flavors of coffee, spices, and a hint of sweetness from brown sugar perfectly complement the juicy sirloin steak."
+      },
+      {
+        "id": "mix4",
+        "label": "Pesto Tortellini with Steak Strips",
+        "image": "https://images.pexels.com/photos/533325/pexels-photo-533325.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+        "ingredients": [
+          {
+            "image": "https://images.pexels.com/photos/6605209/pexels-photo-6605209.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+            "label": "Wholegrain Bread",
+            "quantity": "2 Slices"
+          },
+          {
+            "image": "https://images.pexels.com/photos/557659/pexels-photo-557659.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+            "label": "Avocado",
+            "quantity": "1 rip"
+          },
+          {
+            "image": "https://images.pexels.com/photos/533309/pexels-photo-533309.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+            "label": "Cherry Tomatoes",
+            "quantity": "2 Sliced"
+          },
+          {
+            "image": "https://images.pexels.com/photos/10487732/pexels-photo-10487732.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+            "label": "Black Pepper",
+            "quantity": "1 Pinch"
+          },
+          {
+            "image": "https://images.pexels.com/photos/33260/honey-sweet-syrup-organic.jpg",
+            "label": "Honey",
+            "quantity": "1 Teaspoon"
+          }
+        ],
+        "instructions": [
+          "Cook the cheese tortellini according to package instructions until al dente. Drain and set aside.",
+          "In a large bowl, toss the cooked tortellini with basil pesto sauce until well coated.",
+          "Add cooked steak strips, halved cherry tomatoes, and pine nuts to the bowl.",
+          "Season with salt and black pepper to taste.",
+          "Serve the pesto tortellini with steak strips, garnished with grated Parmesan cheese."
+        ],
+        "duration": "20 minutes",
+        "level": "Intermediate",
+        "description": "Savor the rich and savory flavors of pesto tortellini combined with tender steak strips, cherry tomatoes, and crunchy pine nuts. It's a hearty pasta dish that's sure to satisfy."
+      },
+      {
+        "id": "mix5",
+        "label": "Creamy Alfredo Pizza with Shrimp",
+        "image": "https://images.pexels.com/photos/4553127/pexels-photo-4553127.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+        "ingredients": [
+          {
+            "image": "https://images.pexels.com/photos/6605209/pexels-photo-6605209.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+            "label": "Wholegrain Bread",
+            "quantity": "2 Slices"
+          },
+          {
+            "image": "https://images.pexels.com/photos/557659/pexels-photo-557659.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+            "label": "Avocado",
+            "quantity": "1 rip"
+          },
+          {
+            "image": "https://images.pexels.com/photos/533309/pexels-photo-533309.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+            "label": "Cherry Tomatoes",
+            "quantity": "2 Sliced"
+          },
+          {
+            "image": "https://images.pexels.com/photos/10487732/pexels-photo-10487732.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+            "label": "Black Pepper",
+            "quantity": "1 Pinch"
+          },
+          {
+            "image": "https://images.pexels.com/photos/33260/honey-sweet-syrup-organic.jpg",
+            "label": "Honey",
+            "quantity": "1 Teaspoon"
+          }
+        ],
+        "instructions": [
+          "Preheat your oven to the highest temperature it can reach.",
+          "Roll out the pizza dough on a floured surface to your desired thickness.",
+          "Transfer the dough to a pizza stone or baking sheet.",
+          "Spread the Alfredo sauce evenly over the dough, leaving a border around the edges.",
+          "Sprinkle the shredded mozzarella cheese over the sauce.",
+          "Top with cooked shrimp, sliced sun-dried tomatoes, and torn fresh basil leaves.",
+          "Season with salt and black pepper to taste.",
+          "Bake in the preheated oven until the crust is golden and the cheese is melted and bubbly.",
+          "Slice and serve the creamy Alfredo pizza with shrimp."
+        ],
+        "duration": "30 minutes",
+        "level": "Intermediate",
+        "description": "Delight in the creamy goodness of Alfredo sauce paired with succulent shrimp, sun-dried tomatoes, and fresh basil on a perfectly baked pizza crust. It's a unique twist on pizza you won't want to miss."
+      }
+    ],
     "categories": [
       {
         "id": "c1",
