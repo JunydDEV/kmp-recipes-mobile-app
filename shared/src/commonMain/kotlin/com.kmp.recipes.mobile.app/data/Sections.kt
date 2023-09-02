@@ -1,11 +1,11 @@
-package com.kmp.recipes.mobile.app.common.data
+package com.kmp.recipes.mobile.app.data
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
 data class Sections(
-    @SerialName("discover_recipes") val discover: List<Recipe>,
+    @SerialName("food_quotes") val quotes: List<Quote>,
     @SerialName("categories") val categories: List<Category>,
     @SerialName("popular_recipes") val popularRecipes: PopularRecipesData
 )

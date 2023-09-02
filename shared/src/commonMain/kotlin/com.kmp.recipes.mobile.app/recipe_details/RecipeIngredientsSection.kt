@@ -27,7 +27,7 @@ import androidx.compose.ui.layout.ContentScale
 import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.Dimens
 import com.kmp.recipes.mobile.app.common.ImageX
-import com.kmp.recipes.mobile.app.common.data.Recipe
+import com.kmp.recipes.mobile.app.data.Recipe
 import com.kmp.recipes.mobile.app.recipes_listing.RecipesScreen
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import com.seiko.imageloader.rememberAsyncImagePainter

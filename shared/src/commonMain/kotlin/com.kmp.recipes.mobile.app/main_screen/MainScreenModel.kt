@@ -1,16 +1,15 @@
 package com.kmp.recipes.mobile.app.main_screen
 
 import cafe.adriel.voyager.core.model.ScreenModel
-import com.kmp.recipes.mobile.app.common.data.Recipe
-import com.kmp.recipes.mobile.app.common.data.RecipesData
+import com.kmp.recipes.mobile.app.data.Category
+import com.kmp.recipes.mobile.app.data.Recipe
+import com.kmp.recipes.mobile.app.data.RecipesData
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.FileResource
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.serialization.json.Json
 
 class MainScreenModel: ScreenModel {
-
-    private val _recipesDataFlow = MutableStateFlow<RecipesData?>(null)
 
     fun getRecipesData(): FileResource {
         return SharedRes.files.recipes_fake_data
@@ -24,6 +23,14 @@ class MainScreenModel: ScreenModel {
 
     fun getPopularRecipesList(recipesData: RecipesData): List<Recipe> {
         return recipesData.recipesList.filter { recipesData.recipesList.contains(it) }
+    }
+
+    fun findRecipesByCategoryId(category: Category, recipesList: List<Recipe>): List<Recipe> {
+        return recipesList.filter { category.recipes.contains(it.id) }
+    }
+
+    fun searchRecipesBy(recipes: List<Recipe>, searchQuery: String): List<Recipe> {
+        return recipes.filter { it.label.contains(searchQuery, ignoreCase = true) }
     }
 
     companion object {

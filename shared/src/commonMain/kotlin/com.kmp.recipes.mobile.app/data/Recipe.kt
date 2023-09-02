@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.common.data
+package com.kmp.recipes.mobile.app.data
 
 import kotlinx.serialization.Serializable
 

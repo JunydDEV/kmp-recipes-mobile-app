@@ -1,11 +1,10 @@
-package com.kmp.recipes.mobile.app.common.data
+package com.kmp.recipes.mobile.app.data
 
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Category(
+data class PopularRecipesData(
     val id: String,
-    val image: String,
     val label: String,
     val recipes: List<String>
 )

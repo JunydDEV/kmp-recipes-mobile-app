@@ -21,9 +21,9 @@ import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import com.kmp.recipes.mobile.app.Dimens
-import com.kmp.recipes.mobile.app.common.data.RecipesData
+import com.kmp.recipes.mobile.app.data.RecipesData
 import com.kmp.recipes.mobile.app.main_screen.search_recipes.SearchRecipesList
-import com.kmp.recipes.mobile.app.main_screen.sections.DiscoverRecipesSection
+import com.kmp.recipes.mobile.app.main_screen.sections.FoodQuotesSection
 import com.kmp.recipes.mobile.app.main_screen.sections.MainTopBar
 import com.kmp.recipes.mobile.app.main_screen.sections.PopularRecipesSection
 import com.kmp.recipes.mobile.app.main_screen.sections.RecipesCategoriesSection
@@ -69,7 +69,13 @@ class MainScreen : Screen {
         val navigator = LocalNavigator.currentOrThrow
 
         if (searchQuery.value.isNotEmpty()) {
-            SearchRecipesList(searchQuery.value, navigator)
+            SearchRecipesList(
+                paddingValue = paddingValue,
+                searchQuery = searchQuery.value,
+                navigator = navigator,
+                recipes = recipesData.recipesList,
+                mainScreenModel = model
+            )
         } else {
             HomeScreenDefaultContent(
                 paddingValues = paddingValue,
@@ -88,19 +94,22 @@ class MainScreen : Screen {
         mainScreenModel: MainScreenModel
     ) {
         LazyColumn(
-            modifier = Modifier.fillMaxWidth().padding(paddingValues),
+            modifier = Modifier.fillMaxWidth().padding(paddingValues)
+                .padding(top = Dimens.defaultSpacing),
             verticalArrangement = Arrangement.spacedBy(Dimens.defaultSpacing)
         ) {
             item {
-                DiscoverRecipesSection(
+                FoodQuotesSection(
                     navigator = navigator,
-                    discoverRecipes = recipesData.sections.discover
+                    quotes = recipesData.sections.quotes
                 )
             }
             item {
                 RecipesCategoriesSection(
                     navigator = navigator,
-                    categories = recipesData.sections.categories
+                    categories = recipesData.sections.categories,
+                    recipes = recipesData.recipesList,
+                    mainScreenModel = mainScreenModel
                 )
             }
             item {

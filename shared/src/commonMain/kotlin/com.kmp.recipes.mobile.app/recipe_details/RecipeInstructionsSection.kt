@@ -18,7 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.Dimens
-import com.kmp.recipes.mobile.app.common.data.Recipe
+import com.kmp.recipes.mobile.app.data.Recipe
 
 @Composable
 fun RecipeInstructionsSection(recipe: Recipe, navigator: Navigator) {

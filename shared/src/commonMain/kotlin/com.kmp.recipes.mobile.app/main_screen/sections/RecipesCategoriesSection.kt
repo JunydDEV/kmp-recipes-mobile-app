@@ -20,12 +20,20 @@ import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.Dimens
 import com.kmp.recipes.mobile.app.common.ImageX
 import com.kmp.recipes.mobile.app.common.ColumnX
-import com.kmp.recipes.mobile.app.common.data.Category
+import com.kmp.recipes.mobile.app.data.Category
+import com.kmp.recipes.mobile.app.data.Recipe
+import com.kmp.recipes.mobile.app.main_screen.MainScreenModel
+import com.kmp.recipes.mobile.app.recipes_listing.RecipesScreen
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.compose.stringResource
 
 @Composable
-fun RecipesCategoriesSection(navigator: Navigator, categories: List<Category>) {
+fun RecipesCategoriesSection(
+    navigator: Navigator,
+    categories: List<Category>,
+    recipes: List<Recipe>,
+    mainScreenModel: MainScreenModel,
+) {
     val primaryTitle = stringResource(SharedRes.strings.categories_section_header)
 
     ColumnX(primaryTitle = primaryTitle) {
@@ -40,7 +48,9 @@ fun RecipesCategoriesSection(navigator: Navigator, categories: List<Category>) {
                         width = Dimens.categoryImageWidth,
                         height = Dimens.categoryImageHeight
                     ).clickable {
-                       // navigator.push(RecipesScreen(title, recipes))
+                        val result =
+                            mainScreenModel.findRecipesByCategoryId(categories[it], recipes)
+                        navigator.push(RecipesScreen(title, result))
                     },
                     elevation = CardDefaults.cardElevation(defaultElevation = Dimens.cardElevation)
                 ) {
@@ -61,7 +71,7 @@ fun RecipesCategoriesSection(navigator: Navigator, categories: List<Category>) {
                                 bottom = Dimens.smallSpacing
                             ),
                             text = categories[it].label,
-                            style = MaterialTheme.typography.bodyLarge,
+                            style = MaterialTheme.typography.titleMedium,
                             color = MaterialTheme.colorScheme.onPrimary
                         )
                     }
