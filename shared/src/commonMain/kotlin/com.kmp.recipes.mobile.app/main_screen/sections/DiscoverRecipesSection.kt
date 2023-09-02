@@ -89,27 +89,27 @@ fun RecipesPager(navigator: Navigator) {
 @Composable
 fun getRecipesList(): List<Recipe> {
     return listOf(
-        Recipe(
-            image = "",
-            label = stringResource(SharedRes.strings.discover_recipe_one_title),
-            description = stringResource(SharedRes.strings.discover_recipe_one_description),
-            duration = stringResource(SharedRes.strings.discover_recipe_one_cooking_duration),
-            level = stringResource(SharedRes.strings.discover_recipe_one_cooking_difficulty_level)
-        ),
-        Recipe(
-            image = "",
-            label = stringResource(SharedRes.strings.discover_recipe_two_title),
-            description = stringResource(SharedRes.strings.discover_recipe_two_description),
-            duration = stringResource(SharedRes.strings.discover_recipe_two_cooking_duration),
-            level = stringResource(SharedRes.strings.discover_recipe_two_cooking_difficulty_level)
-        ),
-        Recipe(
-            image = "",
-            label = stringResource(SharedRes.strings.discover_recipe_one_title),
-            description = stringResource(SharedRes.strings.discover_recipe_one_description),
-            duration = stringResource(SharedRes.strings.discover_recipe_one_cooking_duration),
-            level = stringResource(SharedRes.strings.discover_recipe_one_cooking_difficulty_level)
-        ),
+//        Recipe(
+//            image = "",
+//            label = stringResource(SharedRes.strings.discover_recipe_one_title),
+//            description = stringResource(SharedRes.strings.discover_recipe_one_description),
+//            duration = stringResource(SharedRes.strings.discover_recipe_one_cooking_duration),
+//            level = stringResource(SharedRes.strings.discover_recipe_one_cooking_difficulty_level)
+//        ),
+//        Recipe(
+//            image = "",
+//            label = stringResource(SharedRes.strings.discover_recipe_two_title),
+//            description = stringResource(SharedRes.strings.discover_recipe_two_description),
+//            duration = stringResource(SharedRes.strings.discover_recipe_two_cooking_duration),
+//            level = stringResource(SharedRes.strings.discover_recipe_two_cooking_difficulty_level)
+//        ),
+//        Recipe(
+//            image = "",
+//            label = stringResource(SharedRes.strings.discover_recipe_one_title),
+//            description = stringResource(SharedRes.strings.discover_recipe_one_description),
+//            duration = stringResource(SharedRes.strings.discover_recipe_one_cooking_duration),
+//            level = stringResource(SharedRes.strings.discover_recipe_one_cooking_difficulty_level)
+//        ),
     )
 }
 

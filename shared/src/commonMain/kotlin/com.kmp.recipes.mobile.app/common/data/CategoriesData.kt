@@ -2,15 +2,10 @@ package com.kmp.recipes.mobile.app.common.data
 
 import kotlinx.serialization.Serializable
 
-
 @Serializable
-data class CategoriesData(
+data class Category(
     val id: String,
-    val name: String,
-    val categoriesList: List<Category>
+    val image: String,
+    val label: String,
+    val recipes: List<String>
 )
-
-@Serializable
-class Category {
-
-}

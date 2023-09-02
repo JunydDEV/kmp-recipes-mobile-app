@@ -1,10 +1,41 @@
 {
   "sections": {
+    "categories": [
+      {
+        "id": "c1",
+        "image": "https://images.pexels.com/photos/708587/pexels-photo-708587.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+        "label": "Pizza",
+        "recipes": [
+          "t1",
+          "t2"
+        ]
+      },
+      {
+        "id": "c2",
+        "image": "https://images.pexels.com/photos/6565923/pexels-photo-6565923.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+        "label": "Pasta",
+        "recipes": [
+          "t3",
+          "t4"
+        ]
+      },
+      {
+        "id": "c3",
+        "image": "https://images.pexels.com/photos/299348/pexels-photo-299348.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+        "label": "Steak",
+        "recipes": [
+          "t4",
+          "t5"
+        ]
+      }
+    ],
     "popular_recipes": {
       "id": "_popular_recipes",
       "label": "Popular",
       "recipes": [
-        "t1,t2,t3",
+        "t1",
+        "t2",
+        "t3",
         "t4",
         "t5"
       ]
@@ -14,7 +45,7 @@
     {
       "id": "t1",
       "label": "Golden Turmeric Latter",
-      "image": "https://images.pexels.com/photos/2159067/pexels-photo-2159067.jpeg",
+      "image": "https://images.pexels.com/photos/2159067/pexels-photo-2159067.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
       "description": "A warm and soothing turmeric latte with a hint of spice.",
       "instructions": [
         "In a saucepan, heat 1 cup of milk (dairy or plant-based) over medium heat.",
@@ -24,12 +55,31 @@
         "Pour into a mug and enjoy your golden turmeric latte!"
       ],
       "ingredients": [
-        "1 cup milk (dairy or plant-based)",
-        "1/2 teaspoon ground turmeric",
-        "1/4 teaspoon ground cinnamon",
-        "Pinch of black pepper",
-        "Pinch of ground ginger",
-        "Honey or maple syrup to taste"
+        {
+          "image": "https://images.pexels.com/photos/1435706/pexels-photo-1435706.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Milk",
+          "quantity": "1 Cup"
+        },
+        {
+          "image": "https://images.pexels.com/photos/6220707/pexels-photo-6220707.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Turmeric",
+          "quantity": "1/2 Teaspoon"
+        },
+        {
+          "image": "https://images.pexels.com/photos/301669/pexels-photo-301669.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Cinnamon",
+          "quantity": "1/4 Teaspoon"
+        },
+        {
+          "image": "https://images.pexels.com/photos/10487732/pexels-photo-10487732.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Black Pepper",
+          "quantity": "1 Pinch"
+        },
+        {
+          "image": "https://images.pexels.com/photos/33260/honey-sweet-syrup-organic.jpg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Honey",
+          "quantity": "1 Teaspoon"
+        }
       ],
       "duration": "10 minutes",
       "level": "Easy"
@@ -37,7 +87,7 @@
     {
       "id": "t2",
       "label": "Avocado Toast with a Twist",
-      "image": "https://images.pexels.com/photos/2067423/pexels-photo-2067423.jpeg",
+      "image": "https://images.pexels.com/photos/2067423/pexels-photo-2067423.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
       "description": "Upgrade your avocado toast with a variety of delicious toppings.",
       "instructions": [
         "Toast two slices of whole-grain bread until crispy.",
@@ -48,14 +98,31 @@
         "Serve your upgraded avocado toasts for a satisfying breakfast!"
       ],
       "ingredients": [
-        "2 slices whole-grain bread",
-        "1 ripe avocado",
-        "Sliced cherry tomatoes",
-        "Balsamic glaze",
-        "Smoked salmon",
-        "Capers",
-        "Fresh dill",
-        "Salt, black pepper, and red pepper flakes"
+        {
+          "image": "https://images.pexels.com/photos/6605209/pexels-photo-6605209.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Wholegrain Bread",
+          "quantity": "2 Slices"
+        },
+        {
+          "image": "https://images.pexels.com/photos/557659/pexels-photo-557659.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Avocado",
+          "quantity": "1 rip"
+        },
+        {
+          "image": "https://images.pexels.com/photos/533309/pexels-photo-533309.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Cherry Tomatoes",
+          "quantity": "2 Sliced"
+        },
+        {
+          "image": "https://images.pexels.com/photos/10487732/pexels-photo-10487732.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Black Pepper",
+          "quantity": "1 Pinch"
+        },
+        {
+          "image": "https://images.pexels.com/photos/33260/honey-sweet-syrup-organic.jpg",
+          "label": "Honey",
+          "quantity": "1 Teaspoon"
+        }
       ],
       "duration": "15 minutes",
       "level": "Easy"
@@ -63,7 +130,7 @@
     {
       "id": "t3",
       "label": "Vegan Chickpea Buddha Bowl",
-      "image": "https://images.pexels.com/photos/6632285/pexels-photo-6632285.jpeg",
+      "image": "https://images.pexels.com/photos/6632285/pexels-photo-6632285.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
       "description": "A nourishing and colorful vegan bowl packed with nutrients.",
       "instructions": [
         "Cook 1 cup of quinoa according to package instructions.",
@@ -73,14 +140,31 @@
         "Enjoy your vibrant and wholesome vegan chickpea Buddha bowl!"
       ],
       "ingredients": [
-        "1 cup quinoa",
-        "Cooked chickpeas",
-        "Roasted sweet potatoes",
-        "Sautéed kale",
-        "Sliced avocado",
-        "Tahini dressing",
-        "Pumpkin seeds",
-        "Microgreens"
+        {
+          "image": "https://images.pexels.com/photos/1435706/pexels-photo-1435706.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Milk",
+          "quantity": "1 Cup"
+        },
+        {
+          "image": "https://images.pexels.com/photos/6220707/pexels-photo-6220707.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Turmeric",
+          "quantity": "1/2 Teaspoon"
+        },
+        {
+          "image": "https://images.pexels.com/photos/301669/pexels-photo-301669.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Cinnamon",
+          "quantity": "1/4 Teaspoon"
+        },
+        {
+          "image": "https://images.pexels.com/photos/10487732/pexels-photo-10487732.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Black Pepper",
+          "quantity": "1 Pinch"
+        },
+        {
+          "image": "https://images.pexels.com/photos/33260/honey-sweet-syrup-organic.jpg",
+          "label": "Honey",
+          "quantity": "1 Teaspoon"
+        }
       ],
       "duration": "30 minutes",
       "level": "Intermediate"
@@ -88,7 +172,7 @@
     {
       "id": "t4",
       "label": "Crispy Baked Cauliflower Bites",
-      "image": "https://images.pexels.com/photos/5764069/pexels-photo-5764069.jpeg",
+      "image": "https://images.pexels.com/photos/5764069/pexels-photo-5764069.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
       "description": "Irresistibly crispy and flavorful baked cauliflower bites.",
       "instructions": [
         "Preheat the oven to 425°F (220°C) and line a baking sheet with parchment paper.",
@@ -99,14 +183,31 @@
         "Serve your crispy baked cauliflower bites with your favorite dipping sauce!"
       ],
       "ingredients": [
-        "1 cup flour",
-        "1 teaspoon paprika",
-        "1/2 teaspoon garlic powder",
-        "1/2 teaspoon onion powder",
-        "Salt and black pepper",
-        "Cauliflower florets",
-        "1 cup non-dairy milk",
-        "2 tablespoons hot sauce"
+        {
+          "image": "https://images.pexels.com/photos/6605209/pexels-photo-6605209.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Wholegrain Bread",
+          "quantity": "2 Slices"
+        },
+        {
+          "image": "https://images.pexels.com/photos/557659/pexels-photo-557659.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Avocado",
+          "quantity": "1 rip"
+        },
+        {
+          "image": "https://images.pexels.com/photos/533309/pexels-photo-533309.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Cherry Tomatoes",
+          "quantity": "2 Sliced"
+        },
+        {
+          "image": "https://images.pexels.com/photos/10487732/pexels-photo-10487732.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Black Pepper",
+          "quantity": "1 Pinch"
+        },
+        {
+          "image": "https://images.pexels.com/photos/33260/honey-sweet-syrup-organic.jpg",
+          "label": "Honey",
+          "quantity": "1 Teaspoon"
+        }
       ],
       "duration": "40 minutes",
       "level": "Intermediate"
@@ -114,7 +215,7 @@
     {
       "id": "t5",
       "label": "Blueberry Chia Seed Pudding",
-      "image": "https://images.pexels.com/photos/13689785/pexels-photo-13689785.jpeg",
+      "image": "https://images.pexels.com/photos/13689785/pexels-photo-13689785.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
       "description": "A delightful and nutritious chia seed pudding bursting with blueberries.",
       "instructions": [
         "In a bowl, mix 1/4 cup chia seeds, 1 cup almond milk, 1 tablespoon maple syrup, and a splash of vanilla extract.",
@@ -126,13 +227,31 @@
         "Savor your delicious and nutritious blueberry chia seed pudding!"
       ],
       "ingredients": [
-        "1/4 cup chia seeds",
-        "1 cup almond milk",
-        "1 tablespoon maple syrup",
-        "Splash of vanilla extract",
-        "1/2 cup blueberries",
-        "Fresh blueberries",
-        "Honey"
+        {
+          "image": "https://images.pexels.com/photos/1435706/pexels-photo-1435706.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Milk",
+          "quantity": "1 Cup"
+        },
+        {
+          "image": "https://images.pexels.com/photos/6220707/pexels-photo-6220707.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Turmeric",
+          "quantity": "1/2 Teaspoon"
+        },
+        {
+          "image": "https://images.pexels.com/photos/301669/pexels-photo-301669.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Cinnamon",
+          "quantity": "1/4 Teaspoon"
+        },
+        {
+          "image": "https://images.pexels.com/photos/10487732/pexels-photo-10487732.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Black Pepper",
+          "quantity": "1 Pinch"
+        },
+        {
+          "image": "https://images.pexels.com/photos/33260/honey-sweet-syrup-organic.jpg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+          "label": "Honey",
+          "quantity": "1 Teaspoon"
+        }
       ],
       "duration": "2 hours",
       "level": "Easy"

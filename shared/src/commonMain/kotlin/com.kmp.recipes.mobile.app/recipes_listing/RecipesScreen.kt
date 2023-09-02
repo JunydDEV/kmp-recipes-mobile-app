@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -15,37 +14,13 @@ import cafe.adriel.voyager.navigator.currentOrThrow
 import com.kmp.recipes.mobile.app.common.RecipesListing
 import com.kmp.recipes.mobile.app.common.SecondaryAppBar
 import com.kmp.recipes.mobile.app.common.data.Recipe
-import com.kmp.recipes.mobile.app.sharedres.SharedRes
-import dev.icerock.moko.resources.compose.stringResource
 
-class RecipesScreen(private val title: String) : Screen {
+class RecipesScreen(private val title: String, private val recipes: List<Recipe>) : Screen {
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
     override fun Content() {
-        val recipes = listOf(
-            Recipe(
-                image = "",
-                label = stringResource(SharedRes.strings.popular_recipe_one_title),
-                description = stringResource(SharedRes.strings.popular_recipe_one_description),
-                duration = stringResource(SharedRes.strings.popular_recipe_one_duration),
-                level = stringResource(SharedRes.strings.popular_recipe_one_difficulty_level)
-            ),
-            Recipe(
-                image = "",
-                label = stringResource(SharedRes.strings.popular_recipe_two_title),
-                description = stringResource(SharedRes.strings.popular_recipe_two_description),
-                duration = stringResource(SharedRes.strings.popular_recipe_two_duration),
-                level = stringResource(SharedRes.strings.popular_recipe_two_difficulty_level)
-            ),
-            Recipe(
-                image = "",
-                label = stringResource(SharedRes.strings.popular_recipe_three_title),
-                description = stringResource(SharedRes.strings.popular_recipe_three_description),
-                duration = stringResource(SharedRes.strings.popular_recipe_three_duration),
-                level = stringResource(SharedRes.strings.popular_recipe_three_difficulty_level)
-            )
-        )
+
         val navigator = LocalNavigator.currentOrThrow
 
         Scaffold(
@@ -57,9 +32,7 @@ class RecipesScreen(private val title: String) : Screen {
                 )
             }
         ) {
-            val scrollState = rememberScrollState()
-
-            Column(modifier = Modifier.fillMaxSize().padding(it).verticalScroll(scrollState)) {
+            Column(modifier = Modifier.fillMaxSize().padding(it)) {
                 RecipesListing(recipes, navigator)
             }
         }

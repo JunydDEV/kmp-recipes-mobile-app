@@ -23,13 +23,20 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.Dimens
+import com.kmp.recipes.mobile.app.common.ImageX
+import com.kmp.recipes.mobile.app.common.data.Category
+import com.kmp.recipes.mobile.app.common.data.Recipe
+import com.kmp.recipes.mobile.app.common.data.RecipesData
 import com.kmp.recipes.mobile.app.recipes_listing.RecipesScreen
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.compose.painterResource
 import dev.icerock.moko.resources.compose.stringResource
 
 @Composable
-fun RecipesCategories(navigator: Navigator) {
+fun RecipesCategories(navigator: Navigator, recipesData: RecipesData) {
+    val categories = recipesData.sections.categories
+    val recipes = recipesData.recipesList
+
     Column(
         modifier = Modifier.fillMaxWidth(),
     ) {
@@ -49,35 +56,23 @@ fun RecipesCategories(navigator: Navigator) {
                 .padding(start = Dimens.defaultSpacing, end = Dimens.defaultSpacing)
                 .horizontalScroll(rememberScrollState())
         ) {
-            val categoriesImages = listOf(
-                SharedRes.images.pizza_background_image,
-                SharedRes.images.pasta_background_image,
-                SharedRes.images.steak_background_image
-            )
-            val categoriesNames = listOf(
-                SharedRes.strings.category_pizza,
-                SharedRes.strings.category_pasta,
-                SharedRes.strings.category_steak
-            )
-
-            repeat(categoriesImages.size) {
-                val title = "${stringResource(categoriesNames[it])} Recipes"
+            repeat(categories.size) {
+                val title = "${categories[it].label} Recipes"
                 Box(
                     modifier = Modifier.size(
                         width = Dimens.categoryImageWidth,
                         height = Dimens.categoryImageHeight
                     ).clickable {
-                        navigator.push(RecipesScreen(title))
+                        navigator.push(RecipesScreen(title, recipes))
                     },
                     contentAlignment = Alignment.BottomStart
                 ) {
-                    Image(
+                    ImageX(
                         modifier = Modifier.aspectRatio(Dimens.categoryImageRatio)
                             .fillMaxSize()
                             .clip(RoundedCornerShape(Dimens.categoryImageRadius)),
-                        painter = painterResource(categoriesImages[it]),
-                        contentScale = ContentScale.Crop,
-                        contentDescription = stringResource(SharedRes.strings.recipe_category_image_description)
+                        url = categories[it].image,
+                        showOverlay = true
                     )
 
                     Text(
@@ -85,7 +80,7 @@ fun RecipesCategories(navigator: Navigator) {
                             start = Dimens.smallSpacing,
                             bottom = Dimens.smallSpacing
                         ),
-                        text = stringResource(categoriesNames[it]),
+                        text = categories[it].label,
                         style = MaterialTheme.typography.bodyLarge,
                         color = MaterialTheme.colorScheme.onPrimary
                     )

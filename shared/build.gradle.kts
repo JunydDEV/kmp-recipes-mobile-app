@@ -45,7 +45,7 @@ kotlin {
                 implementation("dev.icerock.moko:resources-compose:0.23.0")
                 implementation("cafe.adriel.voyager:voyager-navigator:$voyagerVersion")
                 implementation("cafe.adriel.voyager:voyager-transitions:$voyagerVersion")
-                api("io.github.qdsfdhvh:image-loader:1.5.3")
+                api("io.github.qdsfdhvh:image-loader:1.6.3")
 
             }
         }

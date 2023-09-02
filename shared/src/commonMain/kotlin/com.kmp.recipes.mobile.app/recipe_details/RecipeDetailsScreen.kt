@@ -1,5 +1,6 @@
 package com.kmp.recipes.mobile.app.recipe_details
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -24,6 +25,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.model.rememberScreenModel
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
@@ -32,6 +34,7 @@ import com.kmp.recipes.mobile.app.Dimens
 import com.kmp.recipes.mobile.app.common.SecondaryAppBar
 import com.kmp.recipes.mobile.app.common.data.Recipe
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
+import com.seiko.imageloader.rememberAsyncImagePainter
 import dev.icerock.moko.resources.compose.painterResource
 import dev.icerock.moko.resources.compose.stringResource
 
@@ -50,11 +53,12 @@ class RecipeDetailsScreen(private val recipe: Recipe) : Screen {
                         modifier = Modifier.wrapContentHeight().fillMaxWidth(),
                         contentAlignment = Alignment.Center
                     ) {
-//                        Image(
-//                            modifier = Modifier.size(300.dp),
-//                            painter = painterResource(recipe.image),
-//                            contentDescription = null,
-//                        )
+                        val painter = rememberAsyncImagePainter(recipe.image)
+                        Image(
+                            modifier = Modifier.size(300.dp),
+                            painter = painter,
+                            contentDescription = null,
+                        )
                     }
                 }
             },

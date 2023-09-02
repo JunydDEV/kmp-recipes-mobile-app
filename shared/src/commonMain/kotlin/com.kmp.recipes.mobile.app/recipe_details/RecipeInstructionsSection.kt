@@ -31,16 +31,8 @@ fun RecipeInstructionsSection(recipe: Recipe, navigator: Navigator) {
             color = MaterialTheme.colorScheme.primary
         )
 
-        val instructions = listOf(
-            "Place the shrimp in the work bowl of a food processor",
-            "Process until the shrimp are finely ground",
-            "Set aside in a large bowl",
-            "Working in batches, process the ground beef to a fine grind, and set aside with the shrimp",
-            "Combine the shrimp and ground beef with ginger, shallot, green onions, napa cabbage, soy sauce, sesame oil, salt and pepper, and white sugar, and mix the ingredients until thoroughly combined",
-        )
-
         Column(modifier = Modifier.padding(top = Dimens.smallSpacing)) {
-
+            val instructions = recipe.instructions!!
             repeat(instructions.size) {
                 Text(
                     modifier = Modifier.padding(bottom = Dimens.smallSpacing),

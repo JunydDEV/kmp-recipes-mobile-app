@@ -11,7 +11,10 @@ import com.kmp.recipes.mobile.app.theme.AppTheme
 @Composable
 fun RecipesApp() {
     AppTheme {
-        Navigator(MainScreen()) { navigator ->
+        Navigator(
+            screen = MainScreen(),
+            key = "MainScreenKey"
+        ) { navigator ->
             SlideTransition(navigator)
         }
     }

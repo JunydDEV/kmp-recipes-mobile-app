@@ -17,47 +17,24 @@ import dev.icerock.moko.resources.compose.stringResource
 @Composable
 fun SearchRecipesList(searchQuery: String, navigator: Navigator) {
     val title = stringResource(SharedRes.strings.search_results_label)
-    val recipes = listOf(
-        Recipe(
-            image = "",
-            label = stringResource(SharedRes.strings.popular_recipe_one_title),
-            description = stringResource(SharedRes.strings.popular_recipe_one_description),
-            duration = stringResource(SharedRes.strings.popular_recipe_one_duration),
-            level = stringResource(SharedRes.strings.popular_recipe_one_difficulty_level)
-        ),
-        Recipe(
-            image = "",
-            label = stringResource(SharedRes.strings.popular_recipe_two_title),
-            description = stringResource(SharedRes.strings.popular_recipe_two_description),
-            duration = stringResource(SharedRes.strings.popular_recipe_two_duration),
-            level = stringResource(SharedRes.strings.popular_recipe_two_difficulty_level)
-        ),
-        Recipe(
-            image = "",
-            label = stringResource(SharedRes.strings.popular_recipe_three_title),
-            description = stringResource(SharedRes.strings.popular_recipe_three_description),
-            duration = stringResource(SharedRes.strings.popular_recipe_three_duration),
-            level = stringResource(SharedRes.strings.popular_recipe_three_difficulty_level)
-        )
-    )
-
-    val result = recipes.filter { it.label.contains(searchQuery, ignoreCase = true) }
-    if (result.isEmpty()) {
-        SearchResultsNotFound()
-    } else {
-        Column(modifier = Modifier.fillMaxSize()) {
-            Text(
-                modifier = Modifier.padding(
-                    top = Dimens.defaultSpacing,
-                    start = Dimens.defaultSpacing,
-                    end = Dimens.defaultSpacing
-                ),
-                text = title,
-                style = MaterialTheme.typography.titleLarge,
-                color = MaterialTheme.colorScheme.primary
-            )
-
-            RecipesListing(recipesList = result, navigator = navigator)
-        }
-    }
+//
+//    val result = recipes.filter { it.label.contains(searchQuery, ignoreCase = true) }
+//    if (result.isEmpty()) {
+//        SearchResultsNotFound()
+//    } else {
+//        Column(modifier = Modifier.fillMaxSize()) {
+//            Text(
+//                modifier = Modifier.padding(
+//                    top = Dimens.defaultSpacing,
+//                    start = Dimens.defaultSpacing,
+//                    end = Dimens.defaultSpacing
+//                ),
+//                text = title,
+//                style = MaterialTheme.typography.titleLarge,
+//                color = MaterialTheme.colorScheme.primary
+//            )
+//
+//            RecipesListing(recipesList = result, navigator = navigator)
+//        }
+//    }
 }

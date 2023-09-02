@@ -1,6 +1,5 @@
 package com.kmp.recipes.mobile.app.common
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,13 +19,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
-import androidx.compose.ui.layout.ContentScale
 import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.Dimens
 import com.kmp.recipes.mobile.app.common.data.Recipe
 import com.kmp.recipes.mobile.app.recipe_details.RecipeDetailsScreen
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
-import com.seiko.imageloader.rememberAsyncImagePainter
 import dev.icerock.moko.resources.compose.painterResource
 import dev.icerock.moko.resources.compose.stringResource
 
@@ -54,12 +51,10 @@ fun RecipesListing(recipesList: List<Recipe>, navigator: Navigator) {
                             .padding(top = Dimens.smallSpacing)
                             .clipToBounds(),
                     ) {
-                        val painter = rememberAsyncImagePainter(recipesList[it].image)
-                        Image(
+                        ImageX(
                             modifier = Modifier.fillMaxSize(),
-                            painter = painter,
-                            contentDescription = null,
-                            contentScale = ContentScale.Crop
+                            url = recipesList[it].image,
+                            showOverlay = true
                         )
                     }
                     Text(

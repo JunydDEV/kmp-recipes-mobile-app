@@ -24,6 +24,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
@@ -40,7 +41,7 @@ import dev.icerock.moko.resources.compose.stringResource
 @Composable
 fun MainTopBar(value: String, onChangeValue: (String) -> Unit) {
 
-    val searchBarVisibilityState = remember { mutableStateOf(false) }
+    val searchBarVisibilityState = rememberSaveable { mutableStateOf(false) }
 
     Column(modifier = Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.primary)) {
         TopAppBar(

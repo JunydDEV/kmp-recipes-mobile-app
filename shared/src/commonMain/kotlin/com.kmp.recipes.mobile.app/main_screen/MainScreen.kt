@@ -1,20 +1,24 @@
 package com.kmp.recipes.mobile.app.main_screen
 
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import cafe.adriel.voyager.core.model.rememberScreenModel
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
+import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.navigator.currentOrThrow
+import com.kmp.recipes.mobile.app.common.data.RecipesData
 import com.kmp.recipes.mobile.app.main_screen.search_recipes.SearchRecipesList
 import com.kmp.recipes.mobile.app.main_screen.sections.DiscoverRecipesSection
 import com.kmp.recipes.mobile.app.main_screen.sections.MainTopBar
@@ -29,7 +33,9 @@ class MainScreen : Screen {
     override fun Content() {
         val navigator = LocalNavigator.currentOrThrow
         val mainScreenModel = rememberScreenModel { MainScreenModel() }
-        val searchFieldState = remember { mutableStateOf("") }
+        val searchFieldState = rememberSaveable { mutableStateOf("") }
+        val recipesDataState = mainScreenModel.getRecipesData().readTextAsState()
+        val recipesDataFlow = mainScreenModel.recipesDataFlow.collectAsState()
 
         Scaffold(
             modifier = Modifier.fillMaxSize(),
@@ -39,27 +45,42 @@ class MainScreen : Screen {
                 }
             }
         ) {
-            val recipesDataState = mainScreenModel.getRecipesData().readTextAsState()
             if (recipesDataState.value != null && recipesDataState.value?.isNotEmpty() == true) {
-                val recipesData =
-                    mainScreenModel.serializeRecipesTextToRecipesDataModel(recipesDataState.value)
+                LaunchedEffect(key1 = null) {
+                    mainScreenModel.serializeJsonToRecipesData(recipesDataState.value)
+                }
 
-                val mainModifier = Modifier
-                    .verticalScroll(rememberScrollState())
-                    .fillMaxSize()
-                    .padding(it)
-
-                Column(modifier = mainModifier) {
-                    if (searchFieldState.value.isNotEmpty() && searchFieldState.value.length > 3) {
+                if (recipesDataFlow.value != null) {
+                    if (searchFieldState.value.isNotEmpty()) {
                         SearchRecipesList(searchFieldState.value, navigator)
                     } else {
-                        DiscoverRecipesSection(navigator)
-                        RecipesCategories(navigator)
-                        PopularRecipes(
-                            recipes = mainScreenModel.getPopularRecipesList(recipesData),
-                            navigator = navigator)
+                        HomeScreenDefaultContent(it, navigator,
+                            recipesDataFlow.value!!, mainScreenModel)
                     }
                 }
+            }
+        }
+    }
+
+    @Composable
+    private fun HomeScreenDefaultContent(
+        it: PaddingValues,
+        navigator: Navigator,
+        recipesData: RecipesData,
+        mainScreenModel: MainScreenModel
+    ) {
+        LazyColumn(modifier = Modifier.fillMaxWidth().padding(it)) {
+            item {
+                DiscoverRecipesSection(navigator)
+            }
+            item {
+                RecipesCategories(navigator, recipesData)
+            }
+            item {
+                PopularRecipes(
+                    recipes = mainScreenModel.getPopularRecipesList(recipesData),
+                    navigator = navigator
+                )
             }
         }
     }

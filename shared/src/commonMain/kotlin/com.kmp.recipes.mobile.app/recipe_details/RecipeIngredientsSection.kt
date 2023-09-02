@@ -26,6 +26,7 @@ import com.kmp.recipes.mobile.app.Dimens
 import com.kmp.recipes.mobile.app.common.data.Recipe
 import com.kmp.recipes.mobile.app.recipes_listing.RecipesScreen
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
+import com.seiko.imageloader.rememberAsyncImagePainter
 import dev.icerock.moko.resources.compose.painterResource
 import dev.icerock.moko.resources.compose.stringResource
 
@@ -43,18 +44,8 @@ fun RecipeIngredientsSection(recipe: Recipe, navigator: Navigator) {
         Row(
             modifier = Modifier.horizontalScroll(rememberScrollState())
         ) {
-            val categoriesImages = listOf(
-                SharedRes.images.pizza_background_image,
-                SharedRes.images.pasta_background_image,
-                SharedRes.images.steak_background_image
-            )
-            val categoriesNames = listOf(
-                SharedRes.strings.category_pizza,
-                SharedRes.strings.category_pasta,
-                SharedRes.strings.category_steak
-            )
-
-            repeat(categoriesImages.size) {
+            val ingredients = recipe.ingredients
+            repeat(ingredients.size) {
                 Box(
                     modifier = Modifier.size(
                         width = Dimens.ingredientImageWidth,
@@ -62,11 +53,12 @@ fun RecipeIngredientsSection(recipe: Recipe, navigator: Navigator) {
                     ).padding(top = Dimens.smallSpacing),
                     contentAlignment = Alignment.BottomStart
                 ) {
+                    val painter = rememberAsyncImagePainter(ingredients[it].image)
                     Image(
                         modifier = Modifier.aspectRatio(Dimens.ingredientImageRatio)
                             .fillMaxSize()
                             .clip(RoundedCornerShape(Dimens.categoryImageRadius)),
-                        painter = painterResource(categoriesImages[it]),
+                        painter = painter,
                         contentScale = ContentScale.Crop,
                         contentDescription = stringResource(SharedRes.strings.recipe_category_image_description)
                     )
@@ -76,7 +68,7 @@ fun RecipeIngredientsSection(recipe: Recipe, navigator: Navigator) {
                             start = Dimens.smallSpacing,
                             bottom = Dimens.smallSpacing
                         ),
-                        text = stringResource(categoriesNames[it]),
+                        text = ingredients[it].label,
                         style = MaterialTheme.typography.bodyLarge,
                         color = MaterialTheme.colorScheme.onPrimary
                     )

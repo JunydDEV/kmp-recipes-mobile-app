@@ -23,7 +23,7 @@ import dev.icerock.moko.resources.compose.stringResource
 fun PopularRecipes(recipes: List<Recipe>, navigator: Navigator) {
 
     val title = stringResource(SharedRes.strings.popular_recipes_section_header)
-    Column(modifier = Modifier.fillMaxSize()) {
+    Column(modifier = Modifier.fillMaxWidth()) {
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
@@ -46,7 +46,7 @@ fun PopularRecipes(recipes: List<Recipe>, navigator: Navigator) {
                     start = Dimens.defaultSpacing,
                     end = Dimens.defaultSpacing
                 ).clickable {
-                    navigator.push(RecipesScreen(title))
+                    navigator.push(RecipesScreen(title, recipes))
                 },
                 text = stringResource(SharedRes.strings.title_view_all_recipes),
                 style = MaterialTheme.typography.bodyLarge,
