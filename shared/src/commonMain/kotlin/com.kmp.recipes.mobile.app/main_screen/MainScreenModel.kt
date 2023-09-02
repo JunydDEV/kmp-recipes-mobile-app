@@ -11,7 +11,6 @@ import kotlinx.serialization.json.Json
 class MainScreenModel: ScreenModel {
 
     private val _recipesDataFlow = MutableStateFlow<RecipesData?>(null)
-    val recipesDataFlow = _recipesDataFlow
 
     fun getRecipesData(): FileResource {
         return SharedRes.files.recipes_fake_data
@@ -19,8 +18,8 @@ class MainScreenModel: ScreenModel {
 
     private val json = Json { ignoreUnknownKeys = true }
 
-    fun serializeJsonToRecipesData(value: String?) {
-        _recipesDataFlow.value = json.decodeFromString(value ?: EMPTY_JSON)
+    fun serializeJsonToRecipesData(value: String?): RecipesData {
+        return json.decodeFromString(value ?: EMPTY_JSON)
     }
 
     fun getPopularRecipesList(recipesData: RecipesData): List<Recipe> {
