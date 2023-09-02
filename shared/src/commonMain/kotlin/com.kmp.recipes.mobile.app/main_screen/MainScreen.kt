@@ -44,18 +44,21 @@ class MainScreen : Screen {
                     searchFieldState.value = it
                 }
             }
-        ) {
-            if (recipesDataState.value != null && recipesDataState.value?.isNotEmpty() == true) {
-                LaunchedEffect(key1 = null) {
+        ) { paddingValue ->
+            if (recipesDataState.value?.isNotEmpty() == true) {
+                LaunchedEffect(Unit) {
                     mainScreenModel.serializeJsonToRecipesData(recipesDataState.value)
                 }
-
-                if (recipesDataFlow.value != null) {
+                recipesDataFlow.value?.let {
                     if (searchFieldState.value.isNotEmpty()) {
                         SearchRecipesList(searchFieldState.value, navigator)
                     } else {
-                        HomeScreenDefaultContent(it, navigator,
-                            recipesDataFlow.value!!, mainScreenModel)
+                        HomeScreenDefaultContent(
+                            paddingValues = paddingValue,
+                            navigator = navigator,
+                            recipesData = it,
+                            mainScreenModel = mainScreenModel
+                        )
                     }
                 }
             }
@@ -64,12 +67,12 @@ class MainScreen : Screen {
 
     @Composable
     private fun HomeScreenDefaultContent(
-        it: PaddingValues,
+        paddingValues: PaddingValues,
         navigator: Navigator,
         recipesData: RecipesData,
         mainScreenModel: MainScreenModel
     ) {
-        LazyColumn(modifier = Modifier.fillMaxWidth().padding(it)) {
+        LazyColumn(modifier = Modifier.fillMaxWidth().padding(paddingValues)) {
             item {
                 DiscoverRecipesSection(navigator)
             }

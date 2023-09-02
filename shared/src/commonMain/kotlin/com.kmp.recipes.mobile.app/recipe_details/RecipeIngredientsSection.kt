@@ -12,17 +12,21 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.layout.ContentScale
 import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.Dimens
+import com.kmp.recipes.mobile.app.common.ImageX
 import com.kmp.recipes.mobile.app.common.data.Recipe
 import com.kmp.recipes.mobile.app.recipes_listing.RecipesScreen
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
@@ -46,32 +50,30 @@ fun RecipeIngredientsSection(recipe: Recipe, navigator: Navigator) {
         ) {
             val ingredients = recipe.ingredients
             repeat(ingredients.size) {
-                Box(
+                Card (
                     modifier = Modifier.size(
                         width = Dimens.ingredientImageWidth,
                         height = Dimens.ingredientImageHeight
-                    ).padding(top = Dimens.smallSpacing),
-                    contentAlignment = Alignment.BottomStart
+                    ).padding(top = Dimens.smallSpacing).clipToBounds(),
                 ) {
-                    val painter = rememberAsyncImagePainter(ingredients[it].image)
-                    Image(
-                        modifier = Modifier.aspectRatio(Dimens.ingredientImageRatio)
-                            .fillMaxSize()
-                            .clip(RoundedCornerShape(Dimens.categoryImageRadius)),
-                        painter = painter,
-                        contentScale = ContentScale.Crop,
-                        contentDescription = stringResource(SharedRes.strings.recipe_category_image_description)
-                    )
+                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                        ImageX(
+                            modifier = Modifier.aspectRatio(Dimens.ingredientImageRatio)
+                                .fillMaxSize()
+                                .clip(RoundedCornerShape(Dimens.categoryImageRadius)),
+                            url = ingredients[it].image,
+                            showOverlay = true,
+                            showProgress = false
+                        )
 
-                    Text(
-                        modifier = Modifier.padding(
-                            start = Dimens.smallSpacing,
-                            bottom = Dimens.smallSpacing
-                        ),
-                        text = ingredients[it].label,
-                        style = MaterialTheme.typography.bodyLarge,
-                        color = MaterialTheme.colorScheme.onPrimary
-                    )
+                        Text(
+                            modifier = Modifier.wrapContentSize()
+                                .padding(start = Dimens.smallSpacing, end = Dimens.smallSpacing),
+                            text = ingredients[it].label,
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = MaterialTheme.colorScheme.onPrimary
+                        )
+                    }
                 }
                 Spacer(Modifier.padding(start = Dimens.smallSpacing))
             }

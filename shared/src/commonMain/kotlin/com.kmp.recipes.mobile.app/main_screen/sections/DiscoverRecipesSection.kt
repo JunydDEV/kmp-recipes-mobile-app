@@ -49,7 +49,6 @@ fun DiscoverRecipesSection(navigator: Navigator) {
         )
 
         RecipesPager(navigator)
-
     }
 }
 

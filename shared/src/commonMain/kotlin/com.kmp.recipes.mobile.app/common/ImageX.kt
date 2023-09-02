@@ -25,7 +25,8 @@ fun ImageX(
     modifier: Modifier,
     url: String,
     showOverlay: Boolean = false,
-    overlayColor: Color = MaterialTheme.colorScheme.primary
+    overlayColor: Color = MaterialTheme.colorScheme.primary,
+    showProgress: Boolean = true
 ) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         val imageRequest = ImageRequest { data(url) }
@@ -33,11 +34,11 @@ fun ImageX(
         val action by rememberImageAction(imageRequestState)
         when (val currentAction = action) {
             is ImageEvent.StartWithFetch -> {
-                ShowProgressIndicator()
+                ShowProgressIndicator(showProgress)
             }
 
             is ImageEvent.StartWithMemory -> {
-                ShowProgressIndicator()
+                ShowProgressIndicator(showProgress)
             }
 
             is ImageResult.Bitmap -> {
@@ -61,9 +62,11 @@ fun ImageX(
 }
 
 @Composable
-private fun ShowProgressIndicator() {
-    CircularProgressIndicator(
-        modifier = Modifier.wrapContentSize(),
-        color = MaterialTheme.colorScheme.secondary
-    )
+private fun ShowProgressIndicator(showProgress: Boolean) {
+    if (showProgress) {
+        CircularProgressIndicator(
+            modifier = Modifier.wrapContentSize(),
+            color = MaterialTheme.colorScheme.secondary
+        )
+    }
 }
