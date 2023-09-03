@@ -29,7 +29,7 @@ import com.kmp.recipes.mobile.app.main_screen.sections.PopularRecipesSection
 import com.kmp.recipes.mobile.app.main_screen.sections.RecipesCategoriesSection
 import dev.icerock.moko.resources.compose.readTextAsState
 
-const val KEY_MAIN_SCREEN = "mainScreenKey"
+private const val KEY_MAIN_SCREEN = "mainScreenKey"
 
 @OptIn(ExperimentalMaterial3Api::class)
 class MainScreen : Screen {

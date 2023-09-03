@@ -13,7 +13,6 @@ fun RecipesApp() {
     AppTheme {
         Navigator(
             screen = MainScreen(),
-            key = "MainScreenKey"
         ) { navigator ->
             SlideTransition(navigator)
         }

@@ -1,20 +1,17 @@
 package com.kmp.recipes.mobile.app.recipe_details
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -25,9 +22,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.model.rememberScreenModel
 import cafe.adriel.voyager.core.screen.Screen
+import cafe.adriel.voyager.core.screen.ScreenKey
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import com.kmp.recipes.mobile.app.Dimens
@@ -35,11 +32,15 @@ import com.kmp.recipes.mobile.app.common.ImageX
 import com.kmp.recipes.mobile.app.common.SecondaryAppBar
 import com.kmp.recipes.mobile.app.data.Recipe
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
-import com.seiko.imageloader.rememberAsyncImagePainter
 import dev.icerock.moko.resources.compose.painterResource
 import dev.icerock.moko.resources.compose.stringResource
 
+private const val KEY_RECIPES_DETAILS_SCREEN = "recipesDetailsScreenKey"
+
 class RecipeDetailsScreen(private val recipe: Recipe) : Screen {
+
+    override val key: ScreenKey
+        get() = KEY_RECIPES_DETAILS_SCREEN
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
