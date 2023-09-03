@@ -52,4 +52,8 @@
     <string name="title_recipes_list">Recipes List</string>
     <string name="title_view_all_recipes">View All</string>
 
+    <string name="title_details">Details</string>
+    <string name="title_instructions">Instructions</string>
+    <string name="title_ingredients">Ingredients</string>
+
 </resources>

@@ -94,12 +94,15 @@ fun QuotesContent(quote: Quote) {
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(Dimens.smallSpacing)
         ) {
-            Spacer(modifier = Modifier.height(2.dp).width(20.dp).background(Color.White))
+            Spacer(
+                modifier = Modifier.height(2.dp).width(20.dp)
+                    .background(MaterialTheme.colorScheme.secondary)
+            )
             Text(
                 modifier = Modifier.width(200.dp),
                 text = quote.author,
                 style = MaterialTheme.typography.bodyLarge,
-                color = MaterialTheme.colorScheme.onPrimary,
+                color = MaterialTheme.colorScheme.secondary,
                 maxLines = 2
             )
         }

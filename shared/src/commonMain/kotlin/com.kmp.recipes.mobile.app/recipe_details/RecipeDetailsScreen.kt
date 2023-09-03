@@ -31,6 +31,7 @@ import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import com.kmp.recipes.mobile.app.Dimens
+import com.kmp.recipes.mobile.app.common.ImageX
 import com.kmp.recipes.mobile.app.common.SecondaryAppBar
 import com.kmp.recipes.mobile.app.data.Recipe
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
@@ -48,17 +49,15 @@ class RecipeDetailsScreen(private val recipe: Recipe) : Screen {
         Scaffold(
             topBar = {
                 Column {
-                    SecondaryAppBar(title = "Details", navigator = navigator)
+                    SecondaryAppBar(
+                        title = stringResource(SharedRes.strings.title_details),
+                        navigator = navigator
+                    )
                     Box(
-                        modifier = Modifier.wrapContentHeight().fillMaxWidth(),
+                        modifier = Modifier.height(Dimens.detailsRecipesImageHeight).fillMaxWidth(),
                         contentAlignment = Alignment.Center
                     ) {
-                        val painter = rememberAsyncImagePainter(recipe.image)
-                        Image(
-                            modifier = Modifier.size(300.dp),
-                            painter = painter,
-                            contentDescription = null,
-                        )
+                        ImageX(modifier = Modifier.fillMaxSize(), url = recipe.image)
                     }
                 }
             },
@@ -67,47 +66,23 @@ class RecipeDetailsScreen(private val recipe: Recipe) : Screen {
             val scrollState = rememberScrollState()
             Box(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .fillMaxHeight()
+                    .fillMaxSize()
                     .padding(it)
                     .background(MaterialTheme.colorScheme.background)
                     .verticalScroll(scrollState)
             ) {
-                Column(modifier = Modifier.fillMaxSize().padding(Dimens.defaultSpacing)) {
-                    Text(
-                        modifier = Modifier.padding(top = Dimens.smallSpacing),
-                        text = recipe.label,
-                        style = MaterialTheme.typography.titleLarge,
-                        color = MaterialTheme.colorScheme.primary,
-                        maxLines = 1
-                    )
+                Column(
+                    modifier = Modifier.fillMaxSize()
+                        .padding(start = Dimens.defaultSpacing, end = Dimens.defaultSpacing),
+                    verticalArrangement = Arrangement.spacedBy(Dimens.smallSpacing)
+                ) {
 
-                    Text(
-                        text = recipe.description,
-                        style = MaterialTheme.typography.bodyLarge,
-                        color = MaterialTheme.colorScheme.primary,
-                    )
-
-                    Row(
-                        modifier = Modifier.padding(
-                            top = Dimens.smallSpacing,
-                            bottom = Dimens.smallSpacing
-                        ),
-                        horizontalArrangement = Arrangement.SpaceBetween
-                    ) {
-                        RecipeCookingDuration(recipe)
-                        Spacer(Modifier.width(Dimens.defaultSpacing))
-                        RecipeDifficultyLevel(recipe)
-                    }
-
-                    Spacer(Modifier.height(Dimens.defaultSpacing))
+                    RecipeTitleAndDescription()
 
                     RecipeIngredientsSection(
                         recipe = recipe,
                         navigator = navigator
                     )
-
-                    Spacer(Modifier.height(Dimens.defaultSpacing))
 
                     RecipeInstructionsSection(
                         recipe = recipe,
@@ -119,18 +94,49 @@ class RecipeDetailsScreen(private val recipe: Recipe) : Screen {
 
         }
     }
+
+    @Composable
+    private fun RecipeTitleAndDescription() {
+        Column(modifier = Modifier.fillMaxWidth().padding(top = Dimens.smallSpacing)) {
+            Text(
+                text = recipe.label,
+                style = MaterialTheme.typography.titleLarge,
+                color = MaterialTheme.colorScheme.primary,
+                maxLines = 1
+            )
+
+            Text(
+                text = recipe.description,
+                style = MaterialTheme.typography.bodyLarge,
+                color = MaterialTheme.colorScheme.primary,
+            )
+
+            Row(
+                modifier = Modifier.padding(
+                    top = Dimens.smallSpacing,
+                    bottom = Dimens.smallSpacing
+                ),
+                horizontalArrangement = Arrangement.spacedBy(Dimens.defaultSpacing)
+            ) {
+                RecipeCookingDuration(recipe)
+                RecipeDifficultyLevel(recipe)
+            }
+        }
+    }
 }
 
 @Composable
 fun RecipeCookingDuration(recipe: Recipe) {
-    Row(verticalAlignment = Alignment.CenterVertically) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(Dimens.smallSpacing)
+    ) {
         Icon(
             modifier = Modifier.size(Dimens.iconSizeMedium),
             painter = painterResource(SharedRes.images.ic_time),
             tint = MaterialTheme.colorScheme.onSecondaryContainer,
             contentDescription = stringResource(SharedRes.strings.recipe_cooking_duration_image)
         )
-        Spacer(Modifier.width(Dimens.smallSpacing))
         Text(
             text = recipe.duration,
             style = MaterialTheme.typography.bodyLarge,

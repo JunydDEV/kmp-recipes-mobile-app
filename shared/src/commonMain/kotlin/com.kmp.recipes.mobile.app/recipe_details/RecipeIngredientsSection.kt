@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -40,7 +41,7 @@ fun RecipeIngredientsSection(recipe: Recipe, navigator: Navigator) {
         modifier = Modifier.fillMaxWidth(),
     ) {
         Text(
-            text = "Ingredients",
+            text = stringResource(SharedRes.strings.title_ingredients),
             style = MaterialTheme.typography.titleLarge,
             color = MaterialTheme.colorScheme.primary
         )
@@ -50,11 +51,11 @@ fun RecipeIngredientsSection(recipe: Recipe, navigator: Navigator) {
         ) {
             val ingredients = recipe.ingredients
             repeat(ingredients.size) {
-                Card (
+                Card(
                     modifier = Modifier.size(
                         width = Dimens.ingredientImageWidth,
                         height = Dimens.ingredientImageHeight
-                    ).padding(top = Dimens.smallSpacing).clipToBounds(),
+                    ).padding(top = Dimens.smallSpacing),
                 ) {
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                         ImageX(

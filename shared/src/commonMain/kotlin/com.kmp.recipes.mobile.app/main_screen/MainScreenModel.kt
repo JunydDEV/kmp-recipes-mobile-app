@@ -22,7 +22,10 @@ class MainScreenModel: ScreenModel {
     }
 
     fun getPopularRecipesList(recipesData: RecipesData): List<Recipe> {
-        return recipesData.recipesList.filter { recipesData.recipesList.contains(it) }
+        val popularRecipesIds = recipesData.sections.popularRecipes.recipes
+        return recipesData.recipesList.filter {
+            popularRecipesIds.contains(it.id)
+        }
     }
 
     fun findRecipesByCategoryId(category: Category, recipesList: List<Recipe>): List<Recipe> {

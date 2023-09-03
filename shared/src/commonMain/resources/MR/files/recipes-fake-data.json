@@ -30,29 +30,56 @@
     "categories": [
       {
         "id": "c1",
-        "image": "https://images.pexels.com/photos/708587/pexels-photo-708587.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+        "image": "https://images.pexels.com/photos/708587/pexels-photo-708587.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
         "label": "Pizza",
         "recipes": [
-          "t1",
-          "t2"
+          "pizza1",
+          "pizza2",
+          "pizza3",
+          "pizza4",
+          "pizza5",
+          "pizza6",
+          "pizza6",
+          "pizza7",
+          "pizza8",
+          "pizza9",
+          "pizza10"
         ]
       },
       {
         "id": "c2",
-        "image": "https://images.pexels.com/photos/6565923/pexels-photo-6565923.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+        "image": "https://images.pexels.com/photos/6565923/pexels-photo-6565923.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
         "label": "Pasta",
         "recipes": [
-          "t3",
-          "t4"
+          "pasta1",
+          "pasta2",
+          "pasta3",
+          "pasta4",
+          "pasta5",
+          "pasta6",
+          "pasta6",
+          "pasta7",
+          "pasta8",
+          "pasta9",
+          "pasta10"
         ]
       },
       {
         "id": "c3",
-        "image": "https://images.pexels.com/photos/299348/pexels-photo-299348.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
+        "image": "https://images.pexels.com/photos/299348/pexels-photo-299348.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
         "label": "Steak",
         "recipes": [
-          "t4",
-          "t5"
+          "steak1",
+          "steak2",
+          "steak3",
+          "steak4",
+          "steak5",
+          "steak6",
+          "steak6",
+          "steak7",
+          "steak8",
+          "steak9",
+          "steak10"
         ]
       }
     ],
@@ -60,228 +87,1415 @@
       "id": "_popular_recipes",
       "label": "Popular",
       "recipes": [
-        "t1",
-        "t2",
-        "t3",
-        "t4",
-        "t5"
+        "pizza1",
+        "pizza4",
+        "pasta1",
+        "pasta3",
+        "steak1",
+        "steak5"
       ]
     }
   },
   "recipes": [
     {
-      "id": "t1",
-      "label": "Golden Turmeric Latter",
-      "image": "https://images.pexels.com/photos/2159067/pexels-photo-2159067.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-      "description": "A warm and soothing turmeric latte with a hint of spice.",
-      "instructions": [
-        "In a saucepan, heat 1 cup of milk (dairy or plant-based) over medium heat.",
-        "Add 1/2 teaspoon ground turmeric, 1/4 teaspoon ground cinnamon, a pinch of black pepper, and a pinch of ground ginger.",
-        "Whisk the mixture until well combined and heated through.",
-        "Sweeten with honey or maple syrup to taste.",
-        "Pour into a mug and enjoy your golden turmeric latte!"
-      ],
+      "id": "pizza1",
+      "label": "Margherita Pizza",
+      "image": "https://images.pexels.com/photos/14391207/pexels-photo-14391207.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
       "ingredients": [
         {
-          "image": "https://images.pexels.com/photos/1435706/pexels-photo-1435706.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Milk",
-          "quantity": "1 Cup"
+          "image": "https://images.pexels.com/photos/784636/pexels-photo-784636.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Pizza dough",
+          "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/6220707/pexels-photo-6220707.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Turmeric",
-          "quantity": "1/2 Teaspoon"
+          "image": "https://images.pexels.com/photos/1618943/pexels-photo-1618943.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Tomato sauce",
+          "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/301669/pexels-photo-301669.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Cinnamon",
-          "quantity": "1/4 Teaspoon"
+          "image": "https://images.pexels.com/photos/16134595/pexels-photo-16134595/free-photo-of-appetizer-with-cheese.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Mozzarella cheese",
+          "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/10487732/pexels-photo-10487732.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Black Pepper",
-          "quantity": "1 Pinch"
+          "image": "https://images.pexels.com/photos/3816343/pexels-photo-3816343.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Basil leaves",
+          "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/33260/honey-sweet-syrup-organic.jpg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Honey",
-          "quantity": "1 Teaspoon"
+          "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Olive oil",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/39069/pepper-pepper-mill-pfefferkorn-pepper-ground-39069.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Salt and pepper",
+          "quantity": ""
         }
       ],
-      "duration": "10 minutes",
-      "level": "Easy"
-    },
-    {
-      "id": "t2",
-      "label": "Avocado Toast with a Twist",
-      "image": "https://images.pexels.com/photos/2067423/pexels-photo-2067423.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-      "description": "Upgrade your avocado toast with a variety of delicious toppings.",
       "instructions": [
-        "Toast two slices of whole-grain bread until crispy.",
-        "Mash a ripe avocado and spread it evenly on the toasted bread slices.",
-        "Top one slice with sliced cherry tomatoes and a drizzle of balsamic glaze.",
-        "Top the other slice with smoked salmon, capers, and fresh dill.",
-        "Season both toasts with salt, black pepper, and red pepper flakes.",
-        "Serve your upgraded avocado toasts for a satisfying breakfast!"
-      ],
-      "ingredients": [
-        {
-          "image": "https://images.pexels.com/photos/6605209/pexels-photo-6605209.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Wholegrain Bread",
-          "quantity": "2 Slices"
-        },
-        {
-          "image": "https://images.pexels.com/photos/557659/pexels-photo-557659.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Avocado",
-          "quantity": "1 rip"
-        },
-        {
-          "image": "https://images.pexels.com/photos/533309/pexels-photo-533309.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Cherry Tomatoes",
-          "quantity": "2 Sliced"
-        },
-        {
-          "image": "https://images.pexels.com/photos/10487732/pexels-photo-10487732.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Black Pepper",
-          "quantity": "1 Pinch"
-        },
-        {
-          "image": "https://images.pexels.com/photos/33260/honey-sweet-syrup-organic.jpg",
-          "label": "Honey",
-          "quantity": "1 Teaspoon"
-        }
+        "Preheat your oven to its highest temperature.",
+        "Roll out the pizza dough into a round shape.",
+        "Spread a thin layer of tomato sauce over the dough.",
+        "Place fresh mozzarella slices evenly on top of the sauce.",
+        "Add fresh basil leaves.",
+        "Drizzle with olive oil, and season with salt and pepper.",
+        "Bake in the preheated oven until the crust is golden and the cheese is bubbly.",
+        "Slice and serve."
       ],
       "duration": "15 minutes",
-      "level": "Easy"
+      "level": "Easy",
+      "description": "A classic Margherita pizza with a thin crust, tomato sauce, fresh mozzarella, and aromatic basil leaves. It's simple yet bursting with flavor."
     },
     {
-      "id": "t3",
-      "label": "Vegan Chickpea Buddha Bowl",
-      "image": "https://images.pexels.com/photos/6632285/pexels-photo-6632285.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-      "description": "A nourishing and colorful vegan bowl packed with nutrients.",
-      "instructions": [
-        "Cook 1 cup of quinoa according to package instructions.",
-        "In a bowl, toss together cooked quinoa, cooked chickpeas, roasted sweet potatoes, sautéed kale, and sliced avocado.",
-        "Drizzle with tahini dressing and sprinkle with pumpkin seeds.",
-        "Garnish with microgreens for a fresh touch.",
-        "Enjoy your vibrant and wholesome vegan chickpea Buddha bowl!"
-      ],
+      "id": "pizza2",
+      "label": "Pepperoni Pizza",
+      "image": "https://images.pexels.com/photos/842519/pexels-photo-842519.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
       "ingredients": [
         {
-          "image": "https://images.pexels.com/photos/1435706/pexels-photo-1435706.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Milk",
-          "quantity": "1 Cup"
+          "image": "https://images.pexels.com/photos/784636/pexels-photo-784636.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Pizza dough",
+          "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/6220707/pexels-photo-6220707.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Turmeric",
-          "quantity": "1/2 Teaspoon"
+          "image": "https://images.pexels.com/photos/1618943/pexels-photo-1618943.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Tomato sauce",
+          "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/301669/pexels-photo-301669.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Cinnamon",
-          "quantity": "1/4 Teaspoon"
+          "image": "https://images.pexels.com/photos/16134595/pexels-photo-16134595/free-photo-of-appetizer-with-cheese.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Mozzarella cheese",
+          "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/10487732/pexels-photo-10487732.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Black Pepper",
-          "quantity": "1 Pinch"
+          "image": "https://images.pexels.com/photos/3816343/pexels-photo-3816343.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Basil leaves",
+          "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/33260/honey-sweet-syrup-organic.jpg",
-          "label": "Honey",
-          "quantity": "1 Teaspoon"
+          "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Olive oil",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/39069/pepper-pepper-mill-pfefferkorn-pepper-ground-39069.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Salt and pepper",
+          "quantity": ""
         }
+      ],
+      "instructions": [
+        "Preheat your oven to its highest temperature.",
+        "Roll out the pizza dough into a round shape.",
+        "Spread a layer of tomato sauce over the dough.",
+        "Add mozzarella cheese and arrange pepperoni slices on top.",
+        "Drizzle with olive oil and sprinkle with dried oregano.",
+        "Bake until the crust is golden and the pepperoni is crisp.",
+        "Slice and enjoy."
+      ],
+      "duration": "20 minutes",
+      "level": "Easy",
+      "description": "A beloved classic, pepperoni pizza features a flavorful tomato sauce, gooey mozzarella cheese, and crispy pepperoni slices on a perfectly baked crust."
+    },
+    {
+      "id": "pizza3",
+      "label": "Vegetarian Pizza",
+      "image": "https://images.pexels.com/photos/5593192/pexels-photo-5593192.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/784636/pexels-photo-784636.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Pizza dough",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/1618943/pexels-photo-1618943.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Tomato sauce",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/16134595/pexels-photo-16134595/free-photo-of-appetizer-with-cheese.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Mozzarella cheese",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/3816343/pexels-photo-3816343.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Basil leaves",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Olive oil",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/39069/pepper-pepper-mill-pfefferkorn-pepper-ground-39069.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Salt and pepper",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Preheat your oven to its highest temperature.",
+        "Roll out the pizza dough into a round shape.",
+        "Spread tomato sauce evenly over the dough.",
+        "Layer mozzarella cheese, bell peppers, red onion, mushrooms, and black olives.",
+        "Drizzle with olive oil and add fresh basil leaves.",
+        "Bake until the crust is golden and the cheese is bubbly.",
+        "Slice and savor the veggie goodness."
+      ],
+      "duration": "25 minutes",
+      "level": "Moderate",
+      "description": "A delicious and colorful vegetarian pizza with a medley of fresh vegetables, gooey cheese, and fragrant basil leaves on a crisp crust."
+    },
+    {
+      "id": "pizza4",
+      "label": "Hawaiian Pizza",
+      "image": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/784636/pexels-photo-784636.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Pizza dough",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/1618943/pexels-photo-1618943.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Tomato sauce",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/16134595/pexels-photo-16134595/free-photo-of-appetizer-with-cheese.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Mozzarella cheese",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/3816343/pexels-photo-3816343.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Basil leaves",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Olive oil",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/39069/pepper-pepper-mill-pfefferkorn-pepper-ground-39069.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Salt and pepper",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Preheat your oven to its highest temperature.",
+        "Roll out the pizza dough into a round shape.",
+        "Spread a layer of tomato sauce over the dough.",
+        "Add mozzarella cheese, ham slices, and pineapple chunks.",
+        "Drizzle with olive oil.",
+        "Bake until the crust is golden and the toppings are sizzling.",
+        "Slice and enjoy the sweet and savory combination."
+      ],
+      "duration": "20 minutes",
+      "level": "Easy",
+      "description": "A tropical delight, Hawaiian pizza features tomato sauce, mozzarella, ham, and pineapple, creating a perfect balance of sweet and savory flavors."
+    },
+    {
+      "id": "pizza5",
+      "label": "BBQ Chicken Pizza",
+      "image": "https://images.pexels.com/photos/5017828/pexels-photo-5017828.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/784636/pexels-photo-784636.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Pizza dough",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/1618943/pexels-photo-1618943.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Tomato sauce",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/16134595/pexels-photo-16134595/free-photo-of-appetizer-with-cheese.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Mozzarella cheese",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/3816343/pexels-photo-3816343.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Basil leaves",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Olive oil",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/39069/pepper-pepper-mill-pfefferkorn-pepper-ground-39069.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Salt and pepper",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Preheat your oven to its highest temperature.",
+        "Roll out the pizza dough into a round shape.",
+        "Spread BBQ sauce evenly over the dough.",
+        "Layer mozzarella cheese, shredded chicken, and red onion slices.",
+        "Drizzle with olive oil and add fresh cilantro leaves.",
+        "Bake until the crust is golden and the toppings are bubbling.",
+        "Slice and savor the smoky, tangy flavors."
+      ],
+      "duration": "25 minutes",
+      "level": "Moderate",
+      "description": "BBQ chicken pizza boasts a tangy BBQ sauce base, tender chicken, red onion, and fresh cilantro on a crispy crust, offering a burst of smoky flavor."
+    },
+    {
+      "id": "pizza6",
+      "label": "Supreme Pizza",
+      "image": "https://images.pexels.com/photos/803290/pexels-photo-803290.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/784636/pexels-photo-784636.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Pizza dough",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/1618943/pexels-photo-1618943.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Tomato sauce",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/16134595/pexels-photo-16134595/free-photo-of-appetizer-with-cheese.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Mozzarella cheese",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/3816343/pexels-photo-3816343.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Basil leaves",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Olive oil",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/39069/pepper-pepper-mill-pfefferkorn-pepper-ground-39069.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Salt and pepper",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Preheat your oven to its highest temperature.",
+        "Roll out the pizza dough into a round shape.",
+        "Spread tomato sauce evenly over the dough.",
+        "Layer mozzarella cheese, pepperoni, sausage, bell peppers, black olives, mushrooms, and red onion.",
+        "Drizzle with olive oil and sprinkle with dried oregano.",
+        "Bake until the crust is golden and the toppings are sizzling.",
+        "Slice and enjoy the supreme combination of flavors."
       ],
       "duration": "30 minutes",
-      "level": "Intermediate"
+      "level": "Moderate",
+      "description": "The supreme pizza is a hearty, flavor-packed delight, featuring a variety of toppings including pepperoni, sausage, bell peppers, olives, mushrooms, and more."
     },
     {
-      "id": "t4",
-      "label": "Crispy Baked Cauliflower Bites",
-      "image": "https://images.pexels.com/photos/5764069/pexels-photo-5764069.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-      "description": "Irresistibly crispy and flavorful baked cauliflower bites.",
-      "instructions": [
-        "Preheat the oven to 425°F (220°C) and line a baking sheet with parchment paper.",
-        "In a bowl, whisk together 1 cup of flour, 1 teaspoon paprika, 1/2 teaspoon garlic powder, 1/2 teaspoon onion powder, salt, and black pepper.",
-        "Dip cauliflower florets into a mixture of 1 cup non-dairy milk and 2 tablespoons hot sauce.",
-        "Dredge each floret in the flour mixture until coated and place on the baking sheet.",
-        "Bake for 20-25 minutes, flipping halfway through, until the cauliflower is crispy and golden.",
-        "Serve your crispy baked cauliflower bites with your favorite dipping sauce!"
-      ],
+      "id": "pizza7",
+      "label": "White Pizza with Spinach and Ricotta",
+      "image": "https://images.pexels.com/photos/2271194/pexels-photo-2271194.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
       "ingredients": [
         {
-          "image": "https://images.pexels.com/photos/6605209/pexels-photo-6605209.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Wholegrain Bread",
-          "quantity": "2 Slices"
+          "image": "https://images.pexels.com/photos/784636/pexels-photo-784636.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Pizza dough",
+          "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/557659/pexels-photo-557659.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Avocado",
-          "quantity": "1 rip"
+          "image": "https://images.pexels.com/photos/1618943/pexels-photo-1618943.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Tomato sauce",
+          "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/533309/pexels-photo-533309.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Cherry Tomatoes",
-          "quantity": "2 Sliced"
+          "image": "https://images.pexels.com/photos/16134595/pexels-photo-16134595/free-photo-of-appetizer-with-cheese.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Mozzarella cheese",
+          "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/10487732/pexels-photo-10487732.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Black Pepper",
-          "quantity": "1 Pinch"
+          "image": "https://images.pexels.com/photos/3816343/pexels-photo-3816343.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Basil leaves",
+          "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/33260/honey-sweet-syrup-organic.jpg",
-          "label": "Honey",
-          "quantity": "1 Teaspoon"
+          "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Olive oil",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/39069/pepper-pepper-mill-pfefferkorn-pepper-ground-39069.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Salt and pepper",
+          "quantity": ""
         }
       ],
-      "duration": "40 minutes",
-      "level": "Intermediate"
+      "instructions": [
+        "Preheat your oven to its highest temperature.",
+        "Roll out the pizza dough into a round shape.",
+        "Brush olive oil over the dough.",
+        "Spread mozzarella cheese evenly over the dough.",
+        "Add dollops of ricotta cheese, fresh spinach leaves, and minced garlic.",
+        "Season with salt and pepper.",
+        "Bake until the crust is golden and the cheeses are bubbling.",
+        "Slice and savor the creamy, garlicky goodness."
+      ],
+      "duration": "20 minutes",
+      "level": "Moderate",
+      "description": "Indulge in the simplicity of white pizza with creamy ricotta, mozzarella, fresh spinach, and a hint of garlic on a golden crust."
     },
     {
-      "id": "t5",
-      "label": "Blueberry Chia Seed Pudding",
-      "image": "https://images.pexels.com/photos/13689785/pexels-photo-13689785.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-      "description": "A delightful and nutritious chia seed pudding bursting with blueberries.",
-      "instructions": [
-        "In a bowl, mix 1/4 cup chia seeds, 1 cup almond milk, 1 tablespoon maple syrup, and a splash of vanilla extract.",
-        "Stir well and let it sit for 10 minutes, then stir again to break up any clumps.",
-        "Refrigerate the mixture for at least 2 hours or overnight, allowing the chia seeds to absorb the liquid and thicken.",
-        "In a blender, blend 1/2 cup blueberries until smooth to create a blueberry compote.",
-        "Layer the chia seed pudding and blueberry compote in serving glasses.",
-        "Top with fresh blueberries and a drizzle of honey.",
-        "Savor your delicious and nutritious blueberry chia seed pudding!"
-      ],
+      "id": "pizza8",
+      "label": "Buffalo Chicken Pizza",
+      "image": "https://images.pexels.com/photos/11485190/pexels-photo-11485190.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
       "ingredients": [
         {
-          "image": "https://images.pexels.com/photos/1435706/pexels-photo-1435706.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Milk",
-          "quantity": "1 Cup"
+          "image": "https://images.pexels.com/photos/784636/pexels-photo-784636.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Pizza dough",
+          "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/6220707/pexels-photo-6220707.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Turmeric",
-          "quantity": "1/2 Teaspoon"
+          "image": "https://images.pexels.com/photos/1618943/pexels-photo-1618943.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Tomato sauce",
+          "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/301669/pexels-photo-301669.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Cinnamon",
-          "quantity": "1/4 Teaspoon"
+          "image": "https://images.pexels.com/photos/16134595/pexels-photo-16134595/free-photo-of-appetizer-with-cheese.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Mozzarella cheese",
+          "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/10487732/pexels-photo-10487732.jpeg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Black Pepper",
-          "quantity": "1 Pinch"
+          "image": "https://images.pexels.com/photos/3816343/pexels-photo-3816343.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Basil leaves",
+          "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/33260/honey-sweet-syrup-organic.jpg?auto=compress&cs=tinysrgb&w=250&h=200&dpr=2",
-          "label": "Honey",
-          "quantity": "1 Teaspoon"
+          "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Olive oil",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/39069/pepper-pepper-mill-pfefferkorn-pepper-ground-39069.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Salt and pepper",
+          "quantity": ""
         }
       ],
-      "duration": "2 hours",
-      "level": "Easy"
+      "instructions": [
+        "Preheat your oven to its highest temperature.",
+        "Roll out the pizza dough into a round shape.",
+        "Spread buffalo sauce evenly over the dough.",
+        "Layer mozzarella cheese, shredded chicken, red onion, and blue cheese crumbles.",
+        "Drizzle with olive oil and add fresh cilantro leaves.",
+        "Bake until the crust is golden and the toppings are bubbling.",
+        "Slice and enjoy the spicy, tangy kick of buffalo flavor."
+      ],
+      "duration": "25 minutes",
+      "level": "Moderate",
+      "description": "Buffalo chicken pizza brings the heat with tangy buffalo sauce, tender chicken, red onion, blue cheese, and cilantro on a perfectly baked crust."
+    },
+    {
+      "id": "pizza9",
+      "label": "Pesto and Sun-Dried Tomato Pizza",
+      "image": "https://images.pexels.com/photos/6876075/pexels-photo-6876075.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/784636/pexels-photo-784636.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Pizza dough",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/1618943/pexels-photo-1618943.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Tomato sauce",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/16134595/pexels-photo-16134595/free-photo-of-appetizer-with-cheese.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Mozzarella cheese",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/3816343/pexels-photo-3816343.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Basil leaves",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Olive oil",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/39069/pepper-pepper-mill-pfefferkorn-pepper-ground-39069.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Salt and pepper",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Preheat your oven to its highest temperature.",
+        "Roll out the pizza dough into a round shape.",
+        "Spread pesto sauce evenly over the dough.",
+        "Layer mozzarella cheese, sun-dried tomatoes, and fresh basil leaves.",
+        "Add pine nuts and drizzle with olive oil.",
+        "Bake until the crust is golden and the toppings are aromatic.",
+        "Slice and savor the delightful pesto and sun-dried tomato combination."
+      ],
+      "duration": "20 minutes",
+      "level": "Moderate",
+      "description": "Enjoy the vibrant flavors of pesto and sun-dried tomatoes paired with mozzarella, fresh basil, and pine nuts on a crispy pizza crust."
+    },
+    {
+      "id": "pizza10",
+      "label": "Meat Lover's Pizza",
+      "image": "https://images.pexels.com/photos/7813575/pexels-photo-7813575.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/784636/pexels-photo-784636.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Pizza dough",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/1618943/pexels-photo-1618943.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Tomato sauce",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/16134595/pexels-photo-16134595/free-photo-of-appetizer-with-cheese.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Mozzarella cheese",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/3816343/pexels-photo-3816343.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Basil leaves",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Olive oil",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/39069/pepper-pepper-mill-pfefferkorn-pepper-ground-39069.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Salt and pepper",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Preheat your oven to its highest temperature.",
+        "Roll out the pizza dough into a round shape.",
+        "Spread tomato sauce evenly over the dough.",
+        "Layer mozzarella cheese, pepperoni, sausage, bacon, and ground beef.",
+        "Drizzle with olive oil and sprinkle with dried oregano.",
+        "Bake until the crust is golden and the meaty toppings are sizzling.",
+        "Slice and enjoy the carnivore's dream pizza."
+      ],
+      "duration": "30 minutes",
+      "level": "Moderate",
+      "description": "For meat lovers, this pizza is a feast featuring a combination of pepperoni, sausage, bacon, and ground beef on a savory tomato sauce and mozzarella base."
+    },
+    {
+      "id": "pasta1",
+      "label": "Spaghetti Carbonara",
+      "image": "https://images.pexels.com/photos/5692293/pexels-photo-5692293.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/209569/pexels-photo-209569.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Spaghetti",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/600615/pexels-photo-600615.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Eggs",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/4202892/pexels-photo-4202892.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Pancetta",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/16134595/pexels-photo-16134595/free-photo-of-appetizer-with-cheese.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Parmesan cheese",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Cook the spaghetti until al dente, then drain, reserving some pasta water.",
+        "In a separate bowl, whisk together eggs, grated Parmesan cheese, and black pepper.",
+        "In a skillet, cook pancetta or guanciale until crispy.",
+        "Add the cooked spaghetti to the skillet and toss to coat with the pancetta.",
+        "Remove from heat and quickly mix in the egg and cheese mixture, using reserved pasta water to create a creamy sauce.",
+        "Season with salt and additional black pepper.",
+        "Serve hot, garnished with more grated Parmesan."
+      ],
+      "duration": "20 minutes",
+      "level": "Intermediate",
+      "description": "Spaghetti Carbonara is a classic Roman pasta dish known for its creamy sauce made from eggs, cheese, and pancetta or guanciale, seasoned with black pepper."
+    },
+    {
+      "id": "pasta2",
+      "label": "Fettuccine Alfredo",
+      "image": "https://images.pexels.com/photos/1435896/pexels-photo-1435896.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/209569/pexels-photo-209569.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Spaghetti",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/600615/pexels-photo-600615.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Eggs",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/4202892/pexels-photo-4202892.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Pancetta",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/16134595/pexels-photo-16134595/free-photo-of-appetizer-with-cheese.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Parmesan cheese",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Cook the fettuccine pasta until al dente, then drain.",
+        "In a saucepan, melt butter and sauté minced garlic until fragrant.",
+        "Add heavy cream, grated Parmesan cheese, salt, black pepper, and a pinch of nutmeg.",
+        "Simmer the sauce until it thickens and the cheese is fully melted.",
+        "Toss the cooked fettuccine in the creamy Alfredo sauce until well coated.",
+        "Serve hot, garnished with more grated Parmesan and black pepper."
+      ],
+      "duration": "25 minutes",
+      "level": "Intermediate",
+      "description": "Fettuccine Alfredo is a creamy pasta delight made with butter, heavy cream, and Parmesan cheese, creating a rich and indulgent sauce."
+    },
+    {
+      "id": "pasta3",
+      "label": "Penne alla Vodka",
+      "image": "https://images.pexels.com/photos/3214161/pexels-photo-3214161.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/209569/pexels-photo-209569.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Spaghetti",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/600615/pexels-photo-600615.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Eggs",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/4202892/pexels-photo-4202892.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Pancetta",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/16134595/pexels-photo-16134595/free-photo-of-appetizer-with-cheese.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Parmesan cheese",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Cook the penne pasta until al dente, then drain.",
+        "In a skillet, melt butter and sauté chopped onion and minced garlic until softened.",
+        "Add a splash of vodka and cook until reduced by half.",
+        "Stir in tomato sauce, heavy cream, and red pepper flakes.",
+        "Simmer until the sauce thickens, then season with salt and black pepper.",
+        "Toss the cooked penne in the creamy vodka sauce.",
+        "Serve hot, garnished with grated Parmesan and fresh basil leaves."
+      ],
+      "duration": "30 minutes",
+      "level": "Intermediate",
+      "description": "Penne alla Vodka is a luscious pasta dish featuring a creamy tomato sauce with a hint of vodka, served with tender penne and garnished with fresh basil."
+    },
+    {
+      "id": "pasta4",
+      "label": "Lasagna",
+      "image": "https://images.pexels.com/photos/5949885/pexels-photo-5949885.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/209569/pexels-photo-209569.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Spaghetti",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/600615/pexels-photo-600615.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Eggs",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/4202892/pexels-photo-4202892.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Pancetta",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/16134595/pexels-photo-16134595/free-photo-of-appetizer-with-cheese.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Parmesan cheese",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Cook the lasagna noodles until al dente, then drain.",
+        "In a skillet, brown ground beef with chopped onion and minced garlic.",
+        "Add tomato sauce, dried oregano, salt, and black pepper. Simmer.",
+        "In a separate bowl, mix together ricotta cheese, eggs, grated Parmesan cheese, and chopped fresh basil.",
+        "In a baking dish, layer noodles, meat sauce, ricotta mixture, and mozzarella cheese. Repeat.",
+        "Bake until bubbly and golden brown on top.",
+        "Serve hot, garnished with more Parmesan and fresh basil."
+      ],
+      "duration": "60 minutes",
+      "level": "Intermediate",
+      "description": "Lasagna is a layered pasta dish with sheets of lasagna noodles, rich meat sauce, creamy ricotta, and melted mozzarella, all baked to perfection."
+    },
+    {
+      "id": "pasta5",
+      "label": "Pasta Primavera",
+      "image": "https://images.pexels.com/photos/1907228/pexels-photo-1907228.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/209569/pexels-photo-209569.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Spaghetti",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/600615/pexels-photo-600615.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Eggs",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/4202892/pexels-photo-4202892.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Pancetta",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/16134595/pexels-photo-16134595/free-photo-of-appetizer-with-cheese.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Parmesan cheese",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Cook the pasta until al dente, adding the assorted vegetables in the last few minutes of cooking.",
+        "In a skillet, heat olive oil and sauté minced garlic until fragrant.",
+        "Toss the cooked pasta and vegetables in the garlic-infused olive oil.",
+        "Season with lemon zest, salt, and black pepper.",
+        "Serve hot, garnished with grated Parmesan and fresh basil leaves."
+      ],
+      "duration": "20 minutes",
+      "level": "Easy",
+      "description": "Pasta Primavera is a light and vibrant pasta dish featuring a medley of seasonal vegetables, fresh basil, and lemon zest."
+    },
+    {
+      "id": "pasta6",
+      "label": "Pesto Pasta",
+      "image": "https://images.pexels.com/photos/12006395/pexels-photo-12006395.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/209569/pexels-photo-209569.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Spaghetti",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/600615/pexels-photo-600615.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Eggs",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/4202892/pexels-photo-4202892.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Pancetta",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/16134595/pexels-photo-16134595/free-photo-of-appetizer-with-cheese.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Parmesan cheese",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Cook the pasta until al dente, then drain.",
+        "In a bowl, mix pasta with basil pesto sauce, grated Parmesan cheese, and a handful of toasted pine nuts.",
+        "Drizzle with olive oil and season with salt and black pepper.",
+        "Garnish with fresh basil leaves.",
+        "Serve hot as a simple and flavorful dish."
+      ],
+      "duration": "15 minutes",
+      "level": "Easy",
+      "description": "Pesto pasta is a quick and delightful dish that combines al dente pasta with the bold flavors of basil pesto, Parmesan, and toasted pine nuts."
+    },
+    {
+      "id": "pasta7",
+      "label": "Linguine with Clam Sauce",
+      "image": "https://images.pexels.com/photos/2090921/pexels-photo-2090921.png?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/209569/pexels-photo-209569.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Spaghetti",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/600615/pexels-photo-600615.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Eggs",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/4202892/pexels-photo-4202892.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Pancetta",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/16134595/pexels-photo-16134595/free-photo-of-appetizer-with-cheese.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Parmesan cheese",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Cook the linguine pasta until al dente, then drain.",
+        "In a skillet, heat olive oil and sauté minced garlic and red pepper flakes until fragrant.",
+        "Add canned clams with their juice and a splash of white wine. Simmer.",
+        "Toss the cooked linguine in the clam sauce, adding fresh chopped parsley and a squeeze of lemon juice.",
+        "Season with salt and black pepper.",
+        "Serve hot, garnished with more parsley and a lemon wedge."
+      ],
+      "duration": "20 minutes",
+      "level": "Intermediate",
+      "description": "Linguine with clam sauce is a seafood pasta featuring tender linguine noodles in a savory sauce made with canned clams, garlic, white wine, and fresh herbs."
+    },
+    {
+      "id": "pasta8",
+      "label": "Ravioli with Tomato Cream Sauce",
+      "image": "https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/209569/pexels-photo-209569.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Spaghetti",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/600615/pexels-photo-600615.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Eggs",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/4202892/pexels-photo-4202892.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Pancetta",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/16134595/pexels-photo-16134595/free-photo-of-appetizer-with-cheese.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Parmesan cheese",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Cook the cheese ravioli until tender, then drain.",
+        "In a saucepan, melt butter and sauté minced garlic until fragrant.",
+        "Stir in tomato sauce and heavy cream. Simmer until the sauce thickens.",
+        "Season with salt and black pepper, and add fresh basil leaves.",
+        "Toss the cooked ravioli in the creamy tomato sauce.",
+        "Serve hot, garnished with grated Parmesan and fresh basil."
+      ],
+      "duration": "25 minutes",
+      "level": "Intermediate",
+      "description": "Ravioli with tomato cream sauce is a luxurious pasta dish featuring cheese-filled ravioli in a creamy tomato sauce, garnished with fresh basil and Parmesan cheese."
+    },
+    {
+      "id": "pasta9",
+      "label": "Garlic Shrimp Linguine",
+      "image": "https://images.pexels.com/photos/4518682/pexels-photo-4518682.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/209569/pexels-photo-209569.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Spaghetti",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/600615/pexels-photo-600615.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Eggs",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/4202892/pexels-photo-4202892.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Pancetta",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/16134595/pexels-photo-16134595/free-photo-of-appetizer-with-cheese.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Parmesan cheese",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Cook the linguine pasta until al dente, then drain.",
+        "In a skillet, heat olive oil and sauté minced garlic and red pepper flakes until fragrant.",
+        "Add large shrimp and cook until pink and opaque.",
+        "Deglaze the skillet with white wine and add lemon zest and juice.",
+        "Toss the cooked linguine with the garlic shrimp, fresh chopped parsley, salt, and black pepper.",
+        "Serve hot, garnished with more parsley and lemon wedges."
+      ],
+      "duration": "20 minutes",
+      "level": "Intermediate",
+      "description": "Garlic shrimp linguine is a delightful seafood pasta with tender shrimp, garlic, and a zesty white wine and lemon sauce, finished with fresh parsley."
+    },
+    {
+      "id": "pasta10",
+      "label": "Pasta with Pesto and Roasted Cherry Tomatoes",
+      "image": "https://images.pexels.com/photos/750071/pexels-photo-750071.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/209569/pexels-photo-209569.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Spaghetti",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/600615/pexels-photo-600615.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Eggs",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/4202892/pexels-photo-4202892.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Pancetta",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/16134595/pexels-photo-16134595/free-photo-of-appetizer-with-cheese.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Parmesan cheese",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Cook the pasta until al dente, then drain.",
+        "Toss cherry tomatoes with olive oil, balsamic vinegar, salt, and black pepper.",
+        "Roast the tomatoes until they burst and become slightly caramelized.",
+        "Mix the cooked pasta with basil pesto sauce.",
+        "Top with roasted cherry tomatoes, grated Parmesan, and fresh basil leaves.",
+        "Serve hot, enjoying the burst of flavors."
+      ],
+      "duration": "25 minutes",
+      "level": "Easy",
+      "description": "Pasta with pesto and roasted cherry tomatoes is a simple yet vibrant dish, combining the freshness of basil pesto with the sweet intensity of roasted tomatoes."
+    },
+    {
+      "id": "steak1",
+      "label": "Classic Ribeye Steak",
+      "image": "https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/618773/pexels-photo-618773.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Ribeye steak",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Olive oil",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/750948/pexels-photo-750948.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Garlic cloves",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/5967853/pexels-photo-5967853.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Rosemary sprigs",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Preheat your grill or skillet to high heat.",
+        "Rub the ribeye steak with olive oil and season generously with salt and black pepper.",
+        "Grill the steak for 4-5 minutes per side for medium-rare, or to your preferred doneness.",
+        "During the last minute of cooking, add minced garlic and fresh rosemary to the steak, basting it in the aromatic mixture.",
+        "Rest the steak for a few minutes before slicing and serving."
+      ],
+      "duration": "10 minutes",
+      "level": "Intermediate",
+      "description": "The classic ribeye steak is a juicy and flavorful cut, grilled to perfection and infused with garlic and rosemary for an extra burst of taste."
+    },
+    {
+      "id": "steak2",
+      "label": "Filet Mignon with Red Wine Reduction",
+      "image": "https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/618773/pexels-photo-618773.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Ribeye steak",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Olive oil",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/750948/pexels-photo-750948.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Garlic cloves",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/5967853/pexels-photo-5967853.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Rosemary sprigs",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Preheat your skillet to medium-high heat.",
+        "Rub filet mignon steaks with olive oil and season with salt and black pepper.",
+        "Sear the steaks for 3-4 minutes per side for medium-rare, or to your desired doneness. Transfer to a plate and cover with foil to keep warm.",
+        "In the same skillet, sauté minced shallots until softened.",
+        "Deglaze with red wine and beef broth. Simmer until reduced by half.",
+        "Whisk in butter and add fresh thyme for a rich, velvety sauce.",
+        "Serve the filet mignon with the red wine reduction sauce."
+      ],
+      "duration": "15 minutes",
+      "level": "Intermediate",
+      "description": "Filet mignon, the 'king of steaks,' is seared to perfection and served with a luscious red wine reduction sauce infused with shallots and thyme."
+    },
+    {
+      "id": "steak3",
+      "label": "Grilled T-Bone Steak",
+      "image": "https://images.pexels.com/photos/1482803/pexels-photo-1482803.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/618773/pexels-photo-618773.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Ribeye steak",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Olive oil",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/750948/pexels-photo-750948.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Garlic cloves",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/5967853/pexels-photo-5967853.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Rosemary sprigs",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Preheat your grill to high heat.",
+        "Rub the T-bone steak with olive oil and season generously with salt, black pepper, and garlic powder.",
+        "Grill the steak for 4-5 minutes per side for medium-rare, or to your desired doneness.",
+        "During the last minute of cooking, add fresh thyme sprigs to the grill, infusing the steak with their fragrance.",
+        "Serve the T-bone steak with lemon wedges for a zesty kick."
+      ],
+      "duration": "10 minutes",
+      "level": "Intermediate",
+      "description": "The grilled T-bone steak is a carnivore's delight, featuring two cuts in one - tenderloin and strip steak - seasoned and grilled to perfection."
+    },
+    {
+      "id": "steak4",
+      "label": "New York Strip Steak",
+      "image": "https://images.pexels.com/photos/361184/asparagus-steak-veal-steak-veal-361184.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/618773/pexels-photo-618773.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Ribeye steak",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Olive oil",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/750948/pexels-photo-750948.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Garlic cloves",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/5967853/pexels-photo-5967853.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Rosemary sprigs",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Preheat your grill or skillet to high heat.",
+        "Rub the New York strip steak with olive oil and season generously with salt and black pepper.",
+        "Grill the steak for 4-5 minutes per side for medium-rare, or to your preferred doneness.",
+        "During the last minute of cooking, add minced garlic and fresh thyme to the steak, infusing it with flavor.",
+        "Rest the steak before slicing and serving."
+      ],
+      "duration": "10 minutes",
+      "level": "Intermediate",
+      "description": "The New York strip steak is a classic favorite, grilled to perfection and enhanced with garlic and thyme for a delicious and savory experience."
+    },
+    {
+      "id": "steak5",
+      "label": "Garlic Butter Ribeye Steak",
+      "image": "https://images.pexels.com/photos/3997609/pexels-photo-3997609.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/618773/pexels-photo-618773.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Ribeye steak",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Olive oil",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/750948/pexels-photo-750948.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Garlic cloves",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/5967853/pexels-photo-5967853.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Rosemary sprigs",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Preheat your grill or skillet to high heat.",
+        "Rub the ribeye steak with olive oil and season generously with salt and black pepper.",
+        "Grill the steak for 4-5 minutes per side for medium-rare, or to your desired doneness.",
+        "During the last minute of cooking, add minced garlic, fresh rosemary, and a pat of butter to the steak, basting it until melted and fragrant.",
+        "Rest the steak before slicing and serving."
+      ],
+      "duration": "10 minutes",
+      "level": "Intermediate",
+      "description": "Garlic butter ribeye steak is a flavorful delight, featuring a juicy ribeye cooked to perfection and finished with garlic, rosemary, and butter."
+    },
+    {
+      "id": "steak6",
+      "label": "Chimichurri Skirt Steak",
+      "image": "https://images.pexels.com/photos/1352262/pexels-photo-1352262.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/618773/pexels-photo-618773.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Ribeye steak",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Olive oil",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/750948/pexels-photo-750948.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Garlic cloves",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/5967853/pexels-photo-5967853.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Rosemary sprigs",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Preheat your grill to high heat.",
+        "Rub the skirt steak with olive oil and season generously with salt and black pepper.",
+        "Grill the steak for 2-3 minutes per side for medium-rare, or to your preferred doneness.",
+        "In a food processor, blend garlic, fresh parsley, fresh cilantro, red wine vinegar, and red pepper flakes to make chimichurri sauce.",
+        "Serve the grilled skirt steak with chimichurri sauce drizzled on top."
+      ],
+      "duration": "6 minutes",
+      "level": "Intermediate",
+      "description": "Chimichurri skirt steak is a South American-inspired dish featuring a tender skirt steak grilled to perfection and topped with zesty chimichurri sauce."
+    },
+    {
+      "id": "steak7",
+      "label": "Pepper-Crusted Filet Mignon",
+      "image": "https://images.pexels.com/photos/765082/pexels-photo-765082.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/618773/pexels-photo-618773.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Ribeye steak",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Olive oil",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/750948/pexels-photo-750948.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Garlic cloves",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/5967853/pexels-photo-5967853.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Rosemary sprigs",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Preheat your skillet to medium-high heat.",
+        "Rub filet mignon steaks with olive oil and season with salt.",
+        "Coat the steaks generously with crushed black peppercorns.",
+        "Sear the steaks for 3-4 minutes per side for medium-rare, or to your desired doneness.",
+        "In the same skillet, add minced shallots and cook until softened.",
+        "Deglaze with brandy or cognac, and simmer until reduced by half.",
+        "Stir in heavy cream and Dijon mustard, then whisk in butter for a creamy peppercorn sauce.",
+        "Serve the pepper-crusted filet mignon with the sauce."
+      ],
+      "duration": "15 minutes",
+      "level": "Intermediate",
+      "description": "Pepper-crusted filet mignon is a luxurious steak dish featuring tender filet mignon coated in crushed black peppercorns and served with a creamy peppercorn sauce."
+    },
+    {
+      "id": "steak8",
+      "label": "Garlic Herb Butter Sirloin Steak",
+      "image": "https://images.pexels.com/photos/17130434/pexels-photo-17130434/free-photo-of-a-steak-served-in-a-restaurant.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/618773/pexels-photo-618773.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Ribeye steak",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Olive oil",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/750948/pexels-photo-750948.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Garlic cloves",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/5967853/pexels-photo-5967853.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Rosemary sprigs",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Preheat your grill or skillet to high heat.",
+        "Rub the sirloin steak with olive oil and season generously with salt and black pepper.",
+        "Grill the steak for 4-5 minutes per side for medium-rare, or to your preferred doneness.",
+        "During the last minute of cooking, add minced garlic, fresh thyme leaves, and a pat of butter to the steak, basting it until fragrant.",
+        "Rest the steak before slicing and serving, garnished with fresh parsley."
+      ],
+      "duration": "10 minutes",
+      "level": "Intermediate",
+      "description": "Garlic herb butter sirloin steak is a succulent dish featuring a juicy sirloin steak infused with garlic, thyme, and butter for extra richness."
+    },
+    {
+      "id": "steak9",
+      "label": "Balsamic Glazed Flank Steak",
+      "image": "https://images.pexels.com/photos/8477301/pexels-photo-8477301.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/618773/pexels-photo-618773.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Ribeye steak",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Olive oil",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/750948/pexels-photo-750948.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Garlic cloves",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/5967853/pexels-photo-5967853.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Rosemary sprigs",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Preheat your grill to high heat.",
+        "Rub the flank steak with olive oil and season with salt and black pepper.",
+        "Grill the steak for 3-4 minutes per side for medium-rare, or to your desired doneness.",
+        "During the last few minutes of cooking, brush the steak with a mixture of balsamic vinegar, honey, minced garlic, and fresh rosemary.",
+        "Rest the steak before slicing and serving."
+      ],
+      "duration": "10 minutes",
+      "level": "Intermediate",
+      "description": "Balsamic glazed flank steak is a flavorful dish featuring a grilled flank steak with a sweet and tangy balsamic glaze, enhanced with garlic and rosemary."
+    },
+    {
+      "id": "steak10",
+      "label": "Steak Fajitas",
+      "image": "https://images.pexels.com/photos/1857730/pexels-photo-1857730.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+      "ingredients": [
+        {
+          "image": "https://images.pexels.com/photos/618773/pexels-photo-618773.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Ribeye steak",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Olive oil",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Black pepper",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/750948/pexels-photo-750948.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Garlic cloves",
+          "quantity": ""
+        },
+        {
+          "image": "https://images.pexels.com/photos/5967853/pexels-photo-5967853.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
+          "label": "Rosemary sprigs",
+          "quantity": ""
+        }
+      ],
+      "instructions": [
+        "Preheat your grill to high heat.",
+        "Rub the flank steak with olive oil and season with salt, black pepper, cumin, and chili powder.",
+        "Grill the steak for 3-4 minutes per side for medium-rare, or to your desired doneness.",
+        "Remove the steak and let it rest before slicing it thinly.",
+        "In a skillet, sauté sliced onions and bell peppers until tender.",
+        "Toss the sliced steak with the sautéed vegetables and a squeeze of lime juice.",
+        "Serve the steak fajitas in warm tortillas with sour cream and salsa."
+      ],
+      "duration": "15 minutes",
+      "level": "Intermediate",
+      "description": "Steak fajitas are a Tex-Mex favorite, featuring grilled flank steak sliced thin and served with sautéed onions and bell peppers, all wrapped in warm tortillas."
     }
   ]
 }
