@@ -5,6 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
+import com.kmp.recipes.mobile.app.ui.RecipesApp
 import com.seiko.imageloader.LocalImageLoader
 import com.seiko.imageloader.ImageLoader
 import com.seiko.imageloader.option.androidContext

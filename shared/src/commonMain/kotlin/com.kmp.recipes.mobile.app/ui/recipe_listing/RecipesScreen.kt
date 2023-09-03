@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.recipe_listing
+package com.kmp.recipes.mobile.app.ui.recipe_listing
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,9 +13,9 @@ import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.core.screen.ScreenKey
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import com.kmp.recipes.mobile.app.Dimens
-import com.kmp.recipes.mobile.app.common_composables.RecipesListing
-import com.kmp.recipes.mobile.app.common_composables.SecondaryAppBar
+import com.kmp.recipes.mobile.app.ui.Dimens
+import com.kmp.recipes.mobile.app.ui.common.RecipesListing
+import com.kmp.recipes.mobile.app.ui.common.SecondaryAppBar
 import com.kmp.recipes.mobile.app.data.Recipe
 
 private const val KEY_RECIPES_SCREEN = "recipesScreenKey"

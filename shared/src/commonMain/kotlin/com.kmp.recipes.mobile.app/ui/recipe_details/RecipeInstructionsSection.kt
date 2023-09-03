@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.recipe_details
+package com.kmp.recipes.mobile.app.ui.recipe_details
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,7 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import cafe.adriel.voyager.navigator.Navigator
-import com.kmp.recipes.mobile.app.Dimens
+import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.data.Recipe
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.compose.stringResource

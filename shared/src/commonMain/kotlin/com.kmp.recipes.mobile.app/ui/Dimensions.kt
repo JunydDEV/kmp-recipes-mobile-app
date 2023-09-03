@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app
+package com.kmp.recipes.mobile.app.ui
 
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp

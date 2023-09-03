@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.main_screen.sections_composables
+package com.kmp.recipes.mobile.app.ui.main_screen.sections_composables
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -29,8 +29,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.navigator.Navigator
-import com.kmp.recipes.mobile.app.Dimens
-import com.kmp.recipes.mobile.app.common_composables.ColumnX
+import com.kmp.recipes.mobile.app.ui.Dimens
+import com.kmp.recipes.mobile.app.ui.common.ColumnX
 import com.kmp.recipes.mobile.app.data.Quote
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.compose.painterResource

@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.recipe_details
+package com.kmp.recipes.mobile.app.ui.recipe_details
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -27,9 +27,9 @@ import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.core.screen.ScreenKey
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import com.kmp.recipes.mobile.app.Dimens
-import com.kmp.recipes.mobile.app.common_composables.ImageX
-import com.kmp.recipes.mobile.app.common_composables.SecondaryAppBar
+import com.kmp.recipes.mobile.app.ui.Dimens
+import com.kmp.recipes.mobile.app.ui.common.ImageX
+import com.kmp.recipes.mobile.app.ui.common.SecondaryAppBar
 import com.kmp.recipes.mobile.app.data.Recipe
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.compose.painterResource

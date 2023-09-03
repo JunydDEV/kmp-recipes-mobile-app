@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.main_screen.sections_composables
+package com.kmp.recipes.mobile.app.ui.main_screen.sections_composables
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
@@ -27,7 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.kmp.recipes.mobile.app.Dimens
+import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.safeAreaPadding
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.compose.stringResource

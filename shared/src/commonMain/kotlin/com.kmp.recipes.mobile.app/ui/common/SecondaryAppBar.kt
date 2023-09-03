@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.common_composables
+package com.kmp.recipes.mobile.app.ui.common
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.WindowInsets
@@ -11,7 +11,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.style.TextAlign
 import cafe.adriel.voyager.navigator.Navigator
-import com.kmp.recipes.mobile.app.Dimens
+import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.safeAreaPadding
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.compose.painterResource

@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.common_composables
+package com.kmp.recipes.mobile.app.ui.common
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -7,12 +7,11 @@ import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.kmp.recipes.mobile.app.Dimens
+import com.kmp.recipes.mobile.app.ui.Dimens
 
 @Composable
 fun ColumnX(
@@ -22,10 +21,7 @@ fun ColumnX(
     onSecondaryClick: (() -> Unit)? = null,
     content: @Composable ColumnScope.() -> (Unit)
 ) {
-    val mainModifier = Modifier.fillMaxWidth().padding(
-        start = Dimens.defaultSpacing,
-        end = Dimens.defaultSpacing
-    )
+    val mainModifier = Modifier.fillMaxWidth()
     Column(
         modifier = mainModifier,
         verticalArrangement = Arrangement.spacedBy(Dimens.smallSpacing)
