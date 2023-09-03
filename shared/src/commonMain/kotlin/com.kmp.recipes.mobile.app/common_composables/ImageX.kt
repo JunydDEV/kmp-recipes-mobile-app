@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.common
+package com.kmp.recipes.mobile.app.common_composables
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

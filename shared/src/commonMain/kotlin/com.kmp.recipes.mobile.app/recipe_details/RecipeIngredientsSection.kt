@@ -1,7 +1,5 @@
 package com.kmp.recipes.mobile.app.recipe_details
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -16,23 +14,17 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.clipToBounds
-import androidx.compose.ui.layout.ContentScale
 import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.Dimens
-import com.kmp.recipes.mobile.app.common.ImageX
+import com.kmp.recipes.mobile.app.common_composables.ImageX
 import com.kmp.recipes.mobile.app.data.Recipe
-import com.kmp.recipes.mobile.app.recipes_listing.RecipesScreen
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
-import com.seiko.imageloader.rememberAsyncImagePainter
-import dev.icerock.moko.resources.compose.painterResource
 import dev.icerock.moko.resources.compose.stringResource
 
 @Composable

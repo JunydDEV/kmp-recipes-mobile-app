@@ -6,7 +6,6 @@ import com.kmp.recipes.mobile.app.data.Recipe
 import com.kmp.recipes.mobile.app.data.RecipesData
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.FileResource
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.serialization.json.Json
 
 class MainScreenModel: ScreenModel {

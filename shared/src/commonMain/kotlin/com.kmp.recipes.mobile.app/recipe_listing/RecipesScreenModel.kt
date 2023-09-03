@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.recipes_listing
+package com.kmp.recipes.mobile.app.recipe_listing
 
 import cafe.adriel.voyager.core.model.ScreenModel
 

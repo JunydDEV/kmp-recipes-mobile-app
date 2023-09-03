@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.common
+package com.kmp.recipes.mobile.app.common_composables
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement

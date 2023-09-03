@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.main_screen.sections
+package com.kmp.recipes.mobile.app.main_screen.sections_composables
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
@@ -18,12 +18,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.Dimens
-import com.kmp.recipes.mobile.app.common.ImageX
-import com.kmp.recipes.mobile.app.common.ColumnX
+import com.kmp.recipes.mobile.app.common_composables.ImageX
+import com.kmp.recipes.mobile.app.common_composables.ColumnX
 import com.kmp.recipes.mobile.app.data.Category
 import com.kmp.recipes.mobile.app.data.Recipe
 import com.kmp.recipes.mobile.app.main_screen.MainScreenModel
-import com.kmp.recipes.mobile.app.recipes_listing.RecipesScreen
+import com.kmp.recipes.mobile.app.recipe_listing.RecipesScreen
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.compose.stringResource
 

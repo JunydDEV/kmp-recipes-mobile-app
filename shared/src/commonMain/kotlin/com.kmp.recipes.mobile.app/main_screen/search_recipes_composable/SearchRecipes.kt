@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.main_screen.search_recipes
+package com.kmp.recipes.mobile.app.main_screen.search_recipes_composable
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -9,8 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.Dimens
-import com.kmp.recipes.mobile.app.common.ColumnX
-import com.kmp.recipes.mobile.app.common.RecipesListing
+import com.kmp.recipes.mobile.app.common_composables.ColumnX
+import com.kmp.recipes.mobile.app.common_composables.RecipesListing
 import com.kmp.recipes.mobile.app.data.Recipe
 import com.kmp.recipes.mobile.app.main_screen.MainScreenModel
 import com.kmp.recipes.mobile.app.sharedres.SharedRes

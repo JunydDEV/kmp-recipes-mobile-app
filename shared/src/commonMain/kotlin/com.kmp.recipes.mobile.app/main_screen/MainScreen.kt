@@ -22,11 +22,11 @@ import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import com.kmp.recipes.mobile.app.Dimens
 import com.kmp.recipes.mobile.app.data.RecipesData
-import com.kmp.recipes.mobile.app.main_screen.search_recipes.SearchRecipesList
-import com.kmp.recipes.mobile.app.main_screen.sections.FoodQuotesSection
-import com.kmp.recipes.mobile.app.main_screen.sections.MainTopBar
-import com.kmp.recipes.mobile.app.main_screen.sections.PopularRecipesSection
-import com.kmp.recipes.mobile.app.main_screen.sections.RecipesCategoriesSection
+import com.kmp.recipes.mobile.app.main_screen.search_recipes_composable.SearchRecipesList
+import com.kmp.recipes.mobile.app.main_screen.sections_composables.FoodQuotesSection
+import com.kmp.recipes.mobile.app.main_screen.sections_composables.MainTopBar
+import com.kmp.recipes.mobile.app.main_screen.sections_composables.PopularRecipesSection
+import com.kmp.recipes.mobile.app.main_screen.sections_composables.RecipesCategoriesSection
 import dev.icerock.moko.resources.compose.readTextAsState
 
 private const val KEY_MAIN_SCREEN = "mainScreenKey"
