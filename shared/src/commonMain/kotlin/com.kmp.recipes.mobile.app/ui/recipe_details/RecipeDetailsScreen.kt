@@ -30,7 +30,7 @@ import cafe.adriel.voyager.navigator.currentOrThrow
 import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.ui.common.ImageX
 import com.kmp.recipes.mobile.app.ui.common.SecondaryAppBar
-import com.kmp.recipes.mobile.app.data.Recipe
+import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.compose.painterResource
 import dev.icerock.moko.resources.compose.stringResource

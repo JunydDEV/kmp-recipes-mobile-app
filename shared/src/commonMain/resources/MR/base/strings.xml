@@ -56,4 +56,6 @@
     <string name="title_instructions">Instructions</string>
     <string name="title_ingredients">Ingredients</string>
 
+    <string name="fetch_recipes_failure">Failed to fetch recipes data</string>
+
 </resources>

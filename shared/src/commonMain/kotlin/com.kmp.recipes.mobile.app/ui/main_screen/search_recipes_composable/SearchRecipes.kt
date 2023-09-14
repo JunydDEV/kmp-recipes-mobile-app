@@ -5,40 +5,54 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.ui.common.ColumnX
+import com.kmp.recipes.mobile.app.ui.common.FailureLabel
 import com.kmp.recipes.mobile.app.ui.common.RecipesListing
-import com.kmp.recipes.mobile.app.data.Recipe
 import com.kmp.recipes.mobile.app.ui.main_screen.MainScreenModel
-import com.kmp.recipes.mobile.app.sharedres.SharedRes
-import dev.icerock.moko.resources.compose.stringResource
+import com.kmp.recipes.mobile.app.ui.main_screen.SearchDataState
+import com.kmp.recipes.mobile.app.ui.main_screen.UiState
+import kotlinx.coroutines.flow.asStateFlow
 
 @Composable
 fun SearchRecipesList(
     paddingValue: PaddingValues,
     searchQuery: String,
     navigator: Navigator,
-    recipes: List<Recipe>,
     mainScreenModel: MainScreenModel
 ) {
-    val result = mainScreenModel.searchRecipesBy(recipes, searchQuery)
+    LaunchedEffect(Unit) {
+        mainScreenModel.searchRecipes(searchQuery)
+    }
+
+    val searchResultsState = mainScreenModel.searchRecipesStateFlow.asStateFlow()
     val scrollState = rememberScrollState()
+
     Column(
         modifier = Modifier
             .padding(paddingValue)
             .padding(top = Dimens.defaultSpacing)
             .verticalScroll(scrollState)
     ) {
-        if (result.isEmpty()) {
-            SearchResultsNotFound()
-        } else {
-            ColumnX(
-                primaryTitle = stringResource(SharedRes.strings.search_results_label)
-            ) {
-                RecipesListing(recipesList = result, navigator = navigator)
+        when(val uiState = searchResultsState.value) {
+            is UiState.Init, UiState.Loading -> {
+                // Box { CircularProgressIndicator() }
+            }
+            is UiState.Failure -> {
+                FailureLabel(uiState.errorMessage)
+            }
+            is UiState.Success<*> -> {
+                val searchDataState = uiState.data as SearchDataState
+                ColumnX(
+                    primaryTitle = searchDataState.searchResultsLabel
+                ) {
+                    RecipesListing(recipesList = searchDataState.searchResults, navigator = navigator)
+                }
             }
         }
     }

@@ -16,7 +16,7 @@ import cafe.adriel.voyager.navigator.currentOrThrow
 import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.ui.common.RecipesListing
 import com.kmp.recipes.mobile.app.ui.common.SecondaryAppBar
-import com.kmp.recipes.mobile.app.data.Recipe
+import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
 
 private const val KEY_RECIPES_SCREEN = "recipesScreenKey"
 

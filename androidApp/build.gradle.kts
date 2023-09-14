@@ -33,7 +33,8 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.7"
+        kotlinCompilerVersion = extra["kotlin.version"] as String
+        kotlinCompilerExtensionVersion = extra["compose.version"] as String
     }
     packaging {
         resources {
@@ -62,5 +63,9 @@ dependencies {
     implementation("androidx.compose.foundation:foundation:1.4.3")
     implementation("androidx.compose.material:material:1.4.3")
     implementation("androidx.activity:activity-compose:1.7.2")
-    implementation(platform("com.google.firebase:firebase-bom:30.0.1"))
+
+    // Koin
+    with(Deps.Koin) {
+        api(android)
+    }
 }

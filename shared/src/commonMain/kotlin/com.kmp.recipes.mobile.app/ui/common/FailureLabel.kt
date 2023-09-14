@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.ui.main_screen.search_recipes_composable
+package com.kmp.recipes.mobile.app.ui.common
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,19 +10,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.kmp.recipes.mobile.app.ui.Dimens
-import com.kmp.recipes.mobile.app.sharedres.SharedRes
-import dev.icerock.moko.resources.compose.stringResource
 
 @Composable
-fun SearchResultsNotFound(errorMessage: String) {
+fun FailureLabel(message: String) {
     Column(
         modifier = Modifier.height(Dimens.emptyLayoutHeight).fillMaxWidth(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-
         Text(
-            text = errorMessage,
+            text = message,
             style = MaterialTheme.typography.titleLarge.copy(color = MaterialTheme.colorScheme.secondary)
         )
     }

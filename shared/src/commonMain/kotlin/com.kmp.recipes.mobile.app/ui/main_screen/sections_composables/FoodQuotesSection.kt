@@ -31,7 +31,7 @@ import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.ui.common.ColumnX
-import com.kmp.recipes.mobile.app.data.Quote
+import com.kmp.recipes.mobile.app.data.datasource.model.Quote
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.compose.painterResource
 
@@ -47,7 +47,10 @@ fun FoodQuotesSection(navigator: Navigator, quotes: List<Quote>) {
             pageSpacing = Dimens.smallSpacing
         ) { page ->
             Card(
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier.fillMaxSize().padding(
+                    start = Dimens.smallSpacing,
+                    end = Dimens.smallSpacing
+                ),
                 shape = RoundedCornerShape(Dimens.cornerSize),
                 elevation = CardDefaults.cardElevation(defaultElevation = Dimens.cardElevation),
                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primary)

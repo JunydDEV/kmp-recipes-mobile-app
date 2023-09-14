@@ -22,7 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.ui.Dimens
-import com.kmp.recipes.mobile.app.data.Recipe
+import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
 import com.kmp.recipes.mobile.app.ui.recipe_details.RecipeDetailsScreen
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.compose.painterResource
@@ -32,16 +32,18 @@ import dev.icerock.moko.resources.compose.stringResource
 @Composable
 fun RecipesListing(recipesList: List<Recipe>, navigator: Navigator) {
     Column(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth().padding(
+            start = Dimens.smallSpacing,
+            end = Dimens.smallSpacing
+        ),
         verticalArrangement = Arrangement.spacedBy(Dimens.smallSpacing)
     ) {
         repeat(recipesList.size) {
             Column(modifier = Modifier.clickable {
-                navigator.push(
-                    RecipeDetailsScreen(
-                        recipesList[it]
-                    )
-                )
+                navigateToRecipeDetails(
+                    navigator = navigator,
+                    recipesList = recipesList,
+                    position = it)
             }) {
                 Card(
                     modifier = Modifier.fillMaxWidth().height(Dimens.popularRecipeImageHeight),
@@ -82,6 +84,18 @@ fun RecipesListing(recipesList: List<Recipe>, navigator: Navigator) {
             }
         }
     }
+}
+
+private fun navigateToRecipeDetails(
+    navigator: Navigator,
+    recipesList: List<Recipe>,
+    position: Int
+) {
+    navigator.push(
+        RecipeDetailsScreen(
+            recipesList[position]
+        )
+    )
 }
 
 @Composable

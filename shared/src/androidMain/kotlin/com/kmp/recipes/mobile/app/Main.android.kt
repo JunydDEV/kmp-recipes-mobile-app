@@ -16,6 +16,7 @@ import okio.Path.Companion.toOkioPath
 @Composable
 fun MainView() {
     val context = LocalContext.current
+    initCookitApplication(context)
     CompositionLocalProvider(
         LocalImageLoader provides remember { generateImageLoader(context) },
     ) {

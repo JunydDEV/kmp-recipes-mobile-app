@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.data
+package com.kmp.recipes.mobile.app.data.datasource.model
 
 import kotlinx.serialization.Serializable
 

@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -20,8 +21,8 @@ import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.ui.common.ImageX
 import com.kmp.recipes.mobile.app.ui.common.ColumnX
-import com.kmp.recipes.mobile.app.data.Category
-import com.kmp.recipes.mobile.app.data.Recipe
+import com.kmp.recipes.mobile.app.data.datasource.model.Category
+import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
 import com.kmp.recipes.mobile.app.ui.main_screen.MainScreenModel
 import com.kmp.recipes.mobile.app.ui.recipe_listing.RecipesScreen
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
@@ -38,7 +39,10 @@ fun RecipesCategoriesSection(
 
     ColumnX(primaryTitle = primaryTitle) {
         Row(
-            modifier = Modifier.horizontalScroll(rememberScrollState()),
+            modifier = Modifier.horizontalScroll(rememberScrollState()).padding(
+                start = Dimens.smallSpacing,
+                end = Dimens.smallSpacing
+            ),
             horizontalArrangement = Arrangement.spacedBy(Dimens.defaultSpacing)
         ) {
             repeat(categories.size) {
@@ -52,6 +56,7 @@ fun RecipesCategoriesSection(
                             mainScreenModel.findRecipesByCategoryId(categories[it], recipes)
                         navigator.push(RecipesScreen(title, result))
                     },
+                    shape = RoundedCornerShape(Dimens.normalRadius),
                     elevation = CardDefaults.cardElevation(defaultElevation = Dimens.cardElevation)
                 ) {
                     Box(

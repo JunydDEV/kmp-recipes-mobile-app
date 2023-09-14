@@ -32,21 +32,41 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                val voyagerVersion = "1.0.0-rc06"
-                implementation(project(":systemui"))
-                implementation(compose.runtime)
-                implementation(compose.foundation)
-                implementation(compose.material3)
-                implementation(kotlin("stdlib-common"))
-                implementation("com.soywiz.korlibs.klogger:klogger:4.0.2")
-                implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.2")
-                implementation("dev.gitlive:firebase-firestore:1.8.0")
-                implementation("dev.icerock.moko:resources:0.23.0")
-                implementation("dev.icerock.moko:resources-compose:0.23.0")
-                implementation("cafe.adriel.voyager:voyager-navigator:$voyagerVersion")
-                implementation("cafe.adriel.voyager:voyager-transitions:$voyagerVersion")
-                api("io.github.qdsfdhvh:image-loader:1.6.3")
+                // Compose
+                with(compose) {
+                    api(runtime)
+                    api(foundation)
+                    api(material)
+                    api(material3)
+                    api(materialIconsExtended)
+                }
 
+                // Koin
+                with(Deps.Koin) {
+                    api(core)
+                    api(test)
+                }
+
+                // Voyager
+                with(Deps.Voyager) {
+                    api(navigator)
+                    api(transitions)
+                    api(koin)
+                }
+
+                // Moko
+                with(Deps.Moko) {
+                    api(resources)
+                    api(resourcesCompose)
+                }
+
+                // Github
+                with(Deps.Github) {
+                    api(imageLoader)
+                }
+
+                api(Deps.Io.Ktor.ktorSerializationKotlinxJson)
+                api(project(":systemui"))
             }
         }
         val androidMain by getting {
@@ -54,6 +74,7 @@ kotlin {
                 api("androidx.activity:activity-compose:1.7.2")
                 api("androidx.appcompat:appcompat:1.6.1")
                 api("androidx.core:core-ktx:1.10.1")
+                api(Deps.Koin.android)
             }
         }
         val iosX64Main by getting

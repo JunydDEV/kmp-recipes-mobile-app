@@ -83,18 +83,14 @@
         ]
       }
     ],
-    "popular_recipes": {
-      "id": "_popular_recipes",
-      "label": "Popular",
-      "recipes": [
-        "pizza1",
-        "pizza4",
-        "pasta1",
-        "pasta3",
-        "steak1",
-        "steak5"
-      ]
-    }
+    "popular_recipes": [
+      "pizza1",
+      "pizza4",
+      "pasta1",
+      "pasta3",
+      "steak1",
+      "steak5"
+    ]
   },
   "recipes": [
     {
