@@ -39,8 +39,7 @@ private const val KEY_RECIPES_DETAILS_SCREEN = "recipesDetailsScreenKey"
 
 class RecipeDetailsScreen(private val recipe: Recipe) : Screen {
 
-    override val key: ScreenKey
-        get() = KEY_RECIPES_DETAILS_SCREEN
+    override val key: ScreenKey = KEY_RECIPES_DETAILS_SCREEN
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable

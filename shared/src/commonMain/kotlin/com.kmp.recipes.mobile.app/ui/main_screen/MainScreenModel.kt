@@ -8,13 +8,14 @@ import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
 import com.kmp.recipes.mobile.app.data.datasource.model.RecipesData
 import com.kmp.recipes.mobile.app.data.repository.RecipesRepository
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onStart
 
 class MainScreenModel(val repository: RecipesRepository) : StateScreenModel<UiState>(UiState.Init) {
 
     private val _searchRecipesStateFlow = MutableStateFlow<UiState>(UiState.Init)
-    val searchRecipesStateFlow = _searchRecipesStateFlow
+    val searchRecipesStateFlow: StateFlow<UiState> = _searchRecipesStateFlow
 
     suspend fun fetchRecipesData() {
         repository.getRecipesData()

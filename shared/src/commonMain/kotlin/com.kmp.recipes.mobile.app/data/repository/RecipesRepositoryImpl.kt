@@ -19,11 +19,15 @@ class RecipesRepositoryImpl(
         }
     }
 
-    override suspend fun searchRecipes(query: String)= flow {
+    override suspend fun searchRecipes(query: String) = flow {
         try {
             val result = dataSource.searchRecipes(query)
-            emit(ApiResultState.OnSuccess(result))
-        }catch (e: Exception) {
+            if (result.isEmpty()) {
+                emit(ApiResultState.OnFailure("Sorry, recipes not found."))
+            } else {
+                emit(ApiResultState.OnSuccess(result))
+            }
+        } catch (e: Exception) {
             e.printStackTrace()
             emit(ApiResultState.OnFailure(e.message ?: "Failed to search recipes"))
         }

@@ -41,7 +41,6 @@ class MainScreen : Screen {
     @Composable
     override fun Content() {
         val mainScreenModel = getScreenModel<MainScreenModel>()
-
         val searchQueryState = rememberSaveable { mutableStateOf("") }
         val mainScreenDataState = mainScreenModel.state.collectAsState()
 

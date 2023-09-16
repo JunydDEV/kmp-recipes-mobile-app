@@ -8,6 +8,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.ui.Dimens
@@ -30,7 +31,7 @@ fun SearchRecipesList(
         mainScreenModel.searchRecipes(searchQuery)
     }
 
-    val searchResultsState = mainScreenModel.searchRecipesStateFlow.asStateFlow()
+    val searchResultsState = mainScreenModel.searchRecipesStateFlow.collectAsState()
     val scrollState = rememberScrollState()
 
     Column(
@@ -48,9 +49,7 @@ fun SearchRecipesList(
             }
             is UiState.Success<*> -> {
                 val searchDataState = uiState.data as SearchDataState
-                ColumnX(
-                    primaryTitle = searchDataState.searchResultsLabel
-                ) {
+                ColumnX(primaryTitle = searchDataState.searchResultsLabel) {
                     RecipesListing(recipesList = searchDataState.searchResults, navigator = navigator)
                 }
             }
