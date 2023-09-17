@@ -24,6 +24,7 @@ import com.seiko.imageloader.rememberImageAction
 fun ImageX(
     modifier: Modifier,
     url: String,
+    tag: String,
     showOverlay: Boolean = false,
     overlayColor: Color = MaterialTheme.colorScheme.primary,
     showProgress: Boolean = true

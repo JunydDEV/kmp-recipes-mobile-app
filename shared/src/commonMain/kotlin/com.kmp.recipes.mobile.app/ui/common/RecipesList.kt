@@ -53,6 +53,7 @@ fun RecipesListing(recipesList: List<Recipe>, navigator: Navigator) {
                     ImageX(
                         modifier = Modifier.fillMaxSize(),
                         url = recipesList[it].image,
+                        tag = stringResource(SharedRes.strings.recipe_category_image_description),
                         showOverlay = true
                     )
                 }

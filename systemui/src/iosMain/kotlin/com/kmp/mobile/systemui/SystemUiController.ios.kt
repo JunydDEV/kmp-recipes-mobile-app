@@ -4,6 +4,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
 @Composable
-actual fun setStatusBarColor(color: Color) {
-    // TBD: Set color for iOS safe area.
+actual fun StatusBarColor(color: Color, isDarkTheme: Boolean) {
+    // TBD: Set color for iOS status bar.
 }

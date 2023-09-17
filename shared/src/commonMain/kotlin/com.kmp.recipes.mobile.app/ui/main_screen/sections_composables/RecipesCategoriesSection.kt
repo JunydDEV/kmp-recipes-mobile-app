@@ -66,6 +66,7 @@ fun RecipesCategoriesSection(
                         ImageX(
                             modifier = Modifier.fillMaxSize(),
                             url = categories[it].image,
+                            tag = stringResource(SharedRes.strings.category_image_description),
                             showOverlay = true,
                             showProgress = false
                         )

@@ -5,7 +5,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import com.kmp.mobile.systemui.setStatusBarColor
+import com.kmp.mobile.systemui.StatusBarColor
 
 private val LightColors = lightColorScheme(
     primary = md_theme_light_primary,
@@ -81,7 +81,8 @@ fun AppTheme(
         useDarkTheme -> DarkColors
         else -> LightColors
     }
-    setStatusBarColor(colors.primary)
+
+    StatusBarColor(colors.onPrimary, useDarkTheme)
 
     MaterialTheme(
         colorScheme = colors,

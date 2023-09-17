@@ -25,7 +25,8 @@ object Dimens {
     val cardElevation = 10.dp
 
     val appTitleSize: TextUnit = 28.sp
-    val detailsRecipesImageHeight = 200.dp
+    val detailsRecipesImageHeight = 300.dp
+    val detailsRecipesImageMinHeight = 100.dp
 
     const val halfOfScreenWidth = 0.5f
     const val categoryImageRatio = 16f / 9f

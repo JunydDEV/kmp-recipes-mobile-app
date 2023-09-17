@@ -55,6 +55,7 @@ fun RecipeIngredientsSection(recipe: Recipe, navigator: Navigator) {
                                 .fillMaxSize()
                                 .clip(RoundedCornerShape(Dimens.categoryImageRadius)),
                             url = ingredients[it].image,
+                            tag = stringResource(SharedRes.strings.ingredient_image_description),
                             showOverlay = true,
                             showProgress = false
                         )

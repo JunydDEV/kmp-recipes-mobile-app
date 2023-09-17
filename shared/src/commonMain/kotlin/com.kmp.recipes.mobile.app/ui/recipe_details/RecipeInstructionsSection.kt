@@ -13,12 +13,13 @@ import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
+import com.kmp.recipes.mobile.app.ui.common.ColumnX
 import dev.icerock.moko.resources.compose.stringResource
 
 @Composable
 fun RecipeInstructionsSection(recipe: Recipe, navigator: Navigator) {
     Column(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth().padding(top = Dimens.smallSpacing),
     ) {
         Text(
             text = stringResource(SharedRes.strings.title_instructions),
@@ -26,8 +27,9 @@ fun RecipeInstructionsSection(recipe: Recipe, navigator: Navigator) {
             color = MaterialTheme.colorScheme.primary
         )
 
-        Column {
+        Column(modifier = Modifier.padding(top = Dimens.smallSpacing)) {
             val instructions = recipe.instructions
+
             repeat(instructions.size) {
                 Row(horizontalArrangement = Arrangement.spacedBy(Dimens.smallSpacing)) {
                     Text(

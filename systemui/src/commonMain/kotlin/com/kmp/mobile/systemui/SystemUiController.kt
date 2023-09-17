@@ -4,4 +4,4 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
 @Composable
-expect fun setStatusBarColor(color: Color)
+expect fun StatusBarColor(color: Color, isDarkTheme: Boolean)
