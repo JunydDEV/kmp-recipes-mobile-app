@@ -23,7 +23,7 @@ import androidx.compose.ui.Modifier
 import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
-import com.kmp.recipes.mobile.app.ui.recipe_details.RecipeDetailsScreen
+import com.kmp.recipes.mobile.app.ui.recipeDetail.RecipeDetailsScreen
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.compose.painterResource
 import dev.icerock.moko.resources.compose.stringResource

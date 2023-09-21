@@ -1,9 +1,11 @@
-package com.kmp.recipes.mobile.app.ui.main_screen
+package com.kmp.recipes.mobile.app.ui.recipeMain
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.CircularProgressIndicator
@@ -23,11 +25,14 @@ import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.ui.common.FailureLabel
-import com.kmp.recipes.mobile.app.ui.main_screen.search_recipes_composable.SearchRecipesList
-import com.kmp.recipes.mobile.app.ui.main_screen.sections_composables.FoodQuotesSection
-import com.kmp.recipes.mobile.app.ui.main_screen.sections_composables.MainTopBar
-import com.kmp.recipes.mobile.app.ui.main_screen.sections_composables.PopularRecipesSection
-import com.kmp.recipes.mobile.app.ui.main_screen.sections_composables.RecipesCategoriesSection
+import com.kmp.recipes.mobile.app.ui.recipeMain.search.SearchRecipesList
+import com.kmp.recipes.mobile.app.ui.recipeMain.search.SearchScreenModel
+import com.kmp.recipes.mobile.app.ui.recipeMain.sections.FoodQuotesSection
+import com.kmp.recipes.mobile.app.ui.recipeMain.sections.MainTopBar
+import com.kmp.recipes.mobile.app.ui.recipeMain.sections.PopularRecipesSection
+import com.kmp.recipes.mobile.app.ui.recipeMain.sections.RecipesCategoriesSection
+import com.kmp.recipes.mobile.app.ui.recipeMain.stateholders.RecipesDataState
+import com.kmp.recipes.mobile.app.ui.recipeMain.stateholders.UiState
 import com.kmp.recipes.mobile.app.util.getScreenModel
 
 
@@ -41,6 +46,7 @@ class MainScreen : Screen {
     @Composable
     override fun Content() {
         val mainScreenModel = getScreenModel<MainScreenModel>()
+        val searchScreenModel = getScreenModel<SearchScreenModel>()
         val searchQueryState = rememberSaveable { mutableStateOf("") }
         val mainScreenDataState = mainScreenModel.state.collectAsState()
 
@@ -67,7 +73,8 @@ class MainScreen : Screen {
                         searchQuery = searchQueryState,
                         paddingValue = paddingValue,
                         recipesDataState = recipesDataState,
-                        model = mainScreenModel
+                        mainScreenModel = mainScreenModel,
+                        searchScreenModel = searchScreenModel
                     )
                 }
             }
@@ -79,7 +86,8 @@ class MainScreen : Screen {
         searchQuery: MutableState<String>,
         paddingValue: PaddingValues,
         recipesDataState: RecipesDataState,
-        model: MainScreenModel
+        mainScreenModel: MainScreenModel,
+        searchScreenModel: SearchScreenModel
     ) {
         val navigator = LocalNavigator.currentOrThrow
 
@@ -88,14 +96,14 @@ class MainScreen : Screen {
                 paddingValue = paddingValue,
                 searchQuery = searchQuery.value,
                 navigator = navigator,
-                mainScreenModel = model
+                searchScreenModel = searchScreenModel
             )
         } else {
             HomeScreenDefaultContent(
                 paddingValues = paddingValue,
                 navigator = navigator,
                 recipesDataState = recipesDataState,
-                mainScreenModel = model
+                mainScreenModel = mainScreenModel
             )
         }
     }
@@ -108,10 +116,12 @@ class MainScreen : Screen {
         mainScreenModel: MainScreenModel
     ) {
         LazyColumn(
-            modifier = Modifier.fillMaxWidth().padding(paddingValues)
-                .padding(top = Dimens.defaultSpacing),
+            modifier = Modifier.fillMaxWidth().padding(paddingValues),
             verticalArrangement = Arrangement.spacedBy(Dimens.defaultSpacing)
         ) {
+            item {
+                Spacer(Modifier.fillMaxWidth().height(Dimens.smallSpacing))
+            }
             item {
                 FoodQuotesSection(
                     navigator = navigator,
@@ -122,14 +132,15 @@ class MainScreen : Screen {
                 RecipesCategoriesSection(
                     navigator = navigator,
                     categories = recipesDataState.categories,
-                    recipes = recipesDataState.popularRecipes,
+                    recipes = recipesDataState.recipesList,
                     mainScreenModel = mainScreenModel
                 )
             }
             item {
                 PopularRecipesSection(
                     navigator = navigator,
-                    recipes = recipesDataState.popularRecipes
+                    popularRecipesList = recipesDataState.popularRecipes,
+                    allRecipesList = recipesDataState.recipesList
                 )
             }
         }

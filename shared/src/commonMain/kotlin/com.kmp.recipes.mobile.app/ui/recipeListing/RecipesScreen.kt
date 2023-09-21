@@ -1,7 +1,10 @@
-package com.kmp.recipes.mobile.app.ui.recipe_listing
+package com.kmp.recipes.mobile.app.ui.recipeListing
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -44,9 +47,14 @@ class RecipesScreen(private val title: String, private val recipes: List<Recipe>
             Column(
                 modifier = Modifier.fillMaxSize()
                     .padding(it)
-                    .padding(Dimens.defaultSpacing)
+                    .padding(
+                        start = Dimens.smallSpacing,
+                        end = Dimens.smallSpacing,
+                        bottom = Dimens.defaultSpacing
+                    )
                     .verticalScroll(scrollState)
             ) {
+                Spacer(Modifier.fillMaxWidth().height(Dimens.defaultSpacing))
                 RecipesListing(recipes, navigator)
             }
         }

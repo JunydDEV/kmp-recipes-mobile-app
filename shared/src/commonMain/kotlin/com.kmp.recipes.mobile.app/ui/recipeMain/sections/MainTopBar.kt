@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.ui.main_screen.sections_composables
+package com.kmp.recipes.mobile.app.ui.recipeMain.sections
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background

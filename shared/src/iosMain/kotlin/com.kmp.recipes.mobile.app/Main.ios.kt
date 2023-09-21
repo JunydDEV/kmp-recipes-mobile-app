@@ -3,7 +3,7 @@ package com.kmp.recipes.mobile.app
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
 import androidx.compose.ui.window.ComposeUIViewController
-import com.kmp.recipes.mobile.app.core.di.initKoin
+import com.kmp.recipes.mobile.app.data.di.initKoin
 import com.kmp.recipes.mobile.app.ui.RecipesApp
 import com.seiko.imageloader.ImageLoader
 import com.seiko.imageloader.LocalImageLoader

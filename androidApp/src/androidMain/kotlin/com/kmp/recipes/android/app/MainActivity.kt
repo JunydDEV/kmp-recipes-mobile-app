@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.core.view.WindowCompat
 import com.kmp.recipes.mobile.app.MainView
-import com.kmp.recipes.mobile.app.core.di.initKoin
+import com.kmp.recipes.mobile.app.data.di.initKoin
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.stopKoin

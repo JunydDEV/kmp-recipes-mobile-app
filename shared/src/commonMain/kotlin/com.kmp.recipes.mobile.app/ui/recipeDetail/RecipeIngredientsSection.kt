@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.ui.recipe_details
+package com.kmp.recipes.mobile.app.ui.recipeDetail
 
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Box

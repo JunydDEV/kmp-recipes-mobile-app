@@ -5,10 +5,8 @@ import com.kmp.recipes.mobile.app.data.datasource.FakeRecipesDataSourceImpl
 import com.kmp.recipes.mobile.app.data.datasource.RecipesDataService
 import com.kmp.recipes.mobile.app.data.repository.RecipesRepository
 import com.kmp.recipes.mobile.app.data.repository.RecipesRepositoryImpl
-import com.kmp.recipes.mobile.app.ui.main_screen.MainScreenModel
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.IO
+import com.kmp.recipes.mobile.app.ui.recipeMain.MainScreenModel
+import com.kmp.recipes.mobile.app.ui.recipeMain.search.SearchScreenModel
 import org.koin.dsl.module
 
 val dataModule = module {
@@ -20,4 +18,5 @@ val dataModule = module {
     }
     single<RecipesRepository> { RecipesRepositoryImpl(dataSource = get()) }
     factory { MainScreenModel(repository = get()) }
+    factory { SearchScreenModel(repository = get()) }
 }

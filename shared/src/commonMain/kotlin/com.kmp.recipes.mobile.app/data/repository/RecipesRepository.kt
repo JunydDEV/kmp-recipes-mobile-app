@@ -1,6 +1,6 @@
 package com.kmp.recipes.mobile.app.data.repository
 
-import com.kmp.recipes.mobile.app.data.datasource.ApiResultState
+import com.kmp.recipes.mobile.app.data.datasource.model.ApiResultState
 import kotlinx.coroutines.flow.Flow
 
 interface RecipesRepository {

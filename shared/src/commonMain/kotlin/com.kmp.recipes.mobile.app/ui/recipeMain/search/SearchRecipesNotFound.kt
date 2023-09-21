@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.ui.main_screen.search_recipes_composable
+package com.kmp.recipes.mobile.app.ui.recipeMain.search
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,8 +10,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.kmp.recipes.mobile.app.ui.Dimens
-import com.kmp.recipes.mobile.app.sharedres.SharedRes
-import dev.icerock.moko.resources.compose.stringResource
 
 @Composable
 fun SearchResultsNotFound(errorMessage: String) {

@@ -1,7 +1,7 @@
 package com.kmp.recipes.mobile.app.data.repository
 
 import com.kmp.recipes.mobile.app.cookitApplicationConfig
-import com.kmp.recipes.mobile.app.data.datasource.ApiResultState
+import com.kmp.recipes.mobile.app.data.datasource.model.ApiResultState
 import com.kmp.recipes.mobile.app.data.datasource.FakeRecipesDataSource
 import kotlinx.coroutines.flow.flow
 
@@ -21,6 +21,8 @@ class RecipesRepositoryImpl(
 
     override suspend fun searchRecipes(query: String) = flow {
         try {
+            if (query.length < 3) return@flow
+
             val result = dataSource.searchRecipes(query)
             if (result.isEmpty()) {
                 emit(ApiResultState.OnFailure("Sorry, recipes not found."))
