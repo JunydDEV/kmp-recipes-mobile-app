@@ -47,12 +47,8 @@ fun FoodQuotesSection(navigator: Navigator, quotes: List<Quote>) {
             pageSpacing = Dimens.smallSpacing
         ) { page ->
             Card(
-                modifier = Modifier.fillMaxSize().padding(
-                    start = Dimens.smallSpacing,
-                    end = Dimens.smallSpacing
-                ),
+                modifier = Modifier.fillMaxSize(),
                 shape = RoundedCornerShape(Dimens.cornerSize),
-                elevation = CardDefaults.cardElevation(defaultElevation = Dimens.cardElevation),
                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primary)
             ) {
                 QuotesContent(quotes[page])

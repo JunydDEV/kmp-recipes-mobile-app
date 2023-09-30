@@ -1,10 +1,16 @@
 package com.kmp.recipes.mobile.app.ui.recipeMain.search
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -13,7 +19,7 @@ import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.ui.common.ColumnX
 import com.kmp.recipes.mobile.app.ui.common.FailureLabel
-import com.kmp.recipes.mobile.app.ui.common.RecipesListing
+import com.kmp.recipes.mobile.app.ui.common.RecipeCard
 import com.kmp.recipes.mobile.app.ui.recipeMain.MainScreenModel
 import com.kmp.recipes.mobile.app.ui.recipeMain.stateholders.SearchDataState
 import com.kmp.recipes.mobile.app.ui.recipeMain.stateholders.UiState
@@ -30,25 +36,34 @@ fun SearchRecipesList(
     val searchResultsState = searchScreenModel.state.collectAsState()
     val scrollState = rememberScrollState()
 
-    Column(
-        modifier = Modifier
-            .padding(paddingValue)
-            .padding(top = Dimens.defaultSpacing)
-            .verticalScroll(scrollState)
-    ) {
-        when(val uiState = searchResultsState.value) {
-            is UiState.Init, UiState.Loading -> {
-                // Box { CircularProgressIndicator() }
-            }
-            is UiState.Failure -> {
-                FailureLabel(uiState.errorMessage)
-            }
-            is UiState.Success<*> -> {
-                val searchDataState = uiState.data as SearchDataState
-                ColumnX(primaryTitle = searchDataState.searchResultsLabel) {
-                    RecipesListing(recipesList = searchDataState.searchResults, navigator = navigator)
+    when (val uiState = searchResultsState.value) {
+        is UiState.Init, UiState.Loading -> {
+            // Box { CircularProgressIndicator() }
+        }
+
+        is UiState.Failure -> {
+            FailureLabel(uiState.errorMessage)
+        }
+
+        is UiState.Success<*> -> {
+            val searchDataState = uiState.data as SearchDataState
+            Column(modifier = Modifier.fillMaxSize().padding(paddingValue)) {
+                Text(
+                    modifier = Modifier.clickable { },
+                    text = searchDataState.searchResultsLabel,
+                    style = MaterialTheme.typography.titleLarge,
+                    color = MaterialTheme.colorScheme.primary
+                )
+                LazyColumn(
+                    modifier = Modifier.fillMaxWidth(),
+                    contentPadding = PaddingValues(Dimens.defaultSpacing)
+                ) {
+                    items(searchDataState.searchResults.size) { index ->
+                        RecipeCard(recipe = searchDataState.searchResults[index], navigator = navigator)
+                    }
                 }
             }
         }
     }
+
 }

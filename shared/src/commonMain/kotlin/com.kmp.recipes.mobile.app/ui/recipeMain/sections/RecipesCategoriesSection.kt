@@ -39,10 +39,7 @@ fun RecipesCategoriesSection(
 
     ColumnX(primaryTitle = primaryTitle) {
         Row(
-            modifier = Modifier.horizontalScroll(rememberScrollState()).padding(
-                start = Dimens.smallSpacing,
-                end = Dimens.smallSpacing
-            ),
+            modifier = Modifier.horizontalScroll(rememberScrollState()),
             horizontalArrangement = Arrangement.spacedBy(Dimens.defaultSpacing)
         ) {
             repeat(categories.size) {
@@ -57,7 +54,6 @@ fun RecipesCategoriesSection(
                         navigator.push(RecipesScreen(title, result))
                     },
                     shape = RoundedCornerShape(Dimens.normalRadius),
-                    elevation = CardDefaults.cardElevation(defaultElevation = Dimens.cardElevation)
                 ) {
                     Box(
                         modifier = Modifier.fillMaxSize(),

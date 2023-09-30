@@ -1,6 +1,7 @@
 package com.kmp.recipes.mobile.app.ui.recipeMain
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,6 +9,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
@@ -115,34 +118,30 @@ class MainScreen : Screen {
         recipesDataState: RecipesDataState,
         mainScreenModel: MainScreenModel
     ) {
-        LazyColumn(
-            modifier = Modifier.fillMaxWidth().padding(paddingValues),
+        val scrollState = rememberScrollState()
+        Column (
+            modifier = Modifier.fillMaxWidth()
+                .padding(paddingValues)
+                .padding(start = Dimens.defaultSpacing, end = Dimens.defaultSpacing)
+                .verticalScroll(scrollState),
             verticalArrangement = Arrangement.spacedBy(Dimens.defaultSpacing)
         ) {
-            item {
-                Spacer(Modifier.fillMaxWidth().height(Dimens.smallSpacing))
-            }
-            item {
-                FoodQuotesSection(
-                    navigator = navigator,
-                    quotes = recipesDataState.foodQuotes
-                )
-            }
-            item {
-                RecipesCategoriesSection(
-                    navigator = navigator,
-                    categories = recipesDataState.categories,
-                    recipes = recipesDataState.recipesList,
-                    mainScreenModel = mainScreenModel
-                )
-            }
-            item {
-                PopularRecipesSection(
-                    navigator = navigator,
-                    popularRecipesList = recipesDataState.popularRecipes,
-                    allRecipesList = recipesDataState.recipesList
-                )
-            }
+            Spacer(modifier = Modifier.fillMaxWidth().height(Dimens.smallSpacing))
+            FoodQuotesSection(
+                navigator = navigator,
+                quotes = recipesDataState.foodQuotes
+            )
+            RecipesCategoriesSection(
+                navigator = navigator,
+                categories = recipesDataState.categories,
+                recipes = recipesDataState.recipesList,
+                mainScreenModel = mainScreenModel
+            )
+            PopularRecipesSection(
+                navigator = navigator,
+                popularRecipesList = recipesDataState.popularRecipes,
+                allRecipesList = recipesDataState.recipesList
+            )
         }
     }
 }

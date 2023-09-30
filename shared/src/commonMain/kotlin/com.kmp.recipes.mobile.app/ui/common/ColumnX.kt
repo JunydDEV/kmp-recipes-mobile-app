@@ -22,10 +22,7 @@ fun ColumnX(
     onSecondaryClick: (() -> Unit)? = null,
     content: @Composable ColumnScope.() -> (Unit)
 ) {
-    val mainModifier = Modifier.fillMaxWidth().padding(
-        start = Dimens.smallSpacing,
-        end = Dimens.smallSpacing
-    )
+    val mainModifier = Modifier.fillMaxWidth()
     Column(
         modifier = mainModifier,
         verticalArrangement = Arrangement.spacedBy(Dimens.smallSpacing)
@@ -61,10 +58,7 @@ private fun TitlesRow(
     secondaryTitleContent: @Composable RowScope.() -> Unit
 ) {
     Row(
-        modifier = Modifier.fillMaxWidth().padding(
-            start = Dimens.smallSpacing,
-            end = Dimens.smallSpacing
-        ),
+        modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         primaryTitleContent()
