@@ -13,5 +13,5 @@ data class Recipe(
     val level: String,
     val instructions: List<String>,
     val ingredients: List<Ingredient>,
-    @Transient val isFavourite: Boolean = false
+    @Transient var isFavourite: Boolean = false
 )

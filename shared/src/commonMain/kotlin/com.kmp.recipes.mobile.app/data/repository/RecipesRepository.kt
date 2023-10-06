@@ -19,4 +19,11 @@ interface RecipesRepository {
      * @return flow of [ApiResultState] result object.
      * */
     suspend fun searchRecipes(query: String): Flow<ApiResultState>
+
+    /**
+     * Adds recipe to the favourites.
+     *
+     * @param id identifier of the recipe.
+     * */
+    fun markRecipeFavourite(id: String)
 }

@@ -23,12 +23,22 @@ class FakeRecipesDataSourceImpl(
     }
 
     override fun searchRecipes(query: String): List<Recipe> {
-        if (recipesData == null) {
-            throw RuntimeException("Recipes data is not available.")
-        }
+        val recipesDataObject =
+            recipesData ?: throw RuntimeException("Recipes data is not available.")
 
-        return recipesData!!.recipesList.filter {
+        return recipesDataObject.recipesList.filter {
             it.label.startsWith(query, ignoreCase = true)
+        }
+    }
+
+    override fun markRecipeFavourite(id: String) {
+        val recipesDataObject =
+            recipesData ?: throw RuntimeException("Recipes data is not available.")
+
+        recipesDataObject.recipesList.forEach {
+            if (it.id == id) {
+                it.isFavourite = !it.isFavourite
+            }
         }
     }
 }

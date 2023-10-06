@@ -13,8 +13,14 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Favorite
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -26,6 +32,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.model.rememberScreenModel
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.core.screen.ScreenKey
@@ -35,6 +42,8 @@ import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.ui.common.ImageX
 import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
+import com.kmp.recipes.mobile.app.ui.recipeMain.MainScreenModel
+import com.kmp.recipes.mobile.app.util.getScreenModel
 import dev.icerock.moko.resources.compose.painterResource
 import dev.icerock.moko.resources.compose.stringResource
 
@@ -48,7 +57,7 @@ class RecipeDetailsScreen(private val recipe: Recipe) : Screen {
     @Composable
     override fun Content() {
         val navigator = LocalNavigator.currentOrThrow
-        val recipeDetailsModel = rememberScreenModel { RecipeDetailsModel() }
+        val recipeDetailsModel = getScreenModel<RecipeDetailsModel>()
         val recipeImageScrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
 
         Scaffold(
@@ -85,6 +94,22 @@ class RecipeDetailsScreen(private val recipe: Recipe) : Screen {
                 )
             },
             containerColor = MaterialTheme.colorScheme.primary,
+            floatingActionButton = {
+                FloatingActionButton(
+                    onClick = {
+                        recipeDetailsModel.markAsFavourite(recipe.id)
+                    },
+                    shape = CircleShape,
+                    containerColor = MaterialTheme.colorScheme.primary
+                ) {
+                    Icon(
+                        modifier = Modifier.size(30.dp),
+                        imageVector = Icons.Rounded.Favorite,
+                        tint = MaterialTheme.colorScheme.onPrimary,
+                        contentDescription = null
+                    )
+                }
+            }
         ) {
             val scrollState = rememberScrollState()
             Box(

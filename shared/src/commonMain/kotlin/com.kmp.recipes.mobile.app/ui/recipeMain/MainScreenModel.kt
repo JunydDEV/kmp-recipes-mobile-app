@@ -16,9 +16,6 @@ import kotlinx.coroutines.flow.onStart
 
 class MainScreenModel(val repository: RecipesRepository) : StateScreenModel<UiState>(UiState.Init) {
 
-    private val _searchRecipesStateFlow = MutableStateFlow<UiState>(UiState.Init)
-    val searchRecipesStateFlow: StateFlow<UiState> = _searchRecipesStateFlow
-
     suspend fun fetchRecipesData() {
         repository.getRecipesData()
             .onStart {
@@ -60,9 +57,4 @@ class MainScreenModel(val repository: RecipesRepository) : StateScreenModel<UiSt
     fun findRecipesByCategoryId(category: Category, recipesList: List<Recipe>): List<Recipe> {
         return recipesList.filter { category.recipes.contains(it.id) }
     }
-
-    fun searchRecipesBy(recipes: List<Recipe>, searchQuery: String): List<Recipe> {
-        return recipes.filter { it.label.contains(searchQuery, ignoreCase = true) }
-    }
-
 }

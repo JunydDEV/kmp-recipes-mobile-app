@@ -53,7 +53,7 @@ class MainScreen : Screen {
         val searchQueryState = rememberSaveable { mutableStateOf("") }
         val mainScreenDataState = mainScreenModel.state.collectAsState()
 
-        LaunchedEffect(Unit) {
+        LaunchedEffect(key1 = null) {
             mainScreenModel.fetchRecipesData()
         }
 

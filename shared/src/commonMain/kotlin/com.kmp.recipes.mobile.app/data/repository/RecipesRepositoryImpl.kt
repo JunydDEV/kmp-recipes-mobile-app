@@ -34,4 +34,8 @@ class RecipesRepositoryImpl(
             emit(ApiResultState.OnFailure(e.message ?: "Failed to search recipes"))
         }
     }
+
+    override fun markRecipeFavourite(id: String) {
+        dataSource.markRecipeFavourite(id)
+    }
 }
