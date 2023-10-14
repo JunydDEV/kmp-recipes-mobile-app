@@ -79,7 +79,7 @@ private fun navigateToRecipeDetails(
     navigator: Navigator
 ) {
     navigator.push(
-        RecipeDetailsScreen(recipe)
+        RecipeDetailsScreen(recipe.id)
     )
 }
 

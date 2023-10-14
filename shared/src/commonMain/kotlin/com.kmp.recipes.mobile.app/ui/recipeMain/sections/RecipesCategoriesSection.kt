@@ -32,8 +32,6 @@ import dev.icerock.moko.resources.compose.stringResource
 fun RecipesCategoriesSection(
     navigator: Navigator,
     categories: List<Category>,
-    recipes: List<Recipe>,
-    mainScreenModel: MainScreenModel,
 ) {
     val primaryTitle = stringResource(SharedRes.strings.categories_section_header)
 
@@ -49,9 +47,8 @@ fun RecipesCategoriesSection(
                         width = Dimens.categoryImageWidth,
                         height = Dimens.categoryImageHeight
                     ).clickable {
-                        val result =
-                            mainScreenModel.findRecipesByCategoryId(categories[it], recipes)
-                        navigator.push(RecipesScreen(title, result))
+                        val categoryId = categories[it].id
+                        navigator.push(RecipesScreen(title, categoryId))
                     },
                     shape = RoundedCornerShape(Dimens.normalRadius),
                 ) {

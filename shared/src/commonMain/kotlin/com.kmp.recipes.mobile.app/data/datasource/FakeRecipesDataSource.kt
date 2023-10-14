@@ -23,7 +23,28 @@ interface FakeRecipesDataSource {
     /**
      * Adds recipe to the favourites.
      *
-     * @param id identifier of the recipe.
+     * @param recipe object.
      * */
-    fun markRecipeFavourite(id: String)
+    suspend fun markRecipeFavourite(recipe: Recipe)
+
+    /**
+     * Retrieves favourite recipes list.
+     *
+     * @return list of recipes
+     * */
+    suspend fun getFavouriteRecipesList(): List<Recipe>
+
+    /**
+     * Fetches recipe based on recipe ID.
+     *
+     * @return recipe object
+     * */
+    suspend fun fetchRecipesDetailsById(id: String): Recipe?
+
+    /**
+     * Fetches recipes list based on category ID.
+     *
+     * @return list of recipes
+     * */
+    suspend fun fetchRecipesListByCategory(id: String): List<Recipe>
 }

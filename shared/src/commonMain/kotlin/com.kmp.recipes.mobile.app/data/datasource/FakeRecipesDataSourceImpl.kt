@@ -8,36 +8,74 @@ class FakeRecipesDataSourceImpl(
     private val recipesDataService: RecipesDataService,
 ) : FakeRecipesDataSource {
 
-    private var recipesData: RecipesData? = null
+    private lateinit var recipesData: RecipesData
+    private val favoriteRecipesList = mutableListOf<Recipe>()
 
     override suspend fun getRecipesData(context: Any?): RecipesData {
-        if (context == null) throw RuntimeException("Failed to fetch recipes data, please restart the app")
+        if (context == null)
+            throw RuntimeException("Failed to fetch recipes data, please restart the app")
+
+        if (this::recipesData.isInitialized) return recipesData
 
         return try {
             val fakeRecipesText = readFakeRecipesText(context)
-            recipesData = recipesDataService.fetchRecipesData(fakeRecipesText)
-            recipesData!!
+            recipesDataService.fetchRecipesData(fakeRecipesText).apply {
+                updateFavouriteField()
+                saveRecipesDataForFutureUse()
+            }
         } catch (e: Exception) {
             throw RuntimeException(e.message)
         }
     }
 
-    override fun searchRecipes(query: String): List<Recipe> {
-        val recipesDataObject =
-            recipesData ?: throw RuntimeException("Recipes data is not available.")
+    private fun RecipesData.updateFavouriteField() {
+        recipesList.map { updateFavouriteField(it) }
+    }
 
-        return recipesDataObject.recipesList.filter {
+    private fun RecipesData.saveRecipesDataForFutureUse() {
+        recipesData = this
+    }
+
+    private fun updateFavouriteField(it: Recipe) {
+        it.isFavourite = favoriteRecipesList.contains(it)
+    }
+
+    override fun searchRecipes(query: String): List<Recipe> {
+        return recipesData.recipesList.filter {
             it.label.startsWith(query, ignoreCase = true)
         }
     }
 
-    override fun markRecipeFavourite(id: String) {
-        val recipesDataObject =
-            recipesData ?: throw RuntimeException("Recipes data is not available.")
+    override suspend fun markRecipeFavourite(recipe: Recipe) {
+        val recipeExistsInFavorites = favoriteRecipesList.any { it.id == recipe.id }
+        if (recipeExistsInFavorites) {
+            favoriteRecipesList.remove(recipe)
+        } else {
+            favoriteRecipesList.add(recipe)
+        }
+    }
 
-        recipesDataObject.recipesList.forEach {
-            if (it.id == id) {
-                it.isFavourite = !it.isFavourite
+    override suspend fun getFavouriteRecipesList(): List<Recipe> {
+        return favoriteRecipesList
+    }
+
+    override suspend fun fetchRecipesDetailsById(id: String): Recipe? {
+        return recipesData.recipesList.firstOrNull { it.id == id }
+    }
+
+    override suspend fun fetchRecipesListByCategory(id: String): List<Recipe> {
+        return when (id) {
+            "view all" -> { recipesData.recipesList }
+
+            "favourites" -> { favoriteRecipesList }
+
+            else -> {
+                val category = recipesData.sections.categories.find { it.id == id }
+                val recipesIds = category?.recipes
+                val results = recipesData.recipesList.filter {
+                    recipesIds?.contains(it.id) == true
+                }
+                results
             }
         }
     }

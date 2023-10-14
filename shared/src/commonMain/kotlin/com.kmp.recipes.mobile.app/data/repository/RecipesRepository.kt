@@ -1,6 +1,7 @@
 package com.kmp.recipes.mobile.app.data.repository
 
 import com.kmp.recipes.mobile.app.data.datasource.model.ApiResultState
+import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
 import kotlinx.coroutines.flow.Flow
 
 interface RecipesRepository {
@@ -23,7 +24,21 @@ interface RecipesRepository {
     /**
      * Adds recipe to the favourites.
      *
-     * @param id identifier of the recipe.
+     * @param recipe object.
      * */
-    fun markRecipeFavourite(id: String)
+    suspend fun markRecipeFavourite(recipe: Recipe)
+
+    /**
+     * Fetches recipe based on recipe ID.
+     *
+     * @return flow of [ApiResultState] result object.
+     * */
+    suspend fun fetchRecipeDetailsById(id: String): Flow<ApiResultState>
+
+    /**
+     * Fetches recipes list based on category ID.
+     *
+     * @return flow of [ApiResultState] result object.
+     * */
+    suspend fun fetchRecipesListByCategory(id: String): Flow<ApiResultState>
 }

@@ -27,14 +27,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.safeAreaPadding
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
+import com.kmp.recipes.mobile.app.ui.recipeListing.RecipesScreen
 import dev.icerock.moko.resources.compose.stringResource
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainTopBar(value: String, onChangeValue: (String) -> Unit) {
+fun MainTopBar(navigator: Navigator, value: String, onChangeValue: (String) -> Unit) {
 
     val searchBarVisibilityState = rememberSaveable { mutableStateOf(false) }
 
@@ -50,7 +52,9 @@ fun MainTopBar(value: String, onChangeValue: (String) -> Unit) {
                 )
             },
             actions = {
-                IconButton(onClick = {}) {
+                IconButton(onClick = {
+                    navigator.push(RecipesScreen("My Favourites", "favourites"))
+                }) {
                     Icon(
                         modifier = Modifier.size(30.dp),
                         imageVector = Icons.Rounded.Favorite,

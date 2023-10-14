@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.CircularProgressIndicator
@@ -18,6 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.currentCompositeKeyHash
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
@@ -35,16 +35,17 @@ import com.kmp.recipes.mobile.app.ui.recipeMain.sections.MainTopBar
 import com.kmp.recipes.mobile.app.ui.recipeMain.sections.PopularRecipesSection
 import com.kmp.recipes.mobile.app.ui.recipeMain.sections.RecipesCategoriesSection
 import com.kmp.recipes.mobile.app.ui.recipeMain.stateholders.RecipesDataState
-import com.kmp.recipes.mobile.app.ui.recipeMain.stateholders.UiState
+import com.kmp.recipes.mobile.app.ui.recipeMain.stateholders.MainScreenState
 import com.kmp.recipes.mobile.app.util.getScreenModel
 
 
-private const val KEY_MAIN_SCREEN = "mainScreenKey"
+const val KEY_MAIN_SCREEN = "mainScreenKey"
 
 @OptIn(ExperimentalMaterial3Api::class)
 class MainScreen : Screen {
 
-    override val key: ScreenKey = KEY_MAIN_SCREEN
+    override val key: ScreenKey
+        get() = KEY_MAIN_SCREEN
 
     @Composable
     override fun Content() {
@@ -52,47 +53,50 @@ class MainScreen : Screen {
         val searchScreenModel = getScreenModel<SearchScreenModel>()
         val searchQueryState = rememberSaveable { mutableStateOf("") }
         val mainScreenDataState = mainScreenModel.state.collectAsState()
-
-        LaunchedEffect(key1 = null) {
-            mainScreenModel.fetchRecipesData()
-        }
+        val navigator = LocalNavigator.currentOrThrow
 
         Scaffold(
             modifier = Modifier.fillMaxSize(),
-            topBar = { MainTopBar(searchQueryState.value) { searchQueryState.value = it } }
+            topBar = {
+                MainTopBar(navigator, searchQueryState.value) {
+                    searchQueryState.value = it
+                }
+            }
         ) { paddingValue ->
             when(val state = mainScreenDataState.value) {
-                is UiState.Loading, UiState.Init -> {
+                is MainScreenState.Loading, MainScreenState.Init -> {
                     CircularProgressIndicator()
                 }
 
-                is UiState.Failure -> {
-                    FailureLabel(state.errorMessage)
+                is MainScreenState.Error -> {
+                    FailureLabel(state.message)
                 }
 
-                is UiState.Success<*> -> {
-                    val recipesDataState = state.data as RecipesDataState
+                is MainScreenState.Content -> {
                     MapRecipesData(
+                        navigator = navigator,
                         searchQuery = searchQueryState,
                         paddingValue = paddingValue,
-                        recipesDataState = recipesDataState,
-                        mainScreenModel = mainScreenModel,
+                        content = state,
                         searchScreenModel = searchScreenModel
                     )
                 }
             }
         }
+
+        LaunchedEffect(currentCompositeKeyHash) {
+            mainScreenModel.fetchRecipesData()
+        }
     }
 
     @Composable
     private fun MapRecipesData(
+        navigator: Navigator,
         searchQuery: MutableState<String>,
         paddingValue: PaddingValues,
-        recipesDataState: RecipesDataState,
-        mainScreenModel: MainScreenModel,
+        content: MainScreenState.Content,
         searchScreenModel: SearchScreenModel
     ) {
-        val navigator = LocalNavigator.currentOrThrow
 
         if (searchQuery.value.isNotEmpty()) {
             SearchRecipesList(
@@ -105,8 +109,7 @@ class MainScreen : Screen {
             HomeScreenDefaultContent(
                 paddingValues = paddingValue,
                 navigator = navigator,
-                recipesDataState = recipesDataState,
-                mainScreenModel = mainScreenModel
+                content = content,
             )
         }
     }
@@ -115,8 +118,7 @@ class MainScreen : Screen {
     private fun HomeScreenDefaultContent(
         paddingValues: PaddingValues,
         navigator: Navigator,
-        recipesDataState: RecipesDataState,
-        mainScreenModel: MainScreenModel
+        content: MainScreenState.Content,
     ) {
         val scrollState = rememberScrollState()
         Column (
@@ -129,18 +131,15 @@ class MainScreen : Screen {
             Spacer(modifier = Modifier.fillMaxWidth().height(Dimens.smallSpacing))
             FoodQuotesSection(
                 navigator = navigator,
-                quotes = recipesDataState.foodQuotes
+                quotes = content.foodQuotes
             )
             RecipesCategoriesSection(
                 navigator = navigator,
-                categories = recipesDataState.categories,
-                recipes = recipesDataState.recipesList,
-                mainScreenModel = mainScreenModel
+                categories = content.categories,
             )
             PopularRecipesSection(
                 navigator = navigator,
-                popularRecipesList = recipesDataState.popularRecipes,
-                allRecipesList = recipesDataState.recipesList
+                popularRecipesList = content.popularRecipes
             )
         }
     }
