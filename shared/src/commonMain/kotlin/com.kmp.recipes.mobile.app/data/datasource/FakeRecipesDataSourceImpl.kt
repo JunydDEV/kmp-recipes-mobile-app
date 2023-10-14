@@ -41,8 +41,10 @@ class FakeRecipesDataSourceImpl(
     }
 
     override fun searchRecipes(query: String): List<Recipe> {
-        return recipesData.recipesList.filter {
-            it.label.startsWith(query, ignoreCase = true)
+        val searchQueryInLowercase = query.lowercase()
+
+        return recipesData.recipesList.filter { recipe->
+            recipe.label.lowercase().contains(searchQueryInLowercase)
         }
     }
 
