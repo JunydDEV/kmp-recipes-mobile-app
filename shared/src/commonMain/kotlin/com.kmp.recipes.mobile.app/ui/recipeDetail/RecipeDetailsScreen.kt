@@ -193,7 +193,7 @@ class RecipeDetailsScreen(private val id: String) : Screen {
             val color = if (favouriteState.value) {
                 MaterialTheme.colorScheme.onPrimaryContainer
             } else {
-                MaterialTheme.colorScheme.onSecondaryContainer
+                MaterialTheme.colorScheme.onPrimary
             }
             Icon(
                 modifier = Modifier.size(30.dp),
