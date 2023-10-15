@@ -47,21 +47,23 @@ class MainScreen : Screen {
 
     @Composable
     override fun Content() {
+        val navigator = LocalNavigator.currentOrThrow
+        val searchQueryState = rememberSaveable { mutableStateOf("") }
         val mainScreenModel = getScreenModel<MainScreenModel>()
         val searchScreenModel = getScreenModel<SearchScreenModel>()
-        val searchQueryState = rememberSaveable { mutableStateOf("") }
         val mainScreenDataState = mainScreenModel.state.collectAsState()
-        val navigator = LocalNavigator.currentOrThrow
+
+        LaunchedEffect(currentCompositeKeyHash) {
+            mainScreenModel.fetchRecipesData()
+        }
 
         Scaffold(
             modifier = Modifier.fillMaxSize(),
             topBar = {
-                MainTopBar(navigator, searchQueryState.value) {
-                    searchQueryState.value = it
-                }
+                MainTopBar(navigator, searchQueryState.value) { searchQueryState.value = it }
             }
-        ) { paddingValue ->
-            when(val state = mainScreenDataState.value) {
+        ) { paddingValues ->
+            when (val state = mainScreenDataState.value) {
                 is MainScreenState.Loading, MainScreenState.Init -> {
                     CircularProgressIndicator()
                 }
@@ -71,41 +73,37 @@ class MainScreen : Screen {
                 }
 
                 is MainScreenState.Content -> {
-                    MapRecipesData(
+                    MainScreenContent(
                         navigator = navigator,
                         searchQuery = searchQueryState,
-                        paddingValue = paddingValue,
+                        paddingValues = paddingValues,
                         content = state,
                         searchScreenModel = searchScreenModel
                     )
                 }
             }
         }
-
-        LaunchedEffect(currentCompositeKeyHash) {
-            mainScreenModel.fetchRecipesData()
-        }
     }
 
     @Composable
-    private fun MapRecipesData(
+    private fun MainScreenContent(
         navigator: Navigator,
         searchQuery: MutableState<String>,
-        paddingValue: PaddingValues,
+        paddingValues: PaddingValues,
         content: MainScreenState.Content,
         searchScreenModel: SearchScreenModel
     ) {
 
         if (searchQuery.value.isNotEmpty()) {
             SearchRecipesList(
-                paddingValue = paddingValue,
+                paddingValue = paddingValues,
                 searchQuery = searchQuery.value,
                 navigator = navigator,
                 searchScreenModel = searchScreenModel
             )
         } else {
             HomeScreenDefaultContent(
-                paddingValues = paddingValue,
+                paddingValues = paddingValues,
                 navigator = navigator,
                 content = content,
             )
