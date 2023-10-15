@@ -30,23 +30,23 @@ class RecipesScreenModel(private val repository: RecipesRepository) :
 
     private suspend fun fetchFavouriteRecipes() {
         repository.fetchFavouriteRecipes().collect {
-            parseRecipesResult(it)
+            mapApiResultOnUiState(it)
         }
     }
 
     private suspend fun fetchAllRecipes() {
         repository.fetchAllRecipes().collect {
-            parseRecipesResult(it)
+            mapApiResultOnUiState(it)
         }
     }
 
     private suspend fun fetchRecipesByCategory(id: String) {
         repository.fetchRecipesListByCategory(id).collect {
-            parseRecipesResult(it)
+            mapApiResultOnUiState(it)
         }
     }
 
-    private fun parseRecipesResult(it: ApiResultState) {
+    private fun mapApiResultOnUiState(it: ApiResultState) {
         when (it) {
             is ApiResultState.OnFailure -> {
                 val failureMessage = it.errorMessage

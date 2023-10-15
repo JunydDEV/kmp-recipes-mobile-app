@@ -20,20 +20,24 @@ class RecipeDetailsModel(private val repository: RecipesRepository) :
     fun fetchDetails(recipeId: String) {
         coroutineScope.launch {
             repository.fetchRecipeDetailsById(recipeId)
-                .collect {
-                    when (it) {
-                        is ApiResultState.OnFailure -> {
-                            val errorMessage = it.errorMessage
-                            mutableState.value = DetailsScreenState.Error(errorMessage)
-                        }
-
-                        is ApiResultState.OnSuccess<*> -> {
-                            val recipe = it.data as Recipe
-                            _favoriteStateFlow.value = recipe.isFavourite
-                            mutableState.value = DetailsScreenState.Content(recipe)
-                        }
-                    }
+                .collect { response ->
+                    mapApiResultOnUiState(response)
                 }
+        }
+    }
+
+    private fun mapApiResultOnUiState(response: ApiResultState) {
+        when (response) {
+            is ApiResultState.OnFailure -> {
+                val errorMessage = response.errorMessage
+                mutableState.value = DetailsScreenState.Error(errorMessage)
+            }
+
+            is ApiResultState.OnSuccess<*> -> {
+                val recipe = response.data as Recipe
+                _favoriteStateFlow.value = recipe.isFavourite
+                mutableState.value = DetailsScreenState.Content(recipe)
+            }
         }
     }
 

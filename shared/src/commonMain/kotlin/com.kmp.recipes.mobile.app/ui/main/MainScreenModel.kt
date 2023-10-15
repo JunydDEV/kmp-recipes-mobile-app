@@ -22,18 +22,7 @@ class MainScreenModel(val repository: RecipesRepository) : StateScreenModel<Main
             .collect {
                 when (it) {
                     is ApiResultState.OnSuccess<*> -> {
-                        val recipesData = it.data as RecipesData
-                        with(recipesData.sections) {
-                            mutableState.value = MainScreenState.Content(
-                                foodQuotes = quotes,
-                                categories = categories,
-                                popularRecipes = getPopularRecipes(
-                                    recipesIds = recipesData.sections.popularRecipesIds,
-                                    recipes = recipesData.recipesList,
-                                ),
-                                recipesList = recipesData.recipesList
-                            )
-                        }
+                        mapSuccessResultOnUiState(it)
                     }
 
                     is ApiResultState.OnFailure -> {
@@ -41,6 +30,21 @@ class MainScreenModel(val repository: RecipesRepository) : StateScreenModel<Main
                     }
                 }
             }
+    }
+
+    private fun mapSuccessResultOnUiState(it: ApiResultState.OnSuccess<*>) {
+        val recipesData = it.data as RecipesData
+        with(recipesData.sections) {
+            mutableState.value = MainScreenState.Content(
+                foodQuotes = quotes,
+                categories = categories,
+                popularRecipes = getPopularRecipes(
+                    recipesIds = recipesData.sections.popularRecipesIds,
+                    recipes = recipesData.recipesList,
+                ),
+                recipesList = recipesData.recipesList
+            )
+        }
     }
 
     private fun getPopularRecipes(recipesIds: List<String>, recipes: List<Recipe>): List<Recipe> {
