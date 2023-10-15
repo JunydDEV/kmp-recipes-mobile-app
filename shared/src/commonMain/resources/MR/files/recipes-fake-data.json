@@ -84,12 +84,12 @@
       }
     ],
     "popular_recipes": [
+      "steak1",
+      "steak5",
       "pizza1",
       "pizza4",
       "pasta1",
-      "pasta3",
-      "steak1",
-      "steak5"
+      "pasta3"
     ]
   },
   "recipes": [
@@ -1037,11 +1037,6 @@
           "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
-          "label": "Black pepper",
-          "quantity": ""
-        },
-        {
           "image": "https://images.pexels.com/photos/750948/pexels-photo-750948.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
           "label": "Garlic cloves",
           "quantity": ""
@@ -1076,11 +1071,6 @@
         {
           "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
           "label": "Olive oil",
-          "quantity": ""
-        },
-        {
-          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
-          "label": "Black pepper",
           "quantity": ""
         },
         {
@@ -1133,11 +1123,6 @@
           "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
-          "label": "Black pepper",
-          "quantity": ""
-        },
-        {
           "image": "https://images.pexels.com/photos/750948/pexels-photo-750948.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
           "label": "Garlic cloves",
           "quantity": ""
@@ -1172,11 +1157,6 @@
         {
           "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
           "label": "Olive oil",
-          "quantity": ""
-        },
-        {
-          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
-          "label": "Black pepper",
           "quantity": ""
         },
         {
@@ -1227,11 +1207,6 @@
           "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
-          "label": "Black pepper",
-          "quantity": ""
-        },
-        {
           "image": "https://images.pexels.com/photos/750948/pexels-photo-750948.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
           "label": "Garlic cloves",
           "quantity": ""
@@ -1274,11 +1249,6 @@
           "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
-          "label": "Black pepper",
-          "quantity": ""
-        },
-        {
           "image": "https://images.pexels.com/photos/750948/pexels-photo-750948.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
           "label": "Garlic cloves",
           "quantity": ""
@@ -1313,11 +1283,6 @@
         {
           "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
           "label": "Olive oil",
-          "quantity": ""
-        },
-        {
-          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
-          "label": "Black pepper",
           "quantity": ""
         },
         {
@@ -1371,11 +1336,6 @@
           "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
-          "label": "Black pepper",
-          "quantity": ""
-        },
-        {
           "image": "https://images.pexels.com/photos/750948/pexels-photo-750948.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
           "label": "Garlic cloves",
           "quantity": ""
@@ -1418,11 +1378,6 @@
           "quantity": ""
         },
         {
-          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
-          "label": "Black pepper",
-          "quantity": ""
-        },
-        {
           "image": "https://images.pexels.com/photos/750948/pexels-photo-750948.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
           "label": "Garlic cloves",
           "quantity": ""
@@ -1457,11 +1412,6 @@
         {
           "image": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
           "label": "Olive oil",
-          "quantity": ""
-        },
-        {
-          "image": "https://images.pexels.com/photos/7140277/pexels-photo-7140277.jpeg?auto=compress&cs=tinysrgb&w=550&h=500&dpr=2",
-          "label": "Black pepper",
           "quantity": ""
         },
         {
