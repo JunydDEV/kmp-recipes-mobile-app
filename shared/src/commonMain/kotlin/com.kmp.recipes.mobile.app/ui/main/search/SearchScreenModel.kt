@@ -1,11 +1,9 @@
-package com.kmp.recipes.mobile.app.ui.recipeMain.search
+package com.kmp.recipes.mobile.app.ui.main.search
 
 import cafe.adriel.voyager.core.model.StateScreenModel
 import com.kmp.recipes.mobile.app.data.datasource.model.ApiResultState
 import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
 import com.kmp.recipes.mobile.app.data.repository.RecipesRepository
-import com.kmp.recipes.mobile.app.ui.recipeMain.stateholders.SearchDataState
-import com.kmp.recipes.mobile.app.ui.recipeMain.stateholders.MainScreenState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch

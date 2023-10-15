@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.ui.recipeMain.sections
+package com.kmp.recipes.mobile.app.ui.main.sections
 
 import androidx.compose.runtime.Composable
 import cafe.adriel.voyager.navigator.Navigator
@@ -6,8 +6,10 @@ import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import com.kmp.recipes.mobile.app.ui.common.ColumnX
 import com.kmp.recipes.mobile.app.ui.common.RecipeCard
-import com.kmp.recipes.mobile.app.ui.recipeListing.RecipesScreen
+import com.kmp.recipes.mobile.app.ui.listing.RecipesScreen
 import dev.icerock.moko.resources.compose.stringResource
+
+const val viewAll = "view all"
 
 @Composable
 fun PopularRecipesSection(

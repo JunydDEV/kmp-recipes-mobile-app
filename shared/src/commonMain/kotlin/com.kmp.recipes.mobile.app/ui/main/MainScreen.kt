@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.ui.recipeMain
+package com.kmp.recipes.mobile.app.ui.main
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -28,14 +28,12 @@ import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.ui.common.FailureLabel
-import com.kmp.recipes.mobile.app.ui.recipeMain.search.SearchRecipesList
-import com.kmp.recipes.mobile.app.ui.recipeMain.search.SearchScreenModel
-import com.kmp.recipes.mobile.app.ui.recipeMain.sections.FoodQuotesSection
-import com.kmp.recipes.mobile.app.ui.recipeMain.sections.MainTopBar
-import com.kmp.recipes.mobile.app.ui.recipeMain.sections.PopularRecipesSection
-import com.kmp.recipes.mobile.app.ui.recipeMain.sections.RecipesCategoriesSection
-import com.kmp.recipes.mobile.app.ui.recipeMain.stateholders.RecipesDataState
-import com.kmp.recipes.mobile.app.ui.recipeMain.stateholders.MainScreenState
+import com.kmp.recipes.mobile.app.ui.main.search.SearchRecipesList
+import com.kmp.recipes.mobile.app.ui.main.search.SearchScreenModel
+import com.kmp.recipes.mobile.app.ui.main.sections.FoodQuotesSection
+import com.kmp.recipes.mobile.app.ui.main.sections.MainTopBar
+import com.kmp.recipes.mobile.app.ui.main.sections.PopularRecipesSection
+import com.kmp.recipes.mobile.app.ui.main.sections.RecipesCategoriesSection
 import com.kmp.recipes.mobile.app.util.getScreenModel
 
 

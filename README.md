@@ -19,10 +19,10 @@ Create your personalized recipe box by saving your favorite recipes for quick an
 
 # Getting Started
 To build and run Cookit Recipe app on your preferred platform, follow the steps below:
+- Clone the repository: git clone https://github.com/JunydDEV/kmp-recipes-mobile-app.git
+- Navigate to the project directory: cd kmp-recipes-mobile-app
+- Build and run the app using Android Studio.
 
-1- Clone the repository: git clone https://github.com/JunydDEV/kmp-recipes-mobile-app.git
-2- Navigate to the project directory: cd kmp-recipes-mobile-app
-3- Build and run the app using your Android IDE.
 
 # Libraries
 This app includes the following libraries,

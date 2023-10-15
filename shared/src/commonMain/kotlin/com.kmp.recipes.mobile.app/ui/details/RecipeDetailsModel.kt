@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.ui.recipeDetail
+package com.kmp.recipes.mobile.app.ui.details
 
 import cafe.adriel.voyager.core.model.StateScreenModel
 import cafe.adriel.voyager.core.model.coroutineScope

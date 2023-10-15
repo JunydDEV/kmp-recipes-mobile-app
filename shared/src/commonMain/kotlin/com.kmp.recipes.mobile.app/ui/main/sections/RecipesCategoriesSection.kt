@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.ui.recipeMain.sections
+package com.kmp.recipes.mobile.app.ui.main.sections
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -22,9 +21,7 @@ import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.ui.common.ImageX
 import com.kmp.recipes.mobile.app.ui.common.ColumnX
 import com.kmp.recipes.mobile.app.data.datasource.model.Category
-import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
-import com.kmp.recipes.mobile.app.ui.recipeMain.MainScreenModel
-import com.kmp.recipes.mobile.app.ui.recipeListing.RecipesScreen
+import com.kmp.recipes.mobile.app.ui.listing.RecipesScreen
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.compose.stringResource
 

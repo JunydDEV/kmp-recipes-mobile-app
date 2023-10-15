@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.ui.recipeMain.sections
+package com.kmp.recipes.mobile.app.ui.main.sections
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background

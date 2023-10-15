@@ -1,9 +1,9 @@
 package com.kmp.recipes.mobile.app.ui.di
 
-import com.kmp.recipes.mobile.app.ui.recipeDetail.RecipeDetailsModel
-import com.kmp.recipes.mobile.app.ui.recipeListing.RecipesScreenModel
-import com.kmp.recipes.mobile.app.ui.recipeMain.MainScreenModel
-import com.kmp.recipes.mobile.app.ui.recipeMain.search.SearchScreenModel
+import com.kmp.recipes.mobile.app.ui.details.RecipeDetailsModel
+import com.kmp.recipes.mobile.app.ui.listing.RecipesScreenModel
+import com.kmp.recipes.mobile.app.ui.main.MainScreenModel
+import com.kmp.recipes.mobile.app.ui.main.search.SearchScreenModel
 import org.koin.dsl.module
 
 val viewModelsModule = module {

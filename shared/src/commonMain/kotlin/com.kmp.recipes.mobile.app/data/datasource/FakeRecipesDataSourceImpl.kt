@@ -66,19 +66,19 @@ class FakeRecipesDataSourceImpl(
     }
 
     override suspend fun fetchRecipesListByCategory(id: String): List<Recipe> {
-        return when (id) {
-            "view all" -> { recipesData.recipesList }
-
-            "favourites" -> { favoriteRecipesList }
-
-            else -> {
-                val category = recipesData.sections.categories.find { it.id == id }
-                val recipesIds = category?.recipes
-                val results = recipesData.recipesList.filter {
-                    recipesIds?.contains(it.id) == true
-                }
-                results
-            }
+        val category = recipesData.sections.categories.find { it.id == id }
+        val recipesIds = category?.recipes
+        val results = recipesData.recipesList.filter {
+            recipesIds?.contains(it.id) == true
         }
+        return results
+    }
+
+    override suspend fun fetchAllRecipes(): List<Recipe> {
+        return recipesData.recipesList
+    }
+
+    override suspend fun fetchFavouriteRecipes(): List<Recipe> {
+        return favoriteRecipesList
     }
 }

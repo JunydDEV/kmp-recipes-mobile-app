@@ -6,6 +6,7 @@ import com.kmp.recipes.mobile.app.data.datasource.FakeRecipesDataSource
 import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
@@ -48,7 +49,7 @@ class RecipesRepositoryImpl(
             emit(ApiResultState.OnSuccess(recipe))
         } catch (e: Exception) {
             e.printStackTrace()
-            emit(ApiResultState.OnFailure(e.message ?: "Failed to fetch recipe"))
+            emit(ApiResultState.OnFailure(e.message ?: "Failed to fetch recipe details"))
         }
     }.flowOn(Dispatchers.IO)
 
@@ -62,7 +63,35 @@ class RecipesRepositoryImpl(
             }
         } catch (e: Exception) {
             e.printStackTrace()
-            emit(ApiResultState.OnFailure(e.message ?: "Failed to fetch recipes list"))
+            emit(ApiResultState.OnFailure(e.message ?: "Failed to fetch recipes by category"))
+        }
+    }.flowOn(Dispatchers.IO)
+
+    override suspend fun fetchAllRecipes() = flow {
+        try {
+            val result = dataSource.fetchAllRecipes()
+            if (result.isNotEmpty()) {
+                emit(ApiResultState.OnSuccess(result))
+            } else {
+                emit(ApiResultState.OnFailure("Sorry, recipes not found."))
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            emit(ApiResultState.OnFailure(e.message ?: "Failed to fetch all recipes list"))
+        }
+    }.flowOn(Dispatchers.IO)
+
+    override suspend fun fetchFavouriteRecipes() = flow {
+        try {
+            val result = dataSource.fetchFavouriteRecipes()
+            if (result.isNotEmpty()) {
+                emit(ApiResultState.OnSuccess(result))
+            } else {
+                emit(ApiResultState.OnFailure("Sorry, recipes not found."))
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            emit(ApiResultState.OnFailure(e.message ?: "Failed to fetch favourite recipes list"))
         }
     }.flowOn(Dispatchers.IO)
 }

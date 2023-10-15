@@ -18,9 +18,7 @@ fun MainViewController(): UIViewController {
     initCookitApplication(Any())
     initKoin()
     return ComposeUIViewController {
-        CompositionLocalProvider(
-            LocalImageLoader provides remember { generateImageLoader() },
-        ) {
+        CompositionLocalProvider(LocalImageLoader provides remember { generateImageLoader() }) {
             RecipesApp()
         }
     }

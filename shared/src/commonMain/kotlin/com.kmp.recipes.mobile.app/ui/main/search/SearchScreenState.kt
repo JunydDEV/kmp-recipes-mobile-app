@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.ui.recipeMain.search
+package com.kmp.recipes.mobile.app.ui.main.search
 
 import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
 

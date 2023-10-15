@@ -41,4 +41,19 @@ interface RecipesRepository {
      * @return flow of [ApiResultState] result object.
      * */
     suspend fun fetchRecipesListByCategory(id: String): Flow<ApiResultState>
+
+    /**
+     * Fetches favourite recipes list
+     *
+     * @return flow of [ApiResultState] result object.
+     * */
+    suspend fun fetchFavouriteRecipes(): Flow<ApiResultState>
+
+
+    /**
+     * Fetches all recipes list
+     *
+     * @return flow of [ApiResultState] result object.
+     * */
+    suspend fun fetchAllRecipes(): Flow<ApiResultState>
 }

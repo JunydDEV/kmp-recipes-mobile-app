@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.ui.recipeListing
+package com.kmp.recipes.mobile.app.ui.listing
 
 import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
 

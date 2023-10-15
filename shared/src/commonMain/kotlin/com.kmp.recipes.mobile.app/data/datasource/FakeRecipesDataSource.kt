@@ -47,4 +47,18 @@ interface FakeRecipesDataSource {
      * @return list of recipes
      * */
     suspend fun fetchRecipesListByCategory(id: String): List<Recipe>
+
+    /**
+     * Fetches completed list of recipes.
+     *
+     * @return list of recipes
+     * */
+    suspend fun fetchAllRecipes(): List<Recipe>
+
+    /**
+     * Fetches favourite recipes list.
+     *
+     * @return list of recipes
+     * */
+    suspend fun fetchFavouriteRecipes(): List<Recipe>
 }

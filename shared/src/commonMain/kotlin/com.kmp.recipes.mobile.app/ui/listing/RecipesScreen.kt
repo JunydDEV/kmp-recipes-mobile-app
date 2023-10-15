@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.ui.recipeListing
+package com.kmp.recipes.mobile.app.ui.listing
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -64,7 +64,7 @@ data class RecipesScreen(private val title: String, private val categoryId: Stri
         }
 
         LaunchedEffect(currentCompositeKeyHash) {
-            recipesScreenModel.fetchRecipesByCategory(categoryId)
+            recipesScreenModel.fetchRecipesList(categoryId)
         }
     }
 

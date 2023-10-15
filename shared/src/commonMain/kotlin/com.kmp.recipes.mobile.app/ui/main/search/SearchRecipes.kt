@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.ui.recipeMain.search
+package com.kmp.recipes.mobile.app.ui.main.search
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues

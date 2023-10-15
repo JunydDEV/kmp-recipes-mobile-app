@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.ui.recipeMain.sections
+package com.kmp.recipes.mobile.app.ui.main.sections
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
@@ -31,7 +31,7 @@ import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.safeAreaPadding
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
-import com.kmp.recipes.mobile.app.ui.recipeListing.RecipesScreen
+import com.kmp.recipes.mobile.app.ui.listing.RecipesScreen
 import dev.icerock.moko.resources.compose.stringResource
 
 @OptIn(ExperimentalMaterial3Api::class)
