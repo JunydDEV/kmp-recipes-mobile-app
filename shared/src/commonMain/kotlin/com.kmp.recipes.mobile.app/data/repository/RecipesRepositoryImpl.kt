@@ -46,7 +46,11 @@ class RecipesRepositoryImpl(
     override suspend fun fetchRecipeDetailsById(id: String) = flow {
         try {
             val recipe = dataSource.fetchRecipesDetailsById(id)
-            emit(ApiResultState.OnSuccess(recipe))
+            if (recipe != null) {
+                emit(ApiResultState.OnSuccess(recipe))
+            } else {
+                emit(ApiResultState.OnFailure("Sorry, recipe details not found."))
+            }
         } catch (e: Exception) {
             e.printStackTrace()
             emit(ApiResultState.OnFailure(e.message ?: "Failed to fetch recipe details"))

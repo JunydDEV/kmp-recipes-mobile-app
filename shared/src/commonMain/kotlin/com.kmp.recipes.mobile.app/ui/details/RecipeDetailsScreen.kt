@@ -69,7 +69,13 @@ class RecipeDetailsScreen(private val id: String) : Screen {
         when (screenState.value) {
             is DetailsScreenState.Init,
             is DetailsScreenState.Loading -> {
-                CircularProgressIndicator()
+                Box(
+                    modifier = Modifier.fillMaxSize()
+                        .background(MaterialTheme.colorScheme.background),
+                    contentAlignment = Alignment.Center
+                ) {
+                    CircularProgressIndicator()
+                }
             }
 
             is DetailsScreenState.Content -> {
@@ -86,7 +92,13 @@ class RecipeDetailsScreen(private val id: String) : Screen {
 
             is DetailsScreenState.Error -> {
                 val error = screenState.value as DetailsScreenState.Error
-                FailureLabel(error.message)
+                Box(
+                    modifier = Modifier.fillMaxSize()
+                        .background(MaterialTheme.colorScheme.background),
+                    contentAlignment = Alignment.Center
+                ) {
+                    FailureLabel(error.message)
+                }
             }
         }
 
@@ -188,10 +200,10 @@ class RecipeDetailsScreen(private val id: String) : Screen {
                 recipeDetailsModel.markAsFavourite(recipe)
             },
             shape = CircleShape,
-            containerColor = MaterialTheme.colorScheme.primaryContainer
+            containerColor = MaterialTheme.colorScheme.primary
         ) {
             val color = if (favouriteState.value) {
-                MaterialTheme.colorScheme.onPrimaryContainer
+                MaterialTheme.colorScheme.secondary
             } else {
                 MaterialTheme.colorScheme.onPrimary
             }
