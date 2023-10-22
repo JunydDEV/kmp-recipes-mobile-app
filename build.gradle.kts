@@ -12,8 +12,7 @@ tasks.register("clean", Delete::class) {
 }
 buildscript {
     dependencies {
-        classpath("com.google.gms:google-services:4.3.15")
-        classpath("com.android.tools.build:gradle:8.0.2")
+        classpath("com.android.tools.build:gradle:8.1.2")
         classpath("dev.icerock.moko:resources-generator:0.23.0")
     }
 }
