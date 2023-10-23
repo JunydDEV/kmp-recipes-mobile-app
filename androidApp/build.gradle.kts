@@ -5,7 +5,7 @@ plugins {
 }
 
 kotlin {
-    android()
+    androidTarget()
     sourceSets {
         val androidMain by getting {
             dependencies {
@@ -30,7 +30,6 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerVersion = extra["kotlin.version"] as String
         kotlinCompilerExtensionVersion = extra["compose.version"] as String
     }
     packaging {

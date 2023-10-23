@@ -7,9 +7,8 @@ plugins {
     kotlin("plugin.serialization") version "1.9.0"
 }
 
-@OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
 kotlin {
-    android()
+    androidTarget()
 
     iosX64()
     iosArm64()
@@ -99,7 +98,6 @@ android {
 
     defaultConfig {
         minSdk = (findProperty("android.minSdk") as String).toInt()
-        targetSdk = (findProperty("android.targetSdk") as String).toInt()
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_18
