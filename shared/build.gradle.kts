@@ -4,7 +4,7 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.compose")
     id("dev.icerock.mobile.multiplatform-resources")
-    kotlin("plugin.serialization") version "1.8.0"
+    kotlin("plugin.serialization") version "1.9.0"
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -25,7 +25,6 @@ kotlin {
             baseName = "shared"
             isStatic = true
         }
-        extraSpecAttributes["resources"] = "['src/commonMain/resources/**', 'src/iosMain/resources/**']"
         extraSpecAttributes["resource"] = "'build/cocoapods/framework/shared.framework/*.bundle'"
     }
 
@@ -70,10 +69,11 @@ kotlin {
             }
         }
         val androidMain by getting {
+            dependsOn(commonMain)
             dependencies {
-                api("androidx.activity:activity-compose:1.7.2")
+                api("androidx.activity:activity-compose:1.8.0")
                 api("androidx.appcompat:appcompat:1.6.1")
-                api("androidx.core:core-ktx:1.10.1")
+                api("androidx.core:core-ktx:1.12.0")
                 api(Deps.Koin.android)
             }
         }
