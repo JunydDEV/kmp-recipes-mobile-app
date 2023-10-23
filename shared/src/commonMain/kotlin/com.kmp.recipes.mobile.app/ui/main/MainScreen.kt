@@ -126,7 +126,6 @@ class MainScreen : Screen {
         ) {
             Spacer(modifier = Modifier.fillMaxWidth().height(Dimens.smallSpacing))
             FoodQuotesSection(
-                navigator = navigator,
                 quotes = content.foodQuotes
             )
             RecipesCategoriesSection(

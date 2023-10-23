@@ -28,7 +28,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.ui.common.ColumnX
 import com.kmp.recipes.mobile.app.data.datasource.model.Quote
@@ -37,7 +36,7 @@ import dev.icerock.moko.resources.compose.painterResource
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun FoodQuotesSection(navigator: Navigator, quotes: List<Quote>) {
+fun FoodQuotesSection(quotes: List<Quote>) {
     ColumnX(primaryTitle = "Food Quotes") {
         val pageCount = quotes.size
         val pagerState = rememberPagerState(initialPage = 0, initialPageOffsetFraction = 0F) { pageCount }
