@@ -39,10 +39,9 @@ import dev.icerock.moko.resources.compose.painterResource
 @Composable
 fun FoodQuotesSection(navigator: Navigator, quotes: List<Quote>) {
     ColumnX(primaryTitle = "Food Quotes") {
-        val pagerState = rememberPagerState()
-        val size = quotes.size
+        val pageCount = quotes.size
+        val pagerState = rememberPagerState(initialPage = 0, initialPageOffsetFraction = 0F) { pageCount }
         HorizontalPager(
-            pageCount = size,
             state = pagerState,
             pageSpacing = Dimens.smallSpacing
         ) { page ->
@@ -54,7 +53,7 @@ fun FoodQuotesSection(navigator: Navigator, quotes: List<Quote>) {
                 QuotesContent(quotes[page])
             }
         }
-        PagerIndicatorsRow(size, pagerState)
+        PagerIndicatorsRow(pageCount, pagerState)
     }
 }
 
