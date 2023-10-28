@@ -36,10 +36,10 @@ This app includes the following libraries,
 ![alt text](https://github.com/JunydDEV/kmp-recipes-mobile-app/blob/main/screenshots/app-languages-info.png)
 
 # Things TODO
+- ~~Implement DSqlite for favourite recipes~~
 - Add dark theme support
 - Write Unit tests
 - Write UI tests
-- Implement DSqlite for favourite recipes
 - Preview Ingredient Images
 
 # Contributions
