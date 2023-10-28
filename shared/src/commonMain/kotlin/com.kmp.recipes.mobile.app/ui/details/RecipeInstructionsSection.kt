@@ -41,7 +41,7 @@ fun RecipeInstructionsSection(recipe: Recipe, navigator: Navigator) {
                         modifier = Modifier.padding(bottom = Dimens.smallSpacing),
                         text = instructions[it],
                         style = MaterialTheme.typography.bodyLarge,
-                        color = MaterialTheme.colorScheme.primary
+                        color = MaterialTheme.colorScheme.onBackground
                     )
                 }
             }

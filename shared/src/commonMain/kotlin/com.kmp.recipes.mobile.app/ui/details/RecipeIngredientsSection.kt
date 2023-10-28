@@ -20,6 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.ui.common.ImageX
@@ -64,8 +65,8 @@ fun RecipeIngredientsSection(recipe: Recipe, navigator: Navigator) {
                             modifier = Modifier.wrapContentSize()
                                 .padding(start = Dimens.smallSpacing, end = Dimens.smallSpacing),
                             text = ingredients[it].label,
-                            style = MaterialTheme.typography.bodyLarge,
-                            color = MaterialTheme.colorScheme.onPrimary
+                            style = MaterialTheme.typography.titleSmall,
+                            color = Color.White
                         )
                     }
                 }

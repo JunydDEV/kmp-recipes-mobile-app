@@ -37,7 +37,7 @@ This app includes the following libraries,
 
 # Things TODO
 - ~~Implement DSqlite for favourite recipes~~
-- Add dark theme support
+- ~~Add dark theme support~~
 - Write Unit tests
 - Write UI tests
 - Preview Ingredient Images

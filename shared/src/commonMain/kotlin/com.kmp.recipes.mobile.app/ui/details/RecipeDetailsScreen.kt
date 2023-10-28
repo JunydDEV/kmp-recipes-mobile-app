@@ -34,6 +34,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.currentCompositeKeyHash
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -167,7 +168,7 @@ class RecipeDetailsScreen(private val id: String) : Screen {
                     textAlign = TextAlign.End,
                     text = stringResource(SharedRes.strings.title_details),
                     style = MaterialTheme.typography.titleLarge.copy(fontSize = Dimens.appTitleSize),
-                    color = MaterialTheme.colorScheme.onPrimary
+                    color = Color.White
                 )
             },
             navigationIcon = {
@@ -229,7 +230,7 @@ class RecipeDetailsScreen(private val id: String) : Screen {
             Text(
                 text = recipe.description,
                 style = MaterialTheme.typography.bodyLarge,
-                color = MaterialTheme.colorScheme.primary,
+                color = MaterialTheme.colorScheme.onBackground,
             )
 
             Row(

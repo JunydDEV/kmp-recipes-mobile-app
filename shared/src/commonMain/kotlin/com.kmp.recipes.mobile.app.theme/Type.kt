@@ -27,6 +27,20 @@ fun getTypography(): Typography {
             lineHeight = 28.sp,
             letterSpacing = 0.sp
         ),
+        titleMedium = TextStyle(
+            fontWeight = FontWeight.Bold,
+            fontFamily = fontFamilyResource(SharedRes.fonts.Lato.bold),
+            fontSize = 18.sp,
+            lineHeight = 26.sp,
+            letterSpacing = 0.sp
+        ),
+        titleSmall = TextStyle(
+            fontWeight = FontWeight.Bold,
+            fontFamily = fontFamilyResource(SharedRes.fonts.Lato.bold),
+            fontSize = 16.sp,
+            lineHeight = 24.sp,
+            letterSpacing = 0.sp
+        ),
         bodyLarge = TextStyle(
             fontWeight = FontWeight.Normal,
             fontFamily = fontFamilyResource(SharedRes.fonts.Lato.regular),

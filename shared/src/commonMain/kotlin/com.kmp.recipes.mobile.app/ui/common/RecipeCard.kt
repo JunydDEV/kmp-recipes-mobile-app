@@ -43,7 +43,7 @@ fun RecipeCard(recipe: Recipe, navigator: Navigator) {
                 modifier = Modifier.fillMaxSize(),
                 url = recipe.image,
                 tag = stringResource(SharedRes.strings.recipe_category_image_description),
-                showOverlay = true
+                showOverlay = false
             )
         }
         Text(

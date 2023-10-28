@@ -33,7 +33,7 @@ fun ColumnX(
                     modifier = Modifier.clickable { onPrimaryClick?.invoke() },
                     text = primaryTitle,
                     style = MaterialTheme.typography.titleLarge,
-                    color = MaterialTheme.colorScheme.primary
+                    color = MaterialTheme.colorScheme.onBackground
                 )
             },
 
@@ -43,7 +43,7 @@ fun ColumnX(
                         modifier = Modifier.clickable { onSecondaryClick?.invoke() },
                         text = secondaryTitle,
                         style = MaterialTheme.typography.bodyLarge,
-                        color = MaterialTheme.colorScheme.primary
+                        color = MaterialTheme.colorScheme.onBackground
                     )
                 }
             }

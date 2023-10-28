@@ -12,6 +12,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import com.seiko.imageloader.asImageBitmap
@@ -26,7 +27,7 @@ fun ImageX(
     url: String,
     tag: String,
     showOverlay: Boolean = false,
-    overlayColor: Color = MaterialTheme.colorScheme.primary,
+    overlayColor: Color = Color.Black,
     showProgress: Boolean = true
 ) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
@@ -34,11 +35,7 @@ fun ImageX(
         val imageRequestState = remember { imageRequest }
         val action by rememberImageAction(imageRequestState)
         when (val currentAction = action) {
-            is ImageEvent.StartWithFetch -> {
-                ShowProgressIndicator(showProgress)
-            }
-
-            is ImageEvent.StartWithMemory -> {
+            is ImageEvent.StartWithFetch, ImageEvent.StartWithMemory -> {
                 ShowProgressIndicator(showProgress)
             }
 
@@ -46,12 +43,14 @@ fun ImageX(
                 Image(
                     modifier = modifier,
                     bitmap = currentAction.bitmap.asImageBitmap(),
-                    contentDescription = null,
+                    contentDescription = tag,
                     contentScale = ContentScale.Crop,
                 )
 
                 if (showOverlay) {
-                    Box(modifier = modifier.background(overlayColor.copy(alpha = 0.5f)))
+                    Box(modifier = modifier
+                        .background(overlayColor.copy(alpha = 0.5f))
+                    )
                 }
             }
 

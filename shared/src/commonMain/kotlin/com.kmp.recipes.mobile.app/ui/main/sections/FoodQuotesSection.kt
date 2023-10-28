@@ -76,7 +76,7 @@ fun QuotesContent(quote: Quote) {
             Icon(
                 modifier = Modifier.size(width = 100.dp, height = 100.dp),
                 painter = painterResource(SharedRes.images.ic_quote),
-                tint = MaterialTheme.colorScheme.secondary,
+                tint = MaterialTheme.colorScheme.onPrimary,
                 contentDescription = "",
             )
         }
