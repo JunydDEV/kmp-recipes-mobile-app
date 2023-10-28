@@ -1,7 +1,7 @@
 package com.kmp.recipes.mobile.app.data.datasource
 
-import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
-import com.kmp.recipes.mobile.app.data.datasource.model.RecipesData
+import com.kmp.recipes.mobile.app.data.model.Recipe
+import com.kmp.recipes.mobile.app.data.model.RecipesData
 
 interface FakeRecipesDataSource {
 
@@ -10,7 +10,7 @@ interface FakeRecipesDataSource {
      *
      * @return [RecipesData] result object.
      * */
-    suspend fun getRecipesData(context: Any?): RecipesData
+    fun getRecipesData(): RecipesData
 
     /**
      * Searches for recipes data.
@@ -25,40 +25,33 @@ interface FakeRecipesDataSource {
      *
      * @param recipe object.
      * */
-    suspend fun markRecipeFavourite(recipe: Recipe)
+    fun markRecipeFavourite(recipe: Recipe)
 
     /**
      * Retrieves favourite recipes list.
      *
      * @return list of recipes
      * */
-    suspend fun getFavouriteRecipesList(): List<Recipe>
+    fun getFavouriteRecipesList(): List<Recipe?>
 
     /**
      * Fetches recipe based on recipe ID.
      *
      * @return recipe object
      * */
-    suspend fun fetchRecipesDetailsById(id: String): Recipe?
+    fun fetchRecipesDetailsById(id: String): Recipe?
 
     /**
      * Fetches recipes list based on category ID.
      *
      * @return list of recipes
      * */
-    suspend fun fetchRecipesListByCategory(id: String): List<Recipe>
+    fun fetchRecipesListByCategory(id: String): List<Recipe>
 
     /**
      * Fetches completed list of recipes.
      *
      * @return list of recipes
      * */
-    suspend fun fetchAllRecipes(): List<Recipe>
-
-    /**
-     * Fetches favourite recipes list.
-     *
-     * @return list of recipes
-     * */
-    suspend fun fetchFavouriteRecipes(): List<Recipe>
+    fun fetchAllRecipes(): List<Recipe>
 }

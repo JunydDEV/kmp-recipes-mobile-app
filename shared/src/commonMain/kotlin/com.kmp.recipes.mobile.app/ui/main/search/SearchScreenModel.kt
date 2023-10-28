@@ -1,8 +1,8 @@
 package com.kmp.recipes.mobile.app.ui.main.search
 
 import cafe.adriel.voyager.core.model.StateScreenModel
-import com.kmp.recipes.mobile.app.data.datasource.model.ApiResultState
-import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
+import com.kmp.recipes.mobile.app.data.model.ApiResultState
+import com.kmp.recipes.mobile.app.data.model.Recipe
 import com.kmp.recipes.mobile.app.data.repository.RecipesRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

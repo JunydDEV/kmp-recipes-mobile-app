@@ -1,43 +1,42 @@
 package com.kmp.recipes.mobile.app.data.datasource
 
-import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
-import com.kmp.recipes.mobile.app.data.datasource.model.RecipesData
-import com.kmp.recipes.mobile.app.readFakeRecipesText
+import com.kmp.recipes.mobile.app.data.db.Database
+import com.kmp.recipes.mobile.app.data.model.Recipe
+import com.kmp.recipes.mobile.app.data.model.RecipesData
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.IO
+import kotlinx.coroutines.launch
 
 class FakeRecipesDataSourceImpl(
-    private val recipesDataService: RecipesDataService,
+    recipesDataReader: RecipesDataReader,
+    recipesDataParser: RecipesDataParser,
+    private val database: Database,
 ) : FakeRecipesDataSource {
+    private var recipesData: RecipesData
 
-    private lateinit var recipesData: RecipesData
-    private val favoriteRecipesList = mutableListOf<Recipe>()
-
-    override suspend fun getRecipesData(context: Any?): RecipesData {
-        if (context == null)
-            throw RuntimeException("Failed to fetch recipes data, please restart the app")
-
-        if (this::recipesData.isInitialized) return recipesData
-
-        return try {
-            val fakeRecipesText = readFakeRecipesText(context)
-            recipesDataService.fetchRecipesData(fakeRecipesText).apply {
-                updateFavouriteField()
-                saveRecipesDataForFutureUse()
-            }
+    init {
+        try {
+            val recipesDataJsonResponse = recipesDataReader.getText()
+            recipesData = recipesDataParser.parseJsonResponse(recipesDataJsonResponse)
+            updateFavouriteRecipesInTheList()
         } catch (e: Exception) {
             throw RuntimeException(e.message)
         }
     }
 
-    private fun RecipesData.updateFavouriteField() {
-        recipesList.map { updateFavouriteField(it) }
+    private fun updateFavouriteRecipesInTheList() {
+        CoroutineScope(Dispatchers.IO).launch {
+            val recipesList = recipesData.recipesList
+            val favouriteRecipesList = database.fetchAllFavouriteRecipes()
+            recipesList.forEach {
+                it.isFavourite = favouriteRecipesList.contains(it.id)
+            }
+        }
     }
 
-    private fun RecipesData.saveRecipesDataForFutureUse() {
-        recipesData = this
-    }
-
-    private fun updateFavouriteField(it: Recipe) {
-        it.isFavourite = favoriteRecipesList.contains(it)
+    override fun getRecipesData(): RecipesData {
+        return recipesData
     }
 
     override fun searchRecipes(query: String): List<Recipe> {
@@ -48,24 +47,27 @@ class FakeRecipesDataSourceImpl(
         }
     }
 
-    override suspend fun markRecipeFavourite(recipe: Recipe) {
-        val recipeExistsInFavorites = favoriteRecipesList.any { it.id == recipe.id }
-        if (recipeExistsInFavorites) {
-            favoriteRecipesList.remove(recipe)
+    override fun markRecipeFavourite(recipe: Recipe) {
+        val result = database.fetchRecipeById(recipe.id)
+        if (result.isEmpty()) {
+            database.addToFavourites(recipe)
         } else {
-            favoriteRecipesList.add(recipe)
+            database.removeFromFavourites(recipe.id)
         }
     }
 
-    override suspend fun getFavouriteRecipesList(): List<Recipe> {
-        return favoriteRecipesList
+    override fun getFavouriteRecipesList(): List<Recipe?> {
+        val favourites = database.fetchAllFavouriteRecipes()
+        val allRecipesList = recipesData.recipesList
+        val recipesListMap = allRecipesList.associateBy { it.id }
+        return favourites.map { recipesListMap[it] }
     }
 
-    override suspend fun fetchRecipesDetailsById(id: String): Recipe? {
+    override fun fetchRecipesDetailsById(id: String): Recipe? {
         return recipesData.recipesList.firstOrNull { it.id == id }
     }
 
-    override suspend fun fetchRecipesListByCategory(id: String): List<Recipe> {
+    override fun fetchRecipesListByCategory(id: String): List<Recipe> {
         val category = recipesData.sections.categories.find { it.id == id }
         val recipesIds = category?.recipes
         val results = recipesData.recipesList.filter {
@@ -74,11 +76,7 @@ class FakeRecipesDataSourceImpl(
         return results
     }
 
-    override suspend fun fetchAllRecipes(): List<Recipe> {
+    override fun fetchAllRecipes(): List<Recipe> {
         return recipesData.recipesList
-    }
-
-    override suspend fun fetchFavouriteRecipes(): List<Recipe> {
-        return favoriteRecipesList
     }
 }

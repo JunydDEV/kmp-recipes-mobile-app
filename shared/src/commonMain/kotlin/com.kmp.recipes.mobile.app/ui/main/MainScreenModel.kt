@@ -1,9 +1,9 @@
 package com.kmp.recipes.mobile.app.ui.main
 
 import cafe.adriel.voyager.core.model.StateScreenModel
-import com.kmp.recipes.mobile.app.data.datasource.model.ApiResultState
-import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
-import com.kmp.recipes.mobile.app.data.datasource.model.RecipesData
+import com.kmp.recipes.mobile.app.data.model.ApiResultState
+import com.kmp.recipes.mobile.app.data.model.Recipe
+import com.kmp.recipes.mobile.app.data.model.RecipesData
 import com.kmp.recipes.mobile.app.data.repository.RecipesRepository
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onStart

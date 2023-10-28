@@ -7,19 +7,18 @@ import cafe.adriel.voyager.core.screen.Screen
 import org.koin.core.Koin
 import org.koin.core.parameter.ParametersDefinition
 import org.koin.core.qualifier.Qualifier
+import org.koin.mp.KoinPlatform.getKoin
 import org.koin.mp.KoinPlatformTools
 
 @Composable
-public inline fun <reified T : ScreenModel> Screen.getScreenModel(
+inline fun <reified T : ScreenModel> Screen.getScreenModel(
     qualifier: Qualifier? = null,
     noinline parameters: ParametersDefinition? = null
 ): T {
-    val koin = getKoin()
-    return rememberScreenModel(tag = qualifier?.value) { koin.get(qualifier, parameters) }
+    return rememberScreenModel(tag = qualifier?.value) {
+        getKoin().get(qualifier, parameters)
+    }
 }
-
-fun getKoin(): Koin = KoinPlatformTools.defaultContext().get()
-
 
 
 

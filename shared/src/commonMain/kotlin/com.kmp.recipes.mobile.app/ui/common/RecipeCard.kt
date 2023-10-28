@@ -20,7 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import cafe.adriel.voyager.navigator.Navigator
-import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
+import com.kmp.recipes.mobile.app.data.model.Recipe
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.ui.details.RecipeDetailsScreen

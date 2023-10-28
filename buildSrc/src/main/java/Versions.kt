@@ -11,4 +11,5 @@ object Versions {
     const val voyagerVersion = "1.0.0-rc08"
     const val mokoVersion = "0.23.0"
     const val okioVersion = "3.5.0"
+    const val sqlDelightVersion = "1.5.5"
 }

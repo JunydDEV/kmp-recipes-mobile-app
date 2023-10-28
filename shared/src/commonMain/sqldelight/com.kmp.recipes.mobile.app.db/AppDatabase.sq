@@ -1,0 +1,25 @@
+import kotlin.Boolean;
+
+CREATE TABLE Favourites (
+    recipeId TEXT NOT NULL,
+    recipeTitle TEXT NOT NULL
+);
+
+insertIntoFavourites:
+INSERT INTO Favourites(recipeId, recipeTitle)
+VALUES(?, ?);
+
+selectFavouritesById:
+SELECT Favourites.*
+FROM Favourites
+WHERE recipeId = :recipeId;
+
+selectAllFavourites:
+SELECT *
+FROM Favourites;
+
+deleteFromFavourites:
+DELETE FROM Favourites
+WHERE recipeId = :recipeId;
+
+

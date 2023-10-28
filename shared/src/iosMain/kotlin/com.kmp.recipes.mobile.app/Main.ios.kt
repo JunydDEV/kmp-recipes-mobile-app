@@ -15,7 +15,6 @@ import platform.Foundation.NSUserDomainMask
 import platform.UIKit.UIViewController
 
 fun MainViewController(): UIViewController {
-    initCookitApplication(Any())
     initKoin()
     return ComposeUIViewController {
         CompositionLocalProvider(LocalImageLoader provides remember { generateImageLoader() }) {

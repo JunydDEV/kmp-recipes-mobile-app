@@ -1,4 +1,4 @@
-package com.kmp.recipes.mobile.app.data.datasource.model
+package com.kmp.recipes.mobile.app.data.model
 
 sealed class ApiResultState {
     class OnSuccess<T>(val data: T) : ApiResultState()

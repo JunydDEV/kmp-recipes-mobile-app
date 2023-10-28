@@ -20,7 +20,7 @@ import cafe.adriel.voyager.navigator.Navigator
 import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.ui.common.ImageX
 import com.kmp.recipes.mobile.app.ui.common.ColumnX
-import com.kmp.recipes.mobile.app.data.datasource.model.Category
+import com.kmp.recipes.mobile.app.data.model.Category
 import com.kmp.recipes.mobile.app.ui.listing.RecipesScreen
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import dev.icerock.moko.resources.compose.stringResource

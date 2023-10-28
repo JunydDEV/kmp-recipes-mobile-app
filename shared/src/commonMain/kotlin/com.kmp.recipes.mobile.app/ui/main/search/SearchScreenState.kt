@@ -1,6 +1,6 @@
 package com.kmp.recipes.mobile.app.ui.main.search
 
-import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
+import com.kmp.recipes.mobile.app.data.model.Recipe
 
 sealed class SearchScreenState {
     object Init : SearchScreenState()

@@ -1,8 +1,8 @@
 package com.kmp.recipes.mobile.app.ui.main
 
-import com.kmp.recipes.mobile.app.data.datasource.model.Category
-import com.kmp.recipes.mobile.app.data.datasource.model.Quote
-import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
+import com.kmp.recipes.mobile.app.data.model.Category
+import com.kmp.recipes.mobile.app.data.model.Quote
+import com.kmp.recipes.mobile.app.data.model.Recipe
 
 sealed class MainScreenState {
     object Init : MainScreenState()

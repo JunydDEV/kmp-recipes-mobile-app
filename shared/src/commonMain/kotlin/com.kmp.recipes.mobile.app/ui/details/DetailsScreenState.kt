@@ -1,6 +1,6 @@
 package com.kmp.recipes.mobile.app.ui.details
 
-import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
+import com.kmp.recipes.mobile.app.data.model.Recipe
 
 sealed class DetailsScreenState {
     object Init : DetailsScreenState()

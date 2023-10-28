@@ -1,12 +1,10 @@
 package com.kmp.recipes.mobile.app.data.repository
 
-import com.kmp.recipes.mobile.app.cookitApplicationConfig
-import com.kmp.recipes.mobile.app.data.datasource.model.ApiResultState
 import com.kmp.recipes.mobile.app.data.datasource.FakeRecipesDataSource
-import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
+import com.kmp.recipes.mobile.app.data.model.ApiResultState
+import com.kmp.recipes.mobile.app.data.model.Recipe
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
@@ -16,7 +14,7 @@ class RecipesRepositoryImpl(
 
     override suspend fun getRecipesData() = flow {
         try {
-            val result = dataSource.getRecipesData(cookitApplicationConfig.appContext)
+            val result = dataSource.getRecipesData()
             emit(ApiResultState.OnSuccess(result))
         } catch (e: Exception) {
             e.printStackTrace()
@@ -87,7 +85,7 @@ class RecipesRepositoryImpl(
 
     override suspend fun fetchFavouriteRecipes() = flow {
         try {
-            val result = dataSource.fetchFavouriteRecipes()
+            val result = dataSource.getFavouriteRecipesList()
             if (result.isNotEmpty()) {
                 emit(ApiResultState.OnSuccess(result))
             } else {

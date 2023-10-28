@@ -49,4 +49,10 @@ object Deps {
     object Square {
         const val okio = "com.squareup.okio:okio:${Versions.okioVersion}"
     }
+
+    object SqlDelight {
+        const val sqlDelight = "com.squareup.sqldelight:runtime:${Versions.sqlDelightVersion}"
+        const val sqlDelightAndroid = "com.squareup.sqldelight:android-driver:${Versions.sqlDelightVersion}"
+        const val sqlDelightIos = "com.squareup.sqldelight:native-driver:${Versions.sqlDelightVersion}"
+    }
 }

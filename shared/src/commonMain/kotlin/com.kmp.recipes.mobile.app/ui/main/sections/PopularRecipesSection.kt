@@ -2,7 +2,7 @@ package com.kmp.recipes.mobile.app.ui.main.sections
 
 import androidx.compose.runtime.Composable
 import cafe.adriel.voyager.navigator.Navigator
-import com.kmp.recipes.mobile.app.data.datasource.model.Recipe
+import com.kmp.recipes.mobile.app.data.model.Recipe
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
 import com.kmp.recipes.mobile.app.ui.common.ColumnX
 import com.kmp.recipes.mobile.app.ui.common.RecipeCard

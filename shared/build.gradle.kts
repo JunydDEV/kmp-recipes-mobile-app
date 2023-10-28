@@ -5,6 +5,7 @@ plugins {
     id("org.jetbrains.compose")
     id("dev.icerock.mobile.multiplatform-resources")
     kotlin("plugin.serialization") version "1.9.0"
+    id("com.squareup.sqldelight")
 }
 
 kotlin {
@@ -58,12 +59,10 @@ kotlin {
                     api(resourcesCompose)
                 }
 
-                // Github
-                with(Deps.Github) {
-                    api(imageLoader)
-                }
 
+                api(Deps.Github.imageLoader)
                 api(Deps.Io.Ktor.ktorSerializationKotlinxJson)
+                api(Deps.SqlDelight.sqlDelight)
                 api(project(":systemui"))
             }
         }
@@ -74,6 +73,7 @@ kotlin {
                 api("androidx.appcompat:appcompat:1.6.1")
                 api("androidx.core:core-ktx:1.12.0")
                 api(Deps.Koin.android)
+                api(Deps.SqlDelight.sqlDelightAndroid)
             }
         }
         val iosX64Main by getting
@@ -84,6 +84,9 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
+            dependencies {
+                api(Deps.SqlDelight.sqlDelightIos)
+            }
         }
     }
 }
@@ -112,4 +115,10 @@ multiplatformResources {
     multiplatformResourcesPackage = "com.kmp.recipes.mobile.app.sharedres"
     multiplatformResourcesClassName = "SharedRes"
     disableStaticFrameworkWarning = true
+}
+
+sqldelight {
+    database("AppDatabase") {
+        packageName = "com.kmp.recipes.mobile.app.db"
+    }
 }
