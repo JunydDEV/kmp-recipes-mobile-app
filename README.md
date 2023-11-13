@@ -41,6 +41,7 @@ This app includes the following libraries,
 - Write Unit tests
 - Write UI tests
 - ~~Preview Ingredient Images~~
+- Add App Icons
 
 # Contributions
 We welcome contributions from the community! If you have ideas for new features, bug fixes, or improvements, please open an issue or submit a pull request. Check out our contribution guidelines for more information.
