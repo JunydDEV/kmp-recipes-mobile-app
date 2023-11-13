@@ -1,7 +1,7 @@
 package com.kmp.recipes.mobile.app.ui.details
 
 import cafe.adriel.voyager.core.model.StateScreenModel
-import cafe.adriel.voyager.core.model.coroutineScope
+import cafe.adriel.voyager.core.model.screenModelScope
 import com.kmp.recipes.mobile.app.data.model.ApiResultState
 import com.kmp.recipes.mobile.app.data.model.Recipe
 import com.kmp.recipes.mobile.app.data.repository.RecipesRepository
@@ -18,7 +18,7 @@ class RecipeDetailsModel(private val repository: RecipesRepository) :
     val favouriteStateFlow: StateFlow<Boolean> = _favoriteStateFlow
 
     fun fetchDetails(recipeId: String) {
-        coroutineScope.launch {
+        screenModelScope.launch {
             repository.fetchRecipeDetailsById(recipeId)
                 .collect { response ->
                     mapApiResultOnUiState(response)
@@ -42,7 +42,7 @@ class RecipeDetailsModel(private val repository: RecipesRepository) :
     }
 
     fun markAsFavourite(recipe: Recipe) {
-        coroutineScope.launch(Dispatchers.IO) {
+        screenModelScope.launch(Dispatchers.IO) {
             repository.markRecipeFavourite(recipe).run {
                 recipe.isFavourite = recipe.isFavourite.not()
                 _favoriteStateFlow.value = recipe.isFavourite

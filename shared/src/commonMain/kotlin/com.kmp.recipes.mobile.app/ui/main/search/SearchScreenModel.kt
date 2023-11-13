@@ -1,11 +1,10 @@
 package com.kmp.recipes.mobile.app.ui.main.search
 
 import cafe.adriel.voyager.core.model.StateScreenModel
+import cafe.adriel.voyager.core.model.screenModelScope
 import com.kmp.recipes.mobile.app.data.model.ApiResultState
 import com.kmp.recipes.mobile.app.data.model.Recipe
 import com.kmp.recipes.mobile.app.data.repository.RecipesRepository
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
@@ -14,7 +13,7 @@ class SearchScreenModel(private val repository: RecipesRepository) :
     StateScreenModel<SearchScreenState>(SearchScreenState.Init) {
 
     fun searchRecipes(query: String) {
-        CoroutineScope(Dispatchers.Main).launch {
+        screenModelScope.launch {
             repository.searchRecipes(query)
                 .onStart {
                     mutableState.value = SearchScreenState.Loading

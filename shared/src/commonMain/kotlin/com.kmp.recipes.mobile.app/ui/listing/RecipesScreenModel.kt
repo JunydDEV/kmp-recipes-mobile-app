@@ -1,7 +1,7 @@
 package com.kmp.recipes.mobile.app.ui.listing
 
 import cafe.adriel.voyager.core.model.StateScreenModel
-import cafe.adriel.voyager.core.model.coroutineScope
+import cafe.adriel.voyager.core.model.screenModelScope
 import com.kmp.recipes.mobile.app.data.model.ApiResultState
 import com.kmp.recipes.mobile.app.data.model.Recipe
 import com.kmp.recipes.mobile.app.data.repository.RecipesRepository
@@ -11,7 +11,7 @@ class RecipesScreenModel(private val repository: RecipesRepository) :
     StateScreenModel<RecipesListingScreenState>(RecipesListingScreenState.Init) {
 
     fun fetchRecipesList(id: String) {
-        coroutineScope.launch {
+        screenModelScope.launch {
             when (id) {
                 "view all" -> {
                     fetchAllRecipes()

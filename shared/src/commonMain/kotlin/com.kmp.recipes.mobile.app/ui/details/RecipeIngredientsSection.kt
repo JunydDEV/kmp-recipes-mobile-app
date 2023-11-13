@@ -1,5 +1,6 @@
 package com.kmp.recipes.mobile.app.ui.details
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -26,6 +27,7 @@ import com.kmp.recipes.mobile.app.ui.Dimens
 import com.kmp.recipes.mobile.app.ui.common.ImageX
 import com.kmp.recipes.mobile.app.data.model.Recipe
 import com.kmp.recipes.mobile.app.sharedres.SharedRes
+import com.kmp.recipes.mobile.app.ui.preview.PreviewScreen
 import dev.icerock.moko.resources.compose.stringResource
 
 @Composable
@@ -38,17 +40,21 @@ fun RecipeIngredientsSection(recipe: Recipe, navigator: Navigator) {
             style = MaterialTheme.typography.titleLarge,
             color = MaterialTheme.colorScheme.primary
         )
-
         Row(
             modifier = Modifier.horizontalScroll(rememberScrollState())
         ) {
             val ingredients = recipe.ingredients
             repeat(ingredients.size) {
                 Card(
-                    modifier = Modifier.size(
-                        width = Dimens.ingredientImageWidth,
-                        height = Dimens.ingredientImageHeight
-                    ).padding(top = Dimens.smallSpacing),
+                    modifier = Modifier
+                        .size(
+                            width = Dimens.ingredientImageWidth,
+                            height = Dimens.ingredientImageHeight
+                        )
+                        .padding(top = Dimens.smallSpacing)
+                        .clickable {
+                            navigator.push(PreviewScreen(ingredients[it]))
+                        },
                 ) {
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                         ImageX(

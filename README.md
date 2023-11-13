@@ -40,7 +40,7 @@ This app includes the following libraries,
 - ~~Add dark theme support~~
 - Write Unit tests
 - Write UI tests
-- Preview Ingredient Images
+- ~~Preview Ingredient Images~~
 
 # Contributions
 We welcome contributions from the community! If you have ideas for new features, bug fixes, or improvements, please open an issue or submit a pull request. Check out our contribution guidelines for more information.
